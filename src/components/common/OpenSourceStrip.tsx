@@ -53,7 +53,7 @@ export function OpenSourceStrip({ repo = GITHUB_URL }: { repo?: string } = {}) {
           </div>
 
           <Reveal delay={0.1} className="relative hidden aspect-[5/4] w-full text-ink lg:block">
-            <ConstellationField className="absolute inset-0 h-full w-full" />
+            <ConstellationField ambient className="absolute inset-0 h-full w-full" />
           </Reveal>
         </div>
       </Container>

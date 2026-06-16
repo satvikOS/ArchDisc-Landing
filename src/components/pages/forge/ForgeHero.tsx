@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
 import { GenerativeGrid } from "@/components/artifacts/GenerativeGrid";
-import { IsometricExploded } from "@/components/artifacts/IsometricExploded";
+import { Solid3D } from "@/components/artifacts/Solid3D";
 import { stagger, riseIn } from "@/lib/motion";
 import { APP_URL, REPOS } from "@/lib/site";
 
@@ -97,15 +97,11 @@ export function ForgeHero() {
         <Reveal delay={0.1} y={24} className="w-full">
           <div className="relative rounded-[2px] border border-line-strong bg-surface p-5 md:p-7">
             <div className="mb-3 flex items-center justify-between">
-              <span className="u-label text-faint">exploded assembly</span>
+              <span className="u-label text-faint">native B-rep solid</span>
               <span className="u-spec text-faint">forge-kernel.node</span>
             </div>
             <div className="relative aspect-[6/5] w-full">
-              <IsometricExploded
-                trigger="load"
-                startDelay={0.5}
-                className="absolute inset-0 text-ink"
-              />
+              <Solid3D variant="bracket" className="absolute inset-0" />
             </div>
           </div>
         </Reveal>

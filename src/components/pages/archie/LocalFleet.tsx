@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/motion/Reveal";
 import { GenerativeGrid } from "@/components/artifacts/GenerativeGrid";
-import { ConstellationField } from "@/components/artifacts/ConstellationField";
+import { Lattice3D } from "@/components/artifacts/Lattice3D";
 
 type Stat = { stat: string; label: string; body: string };
 
@@ -48,17 +48,13 @@ export function LocalFleet() {
           <div className="lg:col-span-6">
             <Reveal delay={0.1} y={20}>
               <div className="relative overflow-hidden rounded-[2px] border border-line-strong bg-surface">
-                <ConstellationField
-                  seed={11}
-                  nodeCount={58}
-                  labels={[
-                    "archie · per-discipline fleet",
-                    "open weights",
-                    "self-host",
-                    "on-device",
-                  ]}
-                  className="h-[300px] w-full md:h-[340px]"
-                />
+                <div className="flex items-center justify-between border-b border-line px-4 py-2.5">
+                  <span className="u-label text-faint">archie · per-discipline fleet</span>
+                  <span className="u-spec text-faint">on-device</span>
+                </div>
+                <div className="relative h-[300px] w-full md:h-[360px]">
+                  <Lattice3D seed={11} nodes={56} className="absolute inset-0" />
+                </div>
               </div>
             </Reveal>
           </div>

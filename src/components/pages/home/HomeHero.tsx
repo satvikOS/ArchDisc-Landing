@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
 import { GitHubIcon } from "@/components/ui/icons";
 import { GenerativeGrid } from "@/components/artifacts/GenerativeGrid";
-import { ParametricRevolveLathe } from "@/components/artifacts/ParametricRevolveLathe";
+import { Solid3D } from "@/components/artifacts/Solid3D";
 import { stagger, riseIn } from "@/lib/motion";
 import { APP_URL, GITHUB_URL, CTA, CTA_SECONDARY } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -103,13 +103,9 @@ export function HomeHero() {
                 <span className="u-label text-faint">tool-calls</span>
                 <ToolRail reduce={!!reduce} />
               </div>
-              {/* lathe */}
-              <div className="relative min-h-[300px] p-2 sm:min-h-[360px]">
-                <ParametricRevolveLathe
-                  variant="hero"
-                  startDelay={0.5}
-                  className="text-ink"
-                />
+              {/* live 3D solid — orbits + breathes */}
+              <div className="relative min-h-[320px] sm:min-h-[380px]">
+                <Solid3D variant="vessel" className="absolute inset-0" />
               </div>
             </div>
           </div>
