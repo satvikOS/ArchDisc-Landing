@@ -15,7 +15,7 @@ const ANCHORS = [
 
 /** The single, shared open-source moment — used once per page (replaces the
  *  five duplicated dark open-source sections). */
-export function OpenSourceStrip() {
+export function OpenSourceStrip({ repo = GITHUB_URL }: { repo?: string } = {}) {
   return (
     <Section id="open-source" className="border-t border-line">
       <Container>
@@ -45,7 +45,7 @@ export function OpenSourceStrip() {
               </dl>
             </Reveal>
             <Reveal delay={0.15}>
-              <Button href={GITHUB_URL} variant="secondary" className="mt-7">
+              <Button href={repo} variant="secondary" className="mt-7">
                 <GitHubIcon size={15} />
                 Star on GitHub
               </Button>

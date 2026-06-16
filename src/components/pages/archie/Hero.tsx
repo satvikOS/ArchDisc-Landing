@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -8,7 +8,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { GenerativeGrid } from "@/components/artifacts/GenerativeGrid";
 import { ToolCallLedger } from "@/components/artifacts/ToolCallLedger";
 import { stagger, riseIn } from "@/lib/motion";
-import { APP_URL, GITHUB_URL } from "@/lib/site";
+import { APP_URL } from "@/lib/site";
 
 const EYEBROW = "ARCHIE · LOCAL DESIGN COPILOT";
 const HEADLINE = "The copilot that builds geometry you can trust.";
@@ -69,9 +69,8 @@ export function Hero() {
                 className="transition-transform duration-200 group-hover:translate-x-0.5"
               />
             </Button>
-            <Button href={GITHUB_URL} size="lg" variant="secondary">
-              <Star size={15} />
-              Star on GitHub
+            <Button href="#tool-calls" size="lg" variant="secondary">
+              See how it works
             </Button>
           </div>
         </Reveal>

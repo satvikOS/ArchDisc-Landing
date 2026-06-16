@@ -8,7 +8,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { GenerativeGrid } from "@/components/artifacts/GenerativeGrid";
 import { DitherPortrait } from "@/components/artifacts/DitherPortrait";
 import { stagger, riseIn } from "@/lib/motion";
-import { APP_URL, GITHUB_URL, CTA, CTA_SECONDARY } from "@/lib/site";
+import { APP_URL, REPOS, CTA, CTA_SECONDARY } from "@/lib/site";
 
 const HEADLINE = ["A", "whole", "studio.", "Speak,", "and", "it", "sculpts."];
 
@@ -71,7 +71,7 @@ export function StudioHero() {
                   className="transition-transform duration-200 group-hover:translate-x-0.5"
                 />
               </Button>
-              <Button href={GITHUB_URL} size="lg" variant="secondary">
+              <Button href={REPOS.studio} size="lg" variant="secondary">
                 <Star size={15} />
                 {CTA_SECONDARY}
               </Button>

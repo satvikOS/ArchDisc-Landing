@@ -13,11 +13,13 @@ export function FinalCta({
   headline = "Say it. Watch Archie build it.",
   subhead = "A local, open-source AI copilot, a real CAD kernel, and a full 3D studio — Studio, Forge, and Archie in one app, on your machine.",
   micro = "Open source · free to start · public release soon",
+  repo = GITHUB_URL,
 }: {
   eyebrow?: string;
   headline?: string;
   subhead?: string;
   micro?: string;
+  repo?: string;
 }) {
   return (
     <section className="relative overflow-hidden border-t border-white/10 bg-ink py-28 text-paper md:py-36">
@@ -45,7 +47,7 @@ export function FinalCta({
               Open ArchDisc
             </Button>
             <Button
-              href={GITHUB_URL}
+              href={repo}
               size="lg"
               variant="secondary"
               className="border-white/25 bg-transparent text-paper hover:border-white/50 hover:bg-white/[0.06]"

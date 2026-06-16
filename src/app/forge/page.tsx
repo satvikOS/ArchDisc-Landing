@@ -11,6 +11,7 @@ import { ForgeArchie } from "@/components/pages/forge/ForgeArchie";
 import { ForgeSpecsFaq } from "@/components/pages/forge/ForgeSpecsFaq";
 import { OpenSourceStrip } from "@/components/common/OpenSourceStrip";
 import { FinalCta } from "@/components/common/FinalCta";
+import { REPOS } from "@/lib/site";
 
 const META_TITLE = "Forge — Native parametric CAD, driven by Archie";
 const META_DESCRIPTION =
@@ -42,12 +43,13 @@ export default function ForgePage() {
       <ForgeCamDrawings />
       <ForgeInterop />
       <ForgeArchie />
-      <OpenSourceStrip />
+      <OpenSourceStrip repo={REPOS.forge} />
       <ForgeSpecsFaq />
       <FinalCta
         eyebrow="Build something real"
         headline="Solids that are made to be made."
         subhead="A from-source OpenCASCADE kernel, a real constraint solver, FEA, and drawings — all driven by Archie. Open source, on your machine."
+        repo={REPOS.forge}
       />
     </>
   );

@@ -8,7 +8,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { GenerativeGrid } from "@/components/artifacts/GenerativeGrid";
 import { IsometricExploded } from "@/components/artifacts/IsometricExploded";
 import { stagger, riseIn } from "@/lib/motion";
-import { APP_URL, GITHUB_URL } from "@/lib/site";
+import { APP_URL, REPOS } from "@/lib/site";
 
 const EYEBROW = "FORGE · NATIVE PARAMETRIC CAD";
 const HEADLINE = "Solids that are made to be made.";
@@ -81,7 +81,7 @@ export function ForgeHero() {
                   className="transition-transform duration-200 group-hover:translate-x-0.5"
                 />
               </Button>
-              <Button href={GITHUB_URL} size="lg" variant="secondary">
+              <Button href={REPOS.forge} size="lg" variant="secondary">
                 <Star size={15} />
                 Star on GitHub
               </Button>

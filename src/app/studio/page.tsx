@@ -7,6 +7,7 @@ import { RenderInValue } from "@/components/pages/studio/RenderInValue";
 import { ArchieDrives } from "@/components/pages/studio/ArchieDrives";
 import { OpenSourceStrip } from "@/components/common/OpenSourceStrip";
 import { FinalCta } from "@/components/common/FinalCta";
+import { REPOS } from "@/lib/site";
 
 const META_TITLE = "Studio — 3D creation, driven by Archie";
 const META_DESCRIPTION =
@@ -35,11 +36,12 @@ export default function StudioPage() {
       <FurnitureComposer />
       <RenderInValue />
       <ArchieDrives />
-      <OpenSourceStrip />
+      <OpenSourceStrip repo={REPOS.studio} />
       <FinalCta
         eyebrow="Open the studio"
         headline="Describe a scene. Watch it take shape."
         subhead="Model, sculpt, animate, and render — Blender/Maya/Houdini-class breadth in one app, driven by Archie. Open source, on your machine."
+        repo={REPOS.studio}
       />
     </>
   );
