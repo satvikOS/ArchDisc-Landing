@@ -12,20 +12,69 @@
   --color-line: #ececee;
   --color-line-strong: #dcdce0;
 
-  /* ---- Type families (next/font injects these CSS variables) ---- */
+  /* ---- Three type voices: Space Grotesk (display) · Geist (body) · Geist Mono (instrument) ---- */
+  --font-display: var(--font-space-grotesk), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
 
-  /* ---- Display type scale (fluid) ---- */
-  --text-hero: clamp(2.6rem, 5.8vw, 4.75rem);
-  --text-hero--line-height: 1;
-  --text-hero--letter-spacing: -0.035em;
-  --text-h2: clamp(1.85rem, 3.4vw, 2.9rem);
-  --text-h2--line-height: 1.06;
-  --text-h2--letter-spacing: -0.028em;
-  --text-h3: clamp(1.2rem, 1.8vw, 1.55rem);
-  --text-h3--line-height: 1.2;
-  --text-h3--letter-spacing: -0.018em;
+  /* ---- Display scale (Space Grotesk) ---- */
+  --text-display: clamp(3.25rem, 1.6rem + 6.6vw, 6.5rem);
+  --text-display--line-height: 0.94;
+  --text-display--letter-spacing: -0.04em;
+  --text-display--font-weight: 600;
+
+  --text-h1: clamp(2.5rem, 1.5rem + 4.4vw, 4.25rem);
+  --text-h1--line-height: 0.98;
+  --text-h1--letter-spacing: -0.035em;
+  --text-h1--font-weight: 600;
+
+  --text-h2: clamp(1.9rem, 1.35rem + 2.6vw, 3rem);
+  --text-h2--line-height: 1.04;
+  --text-h2--letter-spacing: -0.03em;
+  --text-h2--font-weight: 600;
+
+  --text-h3: clamp(1.2rem, 1.04rem + 0.75vw, 1.6rem);
+  --text-h3--line-height: 1.18;
+  --text-h3--letter-spacing: -0.02em;
+  --text-h3--font-weight: 600;
+
+  --text-h4: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
+  --text-h4--line-height: 1.32;
+  --text-h4--letter-spacing: -0.012em;
+  --text-h4--font-weight: 500;
+
+  /* ---- Body scale (Geist Sans) ---- */
+  --text-lead: clamp(1.125rem, 1.06rem + 0.34vw, 1.3125rem);
+  --text-lead--line-height: 1.5;
+  --text-lead--letter-spacing: -0.011em;
+
+  --text-body: clamp(0.9375rem, 0.92rem + 0.1vw, 1rem);
+  --text-body--line-height: 1.62;
+  --text-body--letter-spacing: -0.006em;
+
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.55;
+  --text-body-sm--letter-spacing: -0.003em;
+
+  /* ---- Instrument scale (Geist Mono) ---- */
+  --text-label: 0.6875rem;
+  --text-label--line-height: 1;
+  --text-label--letter-spacing: 0.16em;
+  --text-label--font-weight: 500;
+
+  --text-label-lg: 0.75rem;
+  --text-label-lg--line-height: 1.1;
+  --text-label-lg--letter-spacing: 0.14em;
+  --text-label-lg--font-weight: 500;
+
+  --text-spec: 0.8125rem;
+  --text-spec--line-height: 1.5;
+  --text-spec--letter-spacing: 0;
+
+  --text-stat: clamp(2.25rem, 1.6rem + 2.8vw, 3.4rem);
+  --text-stat--line-height: 1;
+  --text-stat--letter-spacing: -0.02em;
+  --text-stat--font-weight: 500;
 
   /* ---- Motion ---- */
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
@@ -49,12 +98,16 @@ body {
   font-family: var(--font-sans);
 }
 
+/* Headings default to the display voice (Space Grotesk). */
+h1, h2, h3 {
+  font-family: var(--font-display);
+}
+
 ::selection {
   background-color: var(--color-ink);
   color: var(--color-paper);
 }
 
-/* Refined, unobtrusive scrollbar */
 ::-webkit-scrollbar {
   width: 11px;
   height: 11px;
@@ -72,4 +125,50 @@ body {
   html {
     scroll-behavior: auto;
   }
+}
+
+@layer components {
+  /* Display family helper for spans/elements that aren't h1–h3. */
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  /* Instrument voice — labels: uppercase, wide-tracked mono. */
+  .u-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    line-height: var(--text-label--line-height);
+    letter-spacing: var(--text-label--letter-spacing);
+    font-weight: var(--text-label--font-weight);
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+
+  /* Instrument voice — specs / tool-calls / dimensions / IDs: natural case, aligned numerals, slashed zero. */
+  .u-spec {
+    font-family: var(--font-mono);
+    font-size: var(--text-spec);
+    line-height: var(--text-spec--line-height);
+    letter-spacing: var(--text-spec--letter-spacing);
+    font-variant-numeric: tabular-nums slashed-zero;
+    font-feature-settings: "tnum" 1, "zero" 1;
+  }
+
+  /* Instrument voice — big quantified numerals. */
+  .u-stat {
+    font-family: var(--font-mono);
+    font-size: var(--text-stat);
+    line-height: var(--text-stat--line-height);
+    letter-spacing: var(--text-stat--letter-spacing);
+    font-weight: var(--text-stat--font-weight);
+    font-variant-numeric: tabular-nums slashed-zero;
+    font-feature-settings: "tnum" 1, "zero" 1;
+  }
+}
+
+/* Display headings: suppress decorative alternates so Space Grotesk never
+   competes with the mono instrument voice. */
+h1, h2, h3, .font-display {
+  font-feature-settings: "ss01" 0, "ss02" 0;
+  font-variant-numeric: normal;
 }

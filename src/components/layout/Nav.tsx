@@ -2,11 +2,13 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
+import { GitHubIcon } from "@/components/ui/icons";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { nav, APP_URL } from "@/lib/content";
+import { nav, APP_URL, GITHUB_URL, CTA } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const focusRing =
@@ -15,6 +17,7 @@ const focusRing =
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -24,7 +27,6 @@ export function Nav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Mobile menu: close on Escape, move focus to the first link on open.
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -34,6 +36,9 @@ export function Nav() {
     panelRef.current?.querySelector<HTMLAnchorElement>("a")?.focus();
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <header
@@ -46,7 +51,7 @@ export function Nav() {
     >
       <Container className="flex h-16 items-center justify-between">
         <Link
-          href="#top"
+          href="/"
           aria-label="ArchDisc — home"
           className={cn("shrink-0 rounded-[2px]", focusRing)}
         >
@@ -58,9 +63,11 @@ export function Nav() {
             <Link
               key={l.href}
               href={l.href}
+              aria-current={isActive(l.href) ? "page" : undefined}
               className={cn(
-                "rounded-[2px] text-[14px] text-muted transition-colors hover:text-ink",
+                "rounded-[2px] font-mono text-[12px] uppercase tracking-[0.1em] transition-colors",
                 focusRing,
+                isActive(l.href) ? "text-ink" : "text-muted hover:text-ink",
               )}
             >
               {l.label}
@@ -68,9 +75,13 @@ export function Nav() {
           ))}
         </nav>
 
-        <div className="hidden items-center md:flex">
+        <div className="hidden items-center gap-2 md:flex">
+          <Button href={GITHUB_URL} size="sm" variant="ghost">
+            <GitHubIcon size={15} />
+            Star
+          </Button>
           <Button href={APP_URL} size="sm">
-            {nav.cta}
+            {CTA}
           </Button>
         </div>
 
@@ -101,17 +112,25 @@ export function Nav() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
+                aria-current={isActive(l.href) ? "page" : undefined}
                 className={cn(
-                  "rounded-[2px] px-2 py-2.5 text-[15px] text-ink-soft transition-colors hover:bg-ink/[0.03]",
+                  "rounded-[2px] px-2 py-2.5 font-mono text-[13px] uppercase tracking-[0.1em] transition-colors",
                   focusRing,
+                  isActive(l.href) ? "text-ink" : "text-ink-soft hover:bg-ink/[0.03]",
                 )}
               >
                 {l.label}
               </Link>
             ))}
-            <Button href={APP_URL} className="mt-3 w-full">
-              {nav.cta}
-            </Button>
+            <div className="mt-3 flex flex-col gap-2">
+              <Button href={GITHUB_URL} variant="secondary" className="w-full">
+                <GitHubIcon size={15} />
+                Star on GitHub
+              </Button>
+              <Button href={APP_URL} className="w-full">
+                {CTA}
+              </Button>
+            </div>
           </Container>
         </div>
       )}

@@ -57,22 +57,28 @@ export function ThroughLine({
   if (variant === "pillar") {
     return (
       <div aria-hidden className={cn("relative h-px w-full text-ink", className)}>
+        {/* When reduced motion resolves, `animate` drives the resting frame
+            immediately, regardless of scroll; otherwise it reveals on scroll. */}
         <motion.div
           className="absolute inset-0 origin-left bg-line-strong"
-          initial={reduce ? false : { scaleX: 0 }}
-          whileInView={{ scaleX: 1 }}
+          initial={{ scaleX: 0 }}
+          animate={reduce ? { scaleX: 1 } : undefined}
+          whileInView={reduce ? undefined : { scaleX: 1 }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 1, ease: EASE }}
+          transition={reduce ? { duration: 0 } : { duration: 1, ease: EASE }}
         />
         {[16.66, 50, 83.33].map((left, i) => (
           <motion.span
             key={i}
             className="absolute top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-ink"
             style={{ left: `${left}%` }}
-            initial={reduce ? false : { opacity: 0, scale: 0 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={reduce ? { opacity: 1, scale: 1 } : undefined}
+            whileInView={reduce ? undefined : { opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, ease: EASE, delay: 0.5 + i * 0.18 }}
+            transition={
+              reduce ? { duration: 0 } : { duration: 0.4, ease: EASE, delay: 0.5 + i * 0.18 }
+            }
           />
         ))}
       </div>
