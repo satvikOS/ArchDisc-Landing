@@ -3,7 +3,8 @@ import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
-import { Grain } from "@/components/visual/Grain";
+import { TexturePass } from "@/components/visual/TexturePass";
+import { InstrumentProvider } from "@/lib/instrument";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -78,10 +79,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable}`}
     >
       <body className="min-h-dvh bg-paper text-ink-soft antialiased">
-        <Grain />
-        <Nav />
-        <main>{children}</main>
-        <Footer />
+        <InstrumentProvider>
+          <TexturePass />
+          <Nav />
+          <main>{children}</main>
+          <Footer />
+        </InstrumentProvider>
       </body>
     </html>
   );

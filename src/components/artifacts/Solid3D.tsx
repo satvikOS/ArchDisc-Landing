@@ -18,6 +18,17 @@ export function Solid3D({
 }) {
   return (
     <div className={cn("relative h-full w-full text-ink", className)}>
+      {!dark && (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-[20%] bottom-[11%] h-[12%] rounded-[50%]"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, rgba(17,21,28,0.16), transparent 72%)",
+            filter: "blur(10px)",
+          }}
+        />
+      )}
       <Stage3D
         dark={dark}
         camZ={variant === "vessel" ? 3.6 : 3.3}

@@ -4,6 +4,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/motion/Reveal";
 import { GenerativeGrid } from "@/components/artifacts/GenerativeGrid";
 import { Lattice3D } from "@/components/artifacts/Lattice3D";
+import { InTolStat } from "@/components/instrument/InTolStat";
 
 type Stat = { stat: string; label: string; body: string };
 
@@ -64,7 +65,7 @@ export function LocalFleet() {
           {STATS.map((s, i) => (
             <Reveal key={s.label} delay={i * 0.08}>
               <article className="h-full bg-surface p-7">
-                <p className="u-stat text-ink">{s.stat}</p>
+                <InTolStat value={s.stat} className="text-ink" />
                 <p className="u-label mt-4 text-faint">{s.label}</p>
                 <p className="mt-3 max-w-[42ch] text-body text-ink-soft">
                   {s.body}

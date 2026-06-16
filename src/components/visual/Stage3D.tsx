@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import type * as THREE from "three";
 import { usePrefersReducedMotion } from "@/lib/artkit";
+import { usePointerRef } from "@/lib/instrument";
 import { cn } from "@/lib/utils";
 
 export type Stage3DColors = { ink: number; paper: number; line: number };
@@ -53,6 +54,7 @@ export function Stage3D({
     buildRef.current = build;
   }, [build]);
   const reduce = usePrefersReducedMotion();
+  const pointerRef = usePointerRef();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -123,6 +125,14 @@ export function Stage3D({
       const render = () => renderer && ctx && renderer.render(ctx.scene, ctx.camera);
       const loop = (tms: number) => {
         if (disposed) return;
+        // cursor-as-key-light: rake the single key light toward the pointer
+        const pt = pointerRef?.current;
+        if (pt) {
+          const tx = (pt.x - 0.5) * 4.4;
+          const ty = (0.42 - pt.y) * 3.6 + 1.1;
+          key.position.x += (tx - key.position.x) * 0.06;
+          key.position.y += (ty - key.position.y) * 0.06;
+        }
         handle.update?.(tms / 1000, ctx as Stage3DCtx);
         render();
         raf = requestAnimationFrame(loop);
@@ -186,7 +196,7 @@ export function Stage3D({
       }
       renderer?.dispose();
     };
-  }, [reduce, camZ, dark]);
+  }, [reduce, camZ, dark, pointerRef]);
 
   return (
     <canvas ref={canvasRef} aria-hidden className={cn("block h-full w-full", className)} />
