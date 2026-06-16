@@ -1,17 +1,20 @@
-import { useEffect, useRef, useState, type RefObject } from "react";
+import { useEffect, useRef, useSyncExternalStore, type RefObject } from "react";
 
-/** Reliable reduced-motion hook: reads the media query value on mount (motion's
- *  own useReducedMotion can miss a preset preference until a change event fires). */
+/** Reliable reduced-motion hook via useSyncExternalStore: reads the media query
+ *  synchronously on the client (motion's own useReducedMotion can miss a preset
+ *  preference), subscribes to changes, and avoids setState-in-effect. */
+const REDUCE_QUERY = "(prefers-reduced-motion: reduce)";
+function subscribeReduce(onStoreChange: () => void): () => void {
+  const mq = window.matchMedia(REDUCE_QUERY);
+  mq.addEventListener("change", onStoreChange);
+  return () => mq.removeEventListener("change", onStoreChange);
+}
 export function usePrefersReducedMotion(): boolean {
-  const [reduce, setReduce] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReduce(mq.matches);
-    const onChange = (e: MediaQueryListEvent) => setReduce(e.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
-  return reduce;
+  return useSyncExternalStore(
+    subscribeReduce,
+    () => window.matchMedia(REDUCE_QUERY).matches,
+    () => false,
+  );
 }
 
 /* ============================================================
