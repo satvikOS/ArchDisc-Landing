@@ -7,8 +7,8 @@ import { Math as MathProof } from "@/components/pages/precision/Math";
 import { Scale } from "@/components/pages/precision/Scale";
 import { Export } from "@/components/pages/precision/Export";
 import { Verify } from "@/components/pages/precision/Verify";
-import { OpenSource } from "@/components/pages/precision/OpenSource";
-import { FinalCta } from "@/components/pages/precision/FinalCta";
+import { OpenSourceStrip } from "@/components/common/OpenSourceStrip";
+import { FinalCta } from "@/components/common/FinalCta";
 
 const META_TITLE = "Precision — AI-native doesn't mean approximate";
 const META_DESCRIPTION =
@@ -34,8 +34,12 @@ export default function PrecisionPage() {
       <Scale />
       <Export />
       <Verify />
-      <OpenSource />
-      <FinalCta />
+      <OpenSourceStrip />
+      <FinalCta
+        eyebrow="Take none of it on faith"
+        headline="See the geometry for yourself."
+        subhead="A native CAD kernel, real B-rep solids, real FEA — and open weights and code you can read end to end. AI-native, never approximate."
+      />
     </>
   );
 }

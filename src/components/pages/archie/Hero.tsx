@@ -13,7 +13,7 @@ import { APP_URL, GITHUB_URL } from "@/lib/site";
 const EYEBROW = "ARCHIE · LOCAL DESIGN COPILOT";
 const HEADLINE = "The copilot that builds geometry you can trust.";
 const SUBHEAD =
-  "Describe what you want in plain language. Archie resolves it into an ordered stream of structured, validated tool-calls, drives a real kernel and a real 3D engine, runs a coherence gate that repairs the solid before you see it, and hands back an editable feature tree — not a throwaway script. It all runs on a local, open-weights model fleet, so your words and your geometry never leave the machine.";
+  "Describe what you want in plain language; Archie turns it into structured, validated tool-calls and hands back real, editable geometry. It runs on a local, open-weights model fleet — your words and your geometry never leave the machine.";
 const MICRO =
   "Open source · free forever · local fleet · public release soon — nothing leaves your machine.";
 
@@ -25,7 +25,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative isolate scroll-mt-24 overflow-hidden pt-20 pb-20 md:pt-28 md:pb-28"
+      className="relative isolate scroll-mt-24 overflow-hidden pt-16 pb-16 md:pt-20 md:pb-20"
     >
       <GenerativeGrid crosshair annotations origin={["72%", "30%"]} />
 
@@ -81,15 +81,16 @@ export function Hero() {
         </Reveal>
       </Container>
 
-      <Container className="relative mt-14 md:mt-16">
-        <div className="border-y border-line py-10 md:py-12">
+      <Container className="relative mt-12 md:mt-14">
+        <div className="border-y border-line py-8 md:py-10">
           <Reveal delay={0.1} y={24}>
             <ToolCallLedger
+              twoPane
               variant="hero"
               tone="light"
               trigger="load"
               startDelay={0.55}
-              className="mx-auto w-full max-w-2xl"
+              className="mx-auto w-full max-w-5xl"
             />
           </Reveal>
         </div>

@@ -5,8 +5,8 @@ import { SculptToShade } from "@/components/pages/studio/SculptToShade";
 import { FurnitureComposer } from "@/components/pages/studio/FurnitureComposer";
 import { RenderInValue } from "@/components/pages/studio/RenderInValue";
 import { ArchieDrives } from "@/components/pages/studio/ArchieDrives";
-import { OpenSource } from "@/components/pages/studio/OpenSource";
-import { StudioCta } from "@/components/pages/studio/StudioCta";
+import { OpenSourceStrip } from "@/components/common/OpenSourceStrip";
+import { FinalCta } from "@/components/common/FinalCta";
 
 const META_TITLE = "Studio — 3D creation, driven by Archie";
 const META_DESCRIPTION =
@@ -35,8 +35,12 @@ export default function StudioPage() {
       <FurnitureComposer />
       <RenderInValue />
       <ArchieDrives />
-      <OpenSource />
-      <StudioCta />
+      <OpenSourceStrip />
+      <FinalCta
+        eyebrow="Open the studio"
+        headline="Describe a scene. Watch it take shape."
+        subhead="Model, sculpt, animate, and render — Blender/Maya/Houdini-class breadth in one app, driven by Archie. Open source, on your machine."
+      />
     </>
   );
 }

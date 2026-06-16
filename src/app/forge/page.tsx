@@ -8,9 +8,9 @@ import { ForgeSimulation } from "@/components/pages/forge/ForgeSimulation";
 import { ForgeCamDrawings } from "@/components/pages/forge/ForgeCamDrawings";
 import { ForgeInterop } from "@/components/pages/forge/ForgeInterop";
 import { ForgeArchie } from "@/components/pages/forge/ForgeArchie";
-import { ForgeOpenSource } from "@/components/pages/forge/ForgeOpenSource";
 import { ForgeSpecsFaq } from "@/components/pages/forge/ForgeSpecsFaq";
-import { ForgeFinalCta } from "@/components/pages/forge/ForgeFinalCta";
+import { OpenSourceStrip } from "@/components/common/OpenSourceStrip";
+import { FinalCta } from "@/components/common/FinalCta";
 
 const META_TITLE = "Forge — Native parametric CAD, driven by Archie";
 const META_DESCRIPTION =
@@ -42,9 +42,13 @@ export default function ForgePage() {
       <ForgeCamDrawings />
       <ForgeInterop />
       <ForgeArchie />
-      <ForgeOpenSource />
+      <OpenSourceStrip />
       <ForgeSpecsFaq />
-      <ForgeFinalCta />
+      <FinalCta
+        eyebrow="Build something real"
+        headline="Solids that are made to be made."
+        subhead="A from-source OpenCASCADE kernel, a real constraint solver, FEA, and drawings — all driven by Archie. Open source, on your machine."
+      />
     </>
   );
 }

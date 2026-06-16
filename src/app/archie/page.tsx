@@ -5,9 +5,9 @@ import { ToolCalls } from "@/components/pages/archie/ToolCalls";
 import { CoherenceGate } from "@/components/pages/archie/CoherenceGate";
 import { FeatureTree } from "@/components/pages/archie/FeatureTree";
 import { DrivesBoth } from "@/components/pages/archie/DrivesBoth";
-import { OpenSource } from "@/components/pages/archie/OpenSource";
 import { Faq } from "@/components/pages/archie/Faq";
-import { FinalCta } from "@/components/pages/archie/FinalCta";
+import { OpenSourceStrip } from "@/components/common/OpenSourceStrip";
+import { FinalCta } from "@/components/common/FinalCta";
 
 const META_TITLE = "Archie — the local AI copilot for design";
 const META_DESCRIPTION =
@@ -39,7 +39,7 @@ export default function ArchiePage() {
       <CoherenceGate />
       <FeatureTree />
       <DrivesBoth />
-      <OpenSource />
+      <OpenSourceStrip />
       <Faq />
       <FinalCta />
     </>

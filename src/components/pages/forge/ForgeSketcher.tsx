@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/motion/Reveal";
 import { ToolCallLedger, type ToolCall } from "@/components/artifacts/ToolCallLedger";
+import { ParametricSketch } from "@/components/artifacts/ParametricSketch";
 
 const PROOF: { label: string; body: string }[] = [
   {
@@ -56,19 +57,9 @@ export function ForgeSketcher() {
           {/* DOF console + tool-call ledger */}
           <Reveal y={24} className="lg:pt-2">
             <div className="rounded-[2px] border border-line-strong bg-surface p-5 md:p-6">
-              {/* DOF console readout */}
-              <div className="rounded-[2px] border border-line bg-paper px-4 py-3.5">
-                <div className="mb-2 flex items-center justify-between">
-                  <span className="u-label text-faint">solver</span>
-                  <span className="u-label text-faint">planegcs</span>
-                </div>
-                <p className="u-spec text-ink">
-                  sketch.dof: <span className="text-ink">0</span> / fully
-                  constrained
-                </p>
-                <p className="u-spec mt-1 text-muted">
-                  6 constraints · 2 dimensions · solver: planegcs
-                </p>
+              {/* parametric sketch resolving to fully-constrained */}
+              <div className="relative aspect-[360/280] w-full overflow-hidden rounded-[2px] border border-line bg-paper text-ink">
+                <ParametricSketch variant="hero" trigger="view" className="h-full w-full" />
               </div>
 
               {/* validated tool-call stream */}
