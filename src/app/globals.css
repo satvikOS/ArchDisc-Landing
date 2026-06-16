@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Monochrome palette — ink #11151C on near-white. Zero chroma anywhere. ---- */
+  --color-paper: #fafafa;
+  --color-surface: #ffffff;
+  --color-ink: #11151c;
+  --color-ink-soft: #2c313a;
+  --color-ink-mid: #4a4f58;
+  --color-muted: #6a7079;
+  --color-faint: #9aa0a8;
+  --color-line: #ececee;
+  --color-line-strong: #dcdce0;
+
+  /* ---- Type families (next/font injects these CSS variables) ---- */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
+
+  /* ---- Display type scale (fluid) ---- */
+  --text-hero: clamp(2.6rem, 5.8vw, 4.75rem);
+  --text-hero--line-height: 1;
+  --text-hero--letter-spacing: -0.035em;
+  --text-h2: clamp(1.85rem, 3.4vw, 2.9rem);
+  --text-h2--line-height: 1.06;
+  --text-h2--letter-spacing: -0.028em;
+  --text-h3: clamp(1.2rem, 1.8vw, 1.55rem);
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.018em;
+
+  /* ---- Motion ---- */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink-soft);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* Refined, unobtrusive scrollbar */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line-strong);
+  border-radius: 999px;
+  border: 3px solid var(--color-paper);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-faint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
