@@ -5,6 +5,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { GenerativeGrid } from "@/components/artifacts/GenerativeGrid";
 import { Lattice3D } from "@/components/artifacts/Lattice3D";
 import { InTolStat } from "@/components/instrument/InTolStat";
+import { OnDeviceBoundary } from "@/components/instrument/OnDeviceBoundary";
 
 type Stat = { stat: string; label: string; body: string };
 
@@ -48,15 +49,23 @@ export function LocalFleet() {
 
           <div className="lg:col-span-6">
             <Reveal delay={0.1} y={20}>
-              <div className="relative overflow-hidden rounded-[2px] border border-line-strong bg-surface">
-                <div className="flex items-center justify-between border-b border-line px-4 py-2.5">
-                  <span className="u-label text-faint">archie · per-discipline fleet</span>
-                  <span className="u-spec text-faint">on-device</span>
+              {/* The per-discipline fleet lives INSIDE a sealed on-device
+                  boundary: activity streams on the local bus while
+                  "bytes leaving machine" stays pegged at 0 — the no-cloud /
+                  open-weights / no-keys moat made visible. */}
+              <OnDeviceBoundary tone="light" className="pt-1.5 pb-3">
+                <div className="relative overflow-hidden rounded-[2px] border border-line-strong bg-surface">
+                  <div className="flex items-center justify-between border-b border-line px-4 py-2.5">
+                    <span className="u-label text-faint">
+                      archie · per-discipline fleet
+                    </span>
+                    <span className="u-spec text-faint">on-device</span>
+                  </div>
+                  <div className="relative h-[300px] w-full md:h-[360px]">
+                    <Lattice3D seed={11} nodes={56} className="absolute inset-0" />
+                  </div>
                 </div>
-                <div className="relative h-[300px] w-full md:h-[360px]">
-                  <Lattice3D seed={11} nodes={56} className="absolute inset-0" />
-                </div>
-              </div>
+              </OnDeviceBoundary>
             </Reveal>
           </div>
         </div>

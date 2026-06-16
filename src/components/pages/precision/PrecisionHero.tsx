@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
 import { GitHubIcon } from "@/components/ui/icons";
 import { GenerativeGrid } from "@/components/artifacts/GenerativeGrid";
-import { StressFieldHalftone } from "@/components/artifacts/StressFieldHalftone";
+import { RasterInspection } from "@/components/instrument/RasterInspection";
 import { stagger, riseIn } from "@/lib/motion";
 import { APP_URL, GITHUB_URL } from "@/lib/site";
 
@@ -115,12 +115,30 @@ export function PrecisionHero() {
           </Reveal>
         </div>
 
-        {/* ── signature artifact column ───────────────────────────── */}
+        {/* ── signature artifact column — RASTER INSPECTION ──────────
+            A measuring light-line rasters across the focal part on
+            scroll-seat and leaves a 1-bit Bayer-dither value-map as it
+            passes, as if the instrument is digitizing the surface line by
+            line. The dark inspection table gets one radial backlight
+            value-lift behind the part (light-table backlight, ≤10% white,
+            never a colored glow); the anodized-plate frame keeps the house
+            2px radius + hairline border. Reduced motion → the complete
+            digitized portrait at rest, no sweep. */}
         <div className="order-1 lg:order-2 lg:col-span-6">
-          <div className="relative mx-auto aspect-square w-full max-w-xl rounded-[2px] border border-white/12 bg-white/[0.02]">
-            <StressFieldHalftone
+          <div className="relative mx-auto aspect-square w-full max-w-xl overflow-hidden rounded-[2px] border border-white/12 bg-white/[0.02]">
+            {/* light-table backlight — pure white → transparent radial lift */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(60% 55% at 50% 46%, rgba(255,255,255,0.09), rgba(255,255,255,0) 72%)",
+              }}
+            />
+            <RasterInspection
+              scrub="play"
               dark
-              className="absolute inset-0 h-full w-full p-6"
+              className="absolute inset-0 h-full w-full p-7"
             />
           </div>
         </div>

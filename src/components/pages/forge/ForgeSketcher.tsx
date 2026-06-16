@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Reveal } from "@/components/motion/Reveal";
 import { ToolCallLedger, type ToolCall } from "@/components/artifacts/ToolCallLedger";
-import { ParametricSketch } from "@/components/artifacts/ParametricSketch";
+import { ConstraintSolverBench } from "@/components/instrument/ConstraintSolverBench";
 
 const PROOF: { label: string; body: string }[] = [
   {
@@ -57,10 +57,20 @@ export function ForgeSketcher() {
           {/* DOF console + tool-call ledger */}
           <Reveal y={24} className="lg:pt-2">
             <div className="rounded-[2px] border border-line-strong bg-surface p-5 md:p-6">
-              {/* parametric sketch resolving to fully-constrained */}
+              {/* interactive constraint-solver bench — drag the corner to DOF 0 */}
               <div className="relative aspect-[360/280] w-full overflow-hidden rounded-[2px] border border-line bg-paper text-ink">
-                <ParametricSketch variant="hero" trigger="view" className="h-full w-full" />
+                <ConstraintSolverBench className="h-full w-full" />
               </div>
+
+              {/* operator hint — degrades silently on touch / reduced motion */}
+              <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
+                <span aria-hidden>drag the corner handle</span>
+                <span className="sr-only">
+                  Focus the corner handle and use arrow keys to move it; Enter
+                  fully constrains the sketch.
+                </span>{" "}
+                — watch the degrees of freedom fall to zero.
+              </p>
 
               {/* validated tool-call stream */}
               <ToolCallLedger

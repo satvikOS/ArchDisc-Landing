@@ -17,6 +17,24 @@ export function usePrefersReducedMotion(): boolean {
   );
 }
 
+/** Fine-pointer + hover capability (mouse / trackpad / stylus-with-hover), via
+ *  useSyncExternalStore — same pattern as usePrefersReducedMotion. Returns false
+ *  on touch / coarse / no-hover devices so interactions can degrade to a static
+ *  resolved frame. SSR-safe (false). */
+const FINE_QUERY = "(hover: hover) and (pointer: fine)";
+function subscribeFine(onStoreChange: () => void): () => void {
+  const mq = window.matchMedia(FINE_QUERY);
+  mq.addEventListener("change", onStoreChange);
+  return () => mq.removeEventListener("change", onStoreChange);
+}
+export function useFinePointer(): boolean {
+  return useSyncExternalStore(
+    subscribeFine,
+    () => window.matchMedia(FINE_QUERY).matches,
+    () => false,
+  );
+}
+
 /* ============================================================
    artkit — shared, dependency-light primitives for the monochrome
    generative artifacts. Pure helpers + one canvas hook. No new deps.
