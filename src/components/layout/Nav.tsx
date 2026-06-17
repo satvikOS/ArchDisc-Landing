@@ -5,10 +5,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/brand/Logo";
-import { GitHubIcon } from "@/components/ui/icons";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { nav, APP_URL, GITHUB_URL, CTA } from "@/lib/site";
+import { nav, APP_URL, CTA } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const focusRing =
@@ -76,9 +75,8 @@ export function Nav() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
-          <Button href={GITHUB_URL} size="sm" variant="ghost">
-            <GitHubIcon size={15} />
-            Star
+          <Button href="/precision" size="sm" variant="ghost">
+            Precision
           </Button>
           <Button href={APP_URL} size="sm">
             {CTA}
@@ -123,10 +121,6 @@ export function Nav() {
               </Link>
             ))}
             <div className="mt-3 flex flex-col gap-2">
-              <Button href={GITHUB_URL} variant="secondary" className="w-full">
-                <GitHubIcon size={15} />
-                Star on GitHub
-              </Button>
               <Button href={APP_URL} className="w-full">
                 {CTA}
               </Button>

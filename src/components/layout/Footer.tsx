@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { Logo } from "@/components/brand/Logo";
-import { GitHubIcon } from "@/components/ui/icons";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { footer, APP_URL, GITHUB_URL, CTA } from "@/lib/site";
+import { footer, APP_URL, CTA } from "@/lib/site";
 
 export function Footer() {
   const year = 2026;
@@ -36,14 +35,8 @@ export function Footer() {
                   <li key={l.label}>
                     <Link
                       href={l.href}
-                      {...("external" in l && l.external
-                        ? { target: "_blank", rel: "noopener noreferrer" }
-                        : {})}
                       className="inline-flex items-center gap-1.5 text-body-sm text-muted transition-colors hover:text-ink"
                     >
-                      {col.title === "Open source" && l.label === "GitHub" && (
-                        <GitHubIcon size={13} />
-                      )}
                       {l.label}
                     </Link>
                   </li>
@@ -58,15 +51,9 @@ export function Footer() {
             © {year} ArchDisc <span className="mx-1 text-line-strong">·</span>{" "}
             {footer.attribution}
           </p>
-          <a
-            href={GITHUB_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 font-mono transition-colors hover:text-ink"
-          >
-            <GitHubIcon size={13} />
+          <span className="inline-flex items-center gap-1.5 font-mono">
             {footer.bottomLine}
-          </a>
+          </span>
         </div>
       </Container>
     </footer>

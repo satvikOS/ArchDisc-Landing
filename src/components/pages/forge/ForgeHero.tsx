@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -8,14 +8,14 @@ import { Reveal } from "@/components/motion/Reveal";
 import { GenerativeGrid } from "@/components/artifacts/GenerativeGrid";
 import { Solid3D } from "@/components/artifacts/Solid3D";
 import { stagger, riseIn } from "@/lib/motion";
-import { APP_URL, REPOS } from "@/lib/site";
+import { APP_URL } from "@/lib/site";
 
 const EYEBROW = "FORGE · NATIVE PARAMETRIC CAD";
 const HEADLINE = "Solids that are made to be made.";
 const SUBHEAD =
   "Forge is mechanical CAD on a from-source OpenCASCADE 7.9.3 kernel — true B-rep geometry, a real constraint solver, simulation, and drawings. The same Archie copilot that draws your part can also size it, simulate it, and detail it. Manufacturable, not just renderable.";
 const MICRO =
-  "Open source · free forever · public release soon · native B-rep, no WASM in the geometry path.";
+  "Free to use · local & private · public release soon · native B-rep, no WASM in the geometry path.";
 
 export function ForgeHero() {
   const reduce = useReducedMotion();
@@ -81,9 +81,8 @@ export function ForgeHero() {
                   className="transition-transform duration-200 group-hover:translate-x-0.5"
                 />
               </Button>
-              <Button href={REPOS.forge} size="lg" variant="secondary">
-                <Star size={15} />
-                Star on GitHub
+              <Button href="/precision" size="lg" variant="secondary">
+                See the precision
               </Button>
             </div>
           </Reveal>

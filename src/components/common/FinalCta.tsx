@@ -1,25 +1,22 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
-import { GitHubIcon } from "@/components/ui/icons";
 import { GenerativeGrid } from "@/components/artifacts/GenerativeGrid";
 import { ParametricRevolveLathe } from "@/components/artifacts/ParametricRevolveLathe";
-import { APP_URL, GITHUB_URL } from "@/lib/site";
+import { APP_URL } from "@/lib/site";
 
 /** The single, shared closing CTA — dark bookend used as the last section on
  *  every page (replaces the four per-page Final CTA variants). */
 export function FinalCta({
   eyebrow = "Ready when you are",
   headline = "Say it. Watch Archie build it.",
-  subhead = "A local, open-source AI copilot, a real CAD kernel, and a full 3D studio — Studio, Forge, and Archie in one app, on your machine.",
-  micro = "Open source · free to start · public release soon",
-  repo = GITHUB_URL,
+  subhead = "A local AI copilot, a real CAD kernel, and a full 3D studio — Studio, Forge, and Archie in one app, on your machine. Free to use, built and maintained by us.",
+  micro = "Free to use · local & private · public release soon",
 }: {
   eyebrow?: string;
   headline?: string;
   subhead?: string;
   micro?: string;
-  repo?: string;
 }) {
   return (
     <section className="relative overflow-hidden border-t border-white/10 bg-ink py-28 text-paper md:py-36">
@@ -47,13 +44,12 @@ export function FinalCta({
               Open ArchDisc
             </Button>
             <Button
-              href={repo}
+              href="/precision"
               size="lg"
               variant="secondary"
               className="border-white/25 bg-transparent text-paper hover:border-white/50 hover:bg-white/[0.06]"
             >
-              <GitHubIcon size={15} />
-              Star on GitHub
+              See the precision
             </Button>
           </div>
         </Reveal>

@@ -6,15 +6,14 @@ import { motion, useReducedMotion } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
-import { GitHubIcon } from "@/components/ui/icons";
 import { GenerativeGrid } from "@/components/artifacts/GenerativeGrid";
 import { RasterInspection } from "@/components/instrument/RasterInspection";
 import { stagger, riseIn } from "@/lib/motion";
-import { APP_URL, GITHUB_URL } from "@/lib/site";
+import { APP_URL } from "@/lib/site";
 
 const HEADLINE = "AI-native doesn't mean approximate.";
 
-const SPEC_CHIPS = ["OCCT 7.9.3", "native B-rep", "no WASM", "open source"];
+const SPEC_CHIPS = ["OCCT 7.9.3", "native B-rep", "no WASM", "free to use"];
 
 export function PrecisionHero() {
   const reduce = useReducedMotion();
@@ -58,8 +57,8 @@ export function PrecisionHero() {
               The copilot is the magic. The substance underneath is a real
               engineering stack — a native CAD kernel compiled from source, true
               B-rep solids, real NURBS, and real FEA on the parts you actually
-              design. Inspect every layer: the kernel, the math, and the model
-              weights are all open source.
+              design. We build and maintain every layer — the kernel, the math,
+              and the on-device model fleet — and it's free for you to use.
             </p>
           </Reveal>
 
@@ -97,20 +96,19 @@ export function PrecisionHero() {
                 />
               </Button>
               <Button
-                href={GITHUB_URL}
+                href="#kernel"
                 size="lg"
                 variant="secondary"
                 className="border-white/20 bg-transparent text-paper hover:border-white/45 hover:bg-white/[0.04] focus-visible:ring-white/30 focus-visible:ring-offset-ink"
               >
-                <GitHubIcon size={16} />
-                Inspect the source on GitHub
+                Inspect the kernel
               </Button>
             </div>
           </Reveal>
 
           <Reveal delay={0.24}>
             <p className="u-spec mt-6 text-white/40">
-              Open source · open weights · public release soon
+              Free to use · local & private · public release soon
             </p>
           </Reveal>
         </div>

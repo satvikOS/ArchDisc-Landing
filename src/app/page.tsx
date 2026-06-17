@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { HomeHero } from "@/components/pages/home/HomeHero";
 import { Pillars } from "@/components/pages/home/Pillars";
 import { HowItWorks } from "@/components/pages/home/HowItWorks";
-import { OpenSourceStrip } from "@/components/common/OpenSourceStrip";
+import { FreeToUseStrip } from "@/components/common/FreeToUseStrip";
 import { FinalCta } from "@/components/common/FinalCta";
 
 const META_TITLE =
-  "ArchDisc — describe it, Archie builds it. Open-source AI design platform.";
+  "ArchDisc — describe it, Archie builds it. Free-to-use AI design platform.";
 const META_DESCRIPTION =
-  "One open-source platform for 3D creation and mechanical CAD, driven by Archie — a local AI copilot that turns plain language into precise, manufacturable geometry on a native CAD kernel. Open code, open weights, self-hostable. Public release coming soon.";
+  "One free-to-use platform for 3D creation and mechanical CAD, driven by Archie — a local AI copilot that turns plain language into precise, manufacturable geometry on a native CAD kernel. Free to use, local, private — we build and maintain the tech. Public release coming soon.";
 
 export const metadata: Metadata = {
   title: META_TITLE,
@@ -24,7 +24,7 @@ export default function HomePage() {
       <HomeHero />
       <Pillars />
       <HowItWorks />
-      <OpenSourceStrip />
+      <FreeToUseStrip />
       <FinalCta />
     </>
   );

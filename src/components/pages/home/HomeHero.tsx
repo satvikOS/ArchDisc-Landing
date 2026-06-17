@@ -1,24 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
-import { GitHubIcon } from "@/components/ui/icons";
 import { GenerativeGrid } from "@/components/artifacts/GenerativeGrid";
 import { Solid3D, type Solid3DVariant } from "@/components/artifacts/Solid3D";
 import { stagger, riseIn } from "@/lib/motion";
 import { usePrefersReducedMotion } from "@/lib/artkit";
-import { APP_URL, GITHUB_URL, CTA, CTA_SECONDARY } from "@/lib/site";
+import { APP_URL, CTA } from "@/lib/site";
 
-const EYEBROW = "ARCHDISC · OPEN-SOURCE AI DESIGN PLATFORM";
+const EYEBROW = "ARCHDISC · FREE-TO-USE AI DESIGN PLATFORM";
 const HEADLINE = "Describe it. Archie builds it.";
 const SUBHEAD =
-  "One platform for 3D creation and mechanical CAD, with a local AI copilot at its center. Describe a part below — Archie turns plain language into validated, manufacturable geometry on a real kernel. Open code, open weights, on your own machine.";
+  "One platform for 3D creation and mechanical CAD, with a local AI copilot at its center. Describe a part below — Archie turns plain language into validated, manufacturable geometry on a real kernel. Free to use, local, private — on your own machine.";
 const MICRO =
-  "Open source · free forever · public release soon · native for Apple Silicon · nothing leaves your machine.";
+  "Free to use · local & private · public release soon · native for Apple Silicon · nothing leaves your machine.";
 
 type Preset = {
   key: string;
@@ -132,10 +131,8 @@ export function HomeHero() {
                   className="transition-transform duration-200 group-hover:translate-x-0.5"
                 />
               </Button>
-              <Button href={GITHUB_URL} size="lg" variant="ghost">
-                <GitHubIcon size={15} />
-                {CTA_SECONDARY}
-                <Star size={14} className="text-faint" />
+              <Button href="/precision" size="lg" variant="ghost">
+                See the precision
               </Button>
             </div>
           </Reveal>

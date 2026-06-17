@@ -2,34 +2,34 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/motion/Reveal";
 import { Button } from "@/components/ui/Button";
-import { GitHubIcon } from "@/components/ui/icons";
 import { ConstellationField } from "@/components/artifacts/ConstellationField";
-import { GITHUB_URL } from "@/lib/site";
+import { APP_URL } from "@/lib/site";
 
 const ANCHORS = [
-  { k: "Open code", v: "Read every line — the kernel, the app, the model harness." },
-  { k: "Open weights", v: "Archie's per-discipline fleet ships with weights you can run." },
-  { k: "Self-host", v: "Runs on your own machine. No cloud, no API keys, no lock-in." },
-  { k: "Public release soon", v: "Pre-release today — star the repo to follow the launch." },
+  { k: "Free to use", v: "Create on your own machine at no cost — no metered API, no per-token bill." },
+  { k: "Local & private", v: "Inference runs on-device. Your prompts and your geometry never leave the machine." },
+  { k: "We build & maintain", v: "ArchDisc builds and ships the kernel, the app, and the model fleet — you just create." },
+  { k: "Public release soon", v: "Pre-release today — pre-release access, with the public launch coming soon." },
 ];
 
-/** The single, shared open-source moment — used once per page (replaces the
- *  five duplicated dark open-source sections). */
-export function OpenSourceStrip({ repo = GITHUB_URL }: { repo?: string } = {}) {
+/** The single, shared free-to-use moment — used once per page (replaces the
+ *  five duplicated dark sections). ArchDisc is free to use, local, and private;
+ *  the team builds and maintains the tech. */
+export function FreeToUseStrip() {
   return (
-    <Section id="open-source" className="border-t border-line">
+    <Section id="free-to-use" className="border-t border-line">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
             <Reveal>
               <span className="u-label inline-flex items-center gap-2">
                 <span className="h-1 w-1 rounded-full bg-ink/40" aria-hidden />
-                Open source · public release soon
+                Free to use · public release soon
               </span>
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mt-4 text-balance text-h2 text-ink">
-                Open code. Open weights. Yours to run.
+                Free to use. Local and private. Built and maintained by us.
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
@@ -45,9 +45,8 @@ export function OpenSourceStrip({ repo = GITHUB_URL }: { repo?: string } = {}) {
               </dl>
             </Reveal>
             <Reveal delay={0.15}>
-              <Button href={repo} variant="secondary" className="mt-7">
-                <GitHubIcon size={15} />
-                Star on GitHub
+              <Button href={APP_URL} variant="secondary" className="mt-7">
+                Open ArchDisc
               </Button>
             </Reveal>
           </div>

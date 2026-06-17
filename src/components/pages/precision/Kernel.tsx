@@ -44,8 +44,8 @@ export function Kernel() {
             </dl>
             <Reveal delay={0.32}>
               <p className="u-spec mt-6 text-muted">
-                Read it yourself — the kernel binding and OCCT build live in the
-                open repo.
+                A native, from-source OCCT 7.9.3 build — the same kernel binding
+                runs in every ArchDisc app, free to use on your machine.
               </p>
             </Reveal>
           </div>

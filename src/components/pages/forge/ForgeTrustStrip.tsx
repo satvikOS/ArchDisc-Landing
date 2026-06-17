@@ -15,12 +15,12 @@ const CLAIMS: { label: string; body: string }[] = [
     body: "Organized assemblies past 100,000 components — packed into structure, not confetti.",
   },
   {
-    label: "Open stack",
-    body: "Open code and open model weights. Read it, self-host it, own it. No lock-in.",
+    label: "Free to use",
+    body: "Free to use, local, and private. We build and maintain the tech — you just create. No metered API, no per-token bill.",
   },
 ];
 
-const CLOSING = "Native math · real solids · open source · runs on your machine.";
+const CLOSING = "Native math · real solids · free to use · runs on your machine.";
 
 export function ForgeTrustStrip() {
   return (

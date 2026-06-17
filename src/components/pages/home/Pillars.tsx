@@ -46,7 +46,7 @@ const CARDS: Card[] = [
     motif: "caret",
     kicker: "The local AI copilot",
     title: "Archie",
-    body: "One copilot drives both surfaces through structured tool-calls. It reasons about geometry, picks the right operation, builds it parametrically, then runs a coherence gate that verifies and repairs the solid before you see it. Local, private, open-weights — and every step is a call you can read.",
+    body: "One copilot drives both surfaces through structured tool-calls. It reasons about geometry, picks the right operation, builds it parametrically, then runs a coherence gate that verifies and repairs the solid before you see it. Local, private, on-device — and every step is a call you can read.",
     proof: "local fleet · validated tool-calls · editable tree",
     link: "Meet Archie",
     href: "/archie",

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -8,7 +8,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { GenerativeGrid } from "@/components/artifacts/GenerativeGrid";
 import { DitherPortrait } from "@/components/artifacts/DitherPortrait";
 import { stagger, riseIn } from "@/lib/motion";
-import { APP_URL, REPOS, CTA, CTA_SECONDARY } from "@/lib/site";
+import { APP_URL, CTA } from "@/lib/site";
 
 const HEADLINE = ["A", "whole", "studio.", "Speak,", "and", "it", "sculpts."];
 
@@ -16,7 +16,7 @@ const SUBHEAD =
   "Model, sculpt, UV, shade, rig, animate, simulate, and render — Blender-, Maya-, and Houdini-class breadth in one surface. Describe a form and Archie sculpts it; describe a scene and it composes, lights, and frames the shot. The same copilot that drives Forge, working in clay and light.";
 
 const MICRO =
-  "Open source · free forever · public release soon · native for Apple Silicon · runs on-device.";
+  "Free to use · local & private · public release soon · native for Apple Silicon · runs on-device.";
 
 export function StudioHero() {
   const reduce = useReducedMotion();
@@ -71,9 +71,8 @@ export function StudioHero() {
                   className="transition-transform duration-200 group-hover:translate-x-0.5"
                 />
               </Button>
-              <Button href={REPOS.studio} size="lg" variant="secondary">
-                <Star size={15} />
-                {CTA_SECONDARY}
+              <Button href="/precision" size="lg" variant="secondary">
+                See the precision
               </Button>
             </div>
           </Reveal>

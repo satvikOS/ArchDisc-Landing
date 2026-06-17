@@ -1,20 +1,11 @@
 /**
  * Global site constants + information architecture for the multi-page ArchDisc site.
  * Per-page copy lives in each page; this is only the shared shell.
- * TODO(satvik): confirm APP_URL (early-access / download entry) and GITHUB_URL (public org).
+ * TODO(satvik): confirm APP_URL (early-access / download entry).
  */
 
 export const APP_URL = "https://app.archdisc.com";
-export const GITHUB_URL = "https://github.com/satvikOS"; // umbrella org
 export const CTA = "Open ArchDisc";
-export const CTA_SECONDARY = "Star on GitHub";
-
-/** Forge and Studio are separate repositories; the model/Archie has no public repo yet. */
-export const REPOS = {
-  studio: "https://github.com/satvikOS/Studio",
-  forge: "https://github.com/satvikOS/Forge",
-  archie: null,
-} as const;
 
 export const nav = {
   links: [
@@ -27,7 +18,7 @@ export const nav = {
 
 export const footer = {
   brand: "ArchDisc — describe it, Archie builds it.",
-  pre: "Open source · public release soon",
+  pre: "Free to use · public release soon",
   columns: [
     {
       title: "Platform",
@@ -40,12 +31,12 @@ export const footer = {
       ],
     },
     {
-      title: "Open source",
+      title: "Product",
       links: [
-        { label: "Studio on GitHub", href: REPOS.studio, external: true },
-        { label: "Forge on GitHub", href: REPOS.forge, external: true },
-        { label: "Self-host guide", href: "#" },
-        { label: "License · OCCT LGPL", href: "#" },
+        { label: "How it works", href: "/#how-it-works" },
+        { label: "Precision", href: "/precision" },
+        { label: "Pricing", href: "#" },
+        { label: "What's free", href: "#" },
       ],
     },
     {
@@ -66,6 +57,6 @@ export const footer = {
       ],
     },
   ],
-  attribution: "Built on OpenCASCADE 7.9.3 · Open source",
+  attribution: "Built on OpenCASCADE 7.9.3 · Free to use",
   bottomLine: "Monochrome by design.",
 };

@@ -16,9 +16,9 @@ const ROWS: { k: string; v: string }[] = [
   { k: "Manufacturing", v: "CAM toolpaths + associative drawings with full GD&T." },
   { k: "Interop", v: "STEP, IGES, DXF, glTF, STL — read and write." },
   { k: "AI", v: "Local DeepSeek-R1-distilled fleet, per-discipline fine-tunes, structured tool-calls." },
-  { k: "License", v: "Open source — open code and open model weights." },
+  { k: "License", v: "Free to use — proprietary; we build and maintain the tech, you create with it." },
   { k: "Runs on", v: "Native Apple Silicon desktop app; Windows in progress." },
-  { k: "Cost", v: "Free forever to open; public release soon." },
+  { k: "Cost", v: "Free to use; public release soon." },
 ];
 
 const FAQ: { q: string; a: string }[] = [
@@ -43,8 +43,8 @@ const FAQ: { q: string; a: string }[] = [
     a: "No. The model fleet runs on-device. Your geometry and your words stay on your hardware — private by default, fast because there is no round-trip.",
   },
   {
-    q: "Is it really open source?",
-    a: "Yes — open code and open model weights. Inspect the kernel binding, self-host the copilot, and fork it. No lock-in.",
+    q: "Is it really free, and what's the catch?",
+    a: "Free to use, where you create — the app, the native kernel, and the on-device copilot, on your own machine, with no metered API or per-token bill. ArchDisc builds and maintains the tech; the codebase itself isn't yours to modify. No cloud lock-in either: your geometry stays local.",
   },
   {
     q: "Can I drive Forge without Archie?",
@@ -52,7 +52,7 @@ const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "What does it cost?",
-    a: "Free forever to open and explore. ArchDisc is in pre-release; a public release is coming soon.",
+    a: "Free to use where you create — on your own machine, with no metered API or per-token bill. ArchDisc builds and maintains the tech. It's in pre-release; a public release is coming soon.",
   },
 ];
 

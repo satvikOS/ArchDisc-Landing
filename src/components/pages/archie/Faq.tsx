@@ -22,8 +22,8 @@ const QAS: QA[] = [
     a: "No. The model fleet runs locally, on-device. Your words and your geometry stay on your hardware — private by default, and fast because there is no round-trip.",
   },
   {
-    q: "Are the model weights really open?",
-    a: "Yes. Both the ArchDisc software and the Archie fleet are open source — open code and open weights. You can read it, run it, and self-host the whole stack. ArchDisc is in pre-release; a public release is coming soon.",
+    q: "Is it really free, and where does the model run?",
+    a: "Yes — ArchDisc is free to use, and the Archie fleet runs entirely on-device, inside the app. There's no metered API and no per-token bill. We build and maintain the kernel, the app, and the models; you create with them. ArchDisc is in pre-release; a public release is coming soon.",
   },
   {
     q: "What if Archie gets the geometry wrong?",

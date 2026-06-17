@@ -42,7 +42,7 @@ export function LocalFleet() {
             />
             <Reveal delay={0.15}>
               <p className="u-spec mt-6 text-faint">
-                Open weights — download the fleet and run it yourself.
+                Free to use — the fleet ships in the app and runs on your machine.
               </p>
             </Reveal>
           </div>
@@ -52,7 +52,7 @@ export function LocalFleet() {
               {/* The per-discipline fleet lives INSIDE a sealed on-device
                   boundary: activity streams on the local bus while
                   "bytes leaving machine" stays pegged at 0 — the no-cloud /
-                  open-weights / no-keys moat made visible. */}
+                  on-device / no-keys moat made visible. */}
               <OnDeviceBoundary tone="light" className="pt-1.5 pb-3">
                 <div className="relative overflow-hidden rounded-[2px] border border-line-strong bg-surface">
                   <div className="flex items-center justify-between border-b border-line px-4 py-2.5">

@@ -9,13 +9,12 @@ import { ForgeCamDrawings } from "@/components/pages/forge/ForgeCamDrawings";
 import { ForgeInterop } from "@/components/pages/forge/ForgeInterop";
 import { ForgeArchie } from "@/components/pages/forge/ForgeArchie";
 import { ForgeSpecsFaq } from "@/components/pages/forge/ForgeSpecsFaq";
-import { OpenSourceStrip } from "@/components/common/OpenSourceStrip";
+import { FreeToUseStrip } from "@/components/common/FreeToUseStrip";
 import { FinalCta } from "@/components/common/FinalCta";
-import { REPOS } from "@/lib/site";
 
 const META_TITLE = "Forge — Native parametric CAD, driven by Archie";
 const META_DESCRIPTION =
-  "Forge is mechanical CAD on a from-source OpenCASCADE 7.9.3 kernel — no WASM. Parametric sketching with the planegcs solver, assemblies past 100,000 components, FEA, CAM, GD&T drawings, and STEP/IGES/DXF interop. Open source, self-hostable, driven by Archie. Public release soon.";
+  "Forge is mechanical CAD on a from-source OpenCASCADE 7.9.3 kernel — no WASM. Parametric sketching with the planegcs solver, assemblies past 100,000 components, FEA, CAM, GD&T drawings, and STEP/IGES/DXF interop. Free to use, local, private, driven by Archie. Public release soon.";
 
 export const metadata: Metadata = {
   title: META_TITLE,
@@ -43,13 +42,12 @@ export default function ForgePage() {
       <ForgeCamDrawings />
       <ForgeInterop />
       <ForgeArchie />
-      <OpenSourceStrip repo={REPOS.forge} />
+      <FreeToUseStrip />
       <ForgeSpecsFaq />
       <FinalCta
         eyebrow="Build something real"
         headline="Solids that are made to be made."
-        subhead="A from-source OpenCASCADE kernel, a real constraint solver, FEA, and drawings — all driven by Archie. Open source, on your machine."
-        repo={REPOS.forge}
+        subhead="A from-source OpenCASCADE kernel, a real constraint solver, FEA, and drawings — all driven by Archie. Free to use, local, private."
       />
     </>
   );

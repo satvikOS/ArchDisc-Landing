@@ -13,9 +13,9 @@ import { APP_URL } from "@/lib/site";
 const EYEBROW = "ARCHIE · LOCAL DESIGN COPILOT";
 const HEADLINE = "The copilot that builds geometry you can trust.";
 const SUBHEAD =
-  "Describe what you want in plain language; Archie turns it into structured, validated tool-calls and hands back real, editable geometry. It runs on a local, open-weights model fleet — your words and your geometry never leave the machine.";
+  "Describe what you want in plain language; Archie turns it into structured, validated tool-calls and hands back real, editable geometry. It runs on a local, on-device model fleet — your words and your geometry never leave the machine.";
 const MICRO =
-  "Open source · free forever · local fleet · public release soon — nothing leaves your machine.";
+  "Free to use · local & private · local fleet · public release soon — nothing leaves your machine.";
 
 export function Hero() {
   const reduce = useReducedMotion();

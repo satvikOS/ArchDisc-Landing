@@ -16,7 +16,7 @@ import {
  *
  * Thousands of short hairline streamlines tracing a smooth vector field —
  * iron filings over a magnet, or laminar flow over an airfoil. Gives dark
- * gravity sections (the open-source moment, the final CTA) depth and
+ * gravity sections (the free-to-use moment, the final CTA) depth and
  * motion-of-the-machine atmosphere without a single hue or any chrome.
  *
  * Monochrome only: strokes are pulled from CSS tokens via cssVar / currentColor

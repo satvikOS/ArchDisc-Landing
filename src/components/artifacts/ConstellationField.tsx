@@ -8,14 +8,14 @@ import { clamp, cssVar, lerp, mulberry32, useCanvas2D } from "@/lib/artkit";
 
 /**
  * ConstellationField — a sparse node/hairline lattice that doubles as the
- * OPEN-SOURCE / LOCAL-FLEET signature of the site. Nodes are placed on a
+ * FREE-TO-USE / LOCAL-FLEET signature of the site. Nodes are placed on a
  * deterministic jittered grid (mulberry32, so SSR === client) and wired to
  * their nearest neighbours with distance-faded hairlines — read as a
- * distributed model fleet, a dependency graph, or a git commit lattice.
+ * distributed model fleet or a dependency graph.
  *
  * A handful of nodes are promoted to hollow 5-point STARS carrying the
- * open-source thread, each with an optional mono micro-label
- * (default: open code · open weights · self-host · public release soon).
+ * free-to-use thread, each with an optional mono micro-label
+ * (default: free to use · local & private · on-device · public release soon).
  *
  * Network + dots paint on a lazy, dpr-capped canvas (useCanvas2D); the crisp
  * star glyphs + labels live on a responsive SVG overlay so type stays sharp.
@@ -40,9 +40,9 @@ import { clamp, cssVar, lerp, mulberry32, useCanvas2D } from "@/lib/artkit";
  */
 
 const DEFAULT_LABELS = [
-  "open code",
-  "open weights",
-  "self-host",
+  "free to use",
+  "local & private",
+  "on-device",
   "public release soon",
 ];
 
