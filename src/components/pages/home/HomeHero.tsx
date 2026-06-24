@@ -4,92 +4,83 @@ import { ArrowRight, ArrowDown } from "lucide-react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
-import { SignalCountdown } from "@/components/fx/SignalCountdown";
+import { Plate } from "@/components/visual/Plate";
 import { fadeUp, stagger } from "@/lib/motion";
 import { usePrefersReducedMotion } from "@/lib/artkit";
 import { ACCESS_URL, CLEARANCE_CTA } from "@/lib/site";
-
-const ROWS: { label: string; word: string; arrow: "lead" | "trail" | "none"; accent?: boolean }[] = [
-  { label: "001 — say it", word: "Describe", arrow: "trail" },
-  { label: "002 — it reasons", word: "it gets", arrow: "lead" },
-  { label: "003 — it's real", word: "Built.", arrow: "none", accent: true },
-];
 
 export function HomeHero() {
   const reduce = usePrefersReducedMotion();
 
   return (
-    <section id="hero" className="relative scroll-mt-24 pt-8 pb-10 md:pt-10 md:pb-14">
+    <section
+      data-theme="vault"
+      className="relative isolate overflow-hidden bg-night pt-8 pb-0"
+    >
       <div className="mx-auto w-full max-w-[1680px] px-5 md:px-10">
-        {/* top instrument bar */}
-        <div className="flex items-center justify-between gap-4 border-b border-ink/15 pb-3">
-          <span className="u-label text-ink">ArchDisc — a private viewing</span>
-          <span className="hidden items-center gap-2 sm:inline-flex">
-            <span className="signal-dot h-1.5 w-1.5 rounded-full bg-coral" aria-hidden />
-            <span className="u-label text-ink">opens in</span>
-            <SignalCountdown inline className="text-ink" />
-          </span>
-        </div>
-
-        {/* giant editorial rows */}
+        {/* giant headline */}
         <motion.h1
-          className="mt-2"
-          variants={stagger(0.1, 0.05)}
+          className="pt-12 md:pt-20"
+          variants={stagger(0.12, 0.05)}
           initial={reduce ? false : "hidden"}
           animate="show"
         >
-          {ROWS.map((r) => (
-            <motion.span
-              key={r.label}
-              variants={fadeUp}
-              className="block border-b border-ink/15 pt-4 pb-1 md:pt-6"
-            >
-              <span className="u-label mb-1 block text-faint">{r.label}</span>
-              <span className="flex items-center gap-3 md:gap-6">
-                {r.arrow === "lead" && (
-                  <ArrowRight className="shrink-0 text-coral" strokeWidth={2.5} size={64} />
-                )}
-                <span
-                  className={
-                    "font-display text-mega font-[800] uppercase leading-[0.84] tracking-[-0.045em] " +
-                    (r.accent ? "iris-text" : "text-ink")
-                  }
-                >
-                  {r.word}
-                </span>
-                {r.arrow === "trail" && (
-                  <ArrowRight className="ml-auto shrink-0 text-ink" strokeWidth={2.5} size={64} />
-                )}
-                {r.accent && (
-                  <span className="ml-auto hidden h-10 w-10 shrink-0 rounded-full bg-coral md:block" aria-hidden />
-                )}
-              </span>
-            </motion.span>
-          ))}
+          <motion.span
+            variants={fadeUp}
+            className="block font-display text-mega font-[800] uppercase leading-[0.82] tracking-[-0.045em] text-ink"
+          >
+            Describe it.
+          </motion.span>
+          <motion.span
+            variants={fadeUp}
+            className="block font-display text-mega font-[800] uppercase leading-[0.82] tracking-[-0.045em] text-ink"
+          >
+            Archie <span className="text-clay">builds it.</span>
+          </motion.span>
         </motion.h1>
 
-        {/* sub bar: claim + CTAs */}
-        <Reveal delay={0.15}>
-          <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <p className="max-w-[46ch] text-pretty text-lead text-ink-soft">
-              One place to design and engineer with an AI at the center —{" "}
-              <span className="font-medium text-ink">Forge</span>,{" "}
-              <span className="font-medium text-ink">Studio</span>, and{" "}
-              <span className="font-medium text-ink">Archie</span>, the model that turns
-              plain language into precise, buildable geometry. None of it is public yet.
+        {/* sub bar */}
+        <Reveal delay={0.2}>
+          <div className="flex flex-col gap-6 pt-8 pb-9 md:flex-row md:items-end md:justify-between">
+            <p className="max-w-[48ch] text-pretty text-lead text-ink-soft">
+              <span className="text-ink">Two apps. One model.</span> Archie is the spine —
+              Studio for 3D creation, Forge for mechanical CAD — and it builds in both. You
+              say what you want; it plans and builds. Local, private, and free to use.
             </p>
             <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center">
               <Button href={ACCESS_URL} size="lg" variant="accent">
                 {CLEARANCE_CTA}
                 <ArrowRight size={17} className="transition-transform duration-200 group-hover:translate-x-0.5" />
               </Button>
-              <Button href="#systems" size="lg" variant="secondary">
-                See the systems <ArrowDown size={16} />
+              <Button href="#watch" size="lg" variant="secondary">
+                Watch it build <ArrowDown size={16} />
               </Button>
             </div>
           </div>
         </Reveal>
       </div>
+
+      {/* full-bleed industry image band */}
+      <Reveal>
+        <div className="relative">
+          <Plate
+            src="/img/forge-turbine.jpg"
+            alt="A jet-engine turbine — the world of mechanical parts ArchDisc is built to make."
+            priority
+            sizes="100vw"
+            className="h-[44vh] w-full md:h-[58vh]"
+            position="center"
+          />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-night/80 to-transparent p-5 md:p-8">
+            <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink/85">
+              The work most people can&rsquo;t make alone
+            </span>
+            <span className="hidden font-mono text-[11px] uppercase tracking-[0.16em] text-ink/60 sm:inline">
+              ArchDisc — describe it, it gets built
+            </span>
+          </div>
+        </div>
+      </Reveal>
     </section>
   );
 }

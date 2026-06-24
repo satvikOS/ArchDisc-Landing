@@ -3,15 +3,15 @@ import { HomeHero } from "@/components/pages/home/HomeHero";
 import { Ticker } from "@/components/common/Ticker";
 import { SystemsBento } from "@/components/pages/home/SystemsBento";
 import { Statement } from "@/components/pages/home/Statement";
-import { OpeningNight } from "@/components/pages/home/OpeningNight";
+import { Pricing } from "@/components/pages/home/Pricing";
 import { Admission } from "@/components/common/Admission";
 import { Chip } from "@/components/ui/Chip";
 import { Reveal } from "@/components/motion/Reveal";
 import { LockedProbe } from "@/components/common/LockedProbe";
 
-const META_TITLE = "ArchDisc — describe it, it gets built. Three systems, opening soon.";
+const META_TITLE = "ArchDisc — describe it, Archie builds it.";
 const META_DESCRIPTION =
-  "ArchDisc is one place to design and engineer with an AI at the center — Forge for real CAD, Studio for creation, and Archie, the model that turns plain language into precise, buildable geometry. None of it is public yet. Request clearance for the opening.";
+  "Two apps, one model. Studio for 3D creation, Forge for mechanical CAD, and Archie — the AI that builds in both. You say what you want; it plans and builds, locally and privately. Free to use. Public release soon.";
 
 export const metadata: Metadata = {
   title: META_TITLE,
@@ -27,23 +27,24 @@ export default function HomePage() {
       <HomeHero />
       <Ticker />
       <SystemsBento />
+      <Statement />
 
-      {/* The interactive exhibit */}
-      <section className="border-t border-ink/10 py-20 md:py-28">
+      {/* Watch it build */}
+      <section id="watch" className="scroll-mt-24 border-t border-line py-20 md:py-28">
         <div className="mx-auto grid w-full max-w-[1680px] items-center gap-10 px-5 md:grid-cols-[40fr_60fr] md:px-10">
           <div>
             <Reveal>
-              <Chip tone="coral">The interactive exhibit</Chip>
+              <Chip tone="coral">Watch it build</Chip>
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="mt-5 max-w-[14ch] text-balance text-h1 text-ink">
-                Touch this one. It builds for real.
+                Don&rsquo;t take our word.
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-5 max-w-[44ch] text-pretty text-lead text-muted">
                 Describe a part and watch Archie work the kernel — every line is a real
-                operation. The finished piece just stays a preview until opening.
+                operation on a real solid. This is a preview; the full thing opens soon.
               </p>
             </Reveal>
           </div>
@@ -53,8 +54,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Statement />
-      <OpeningNight />
+      <Pricing />
       <Admission />
     </>
   );

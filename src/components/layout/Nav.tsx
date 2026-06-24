@@ -43,10 +43,8 @@ export function Nav() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-colors duration-300",
-        scrolled
-          ? "border-b border-line bg-paper/70 backdrop-blur-xl"
-          : "border-b border-transparent",
+        "sticky top-0 z-50 border-b transition-colors duration-300",
+        scrolled ? "border-line bg-paper/85 backdrop-blur-xl" : "border-line/60 bg-paper",
       )}
     >
       <Container className="flex h-16 items-center justify-between gap-4">

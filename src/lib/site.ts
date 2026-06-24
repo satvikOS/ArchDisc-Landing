@@ -1,18 +1,18 @@
 /**
  * Global site constants + information architecture.
- * Every link here resolves to a real, built page — no "#" stubs.
+ * Grounded in the ArchDisc pitch deck: "Describe it. Archie builds it.",
+ * "Two apps. One model.", "Free to dream. Pay to grow — the source stays ours."
+ * Every link resolves to a real, built page.
  */
 
-/** The single conversion destination while the products are pre-release. */
 export const ACCESS_URL = "/access";
-export const CLEARANCE_CTA = "Request clearance";
+export const CLEARANCE_CTA = "Get early access";
 
 /** Back-compat aliases (older components import these). */
 export const APP_URL = ACCESS_URL;
 export const CTA = CLEARANCE_CTA;
 
-/** Public-release target. Edit this one constant to move the countdown.
- *  When it passes, the UI flips to "SIGNAL LIVE" rather than going negative. */
+/** Public-release target. Edit this one constant to move the countdown. */
 export const LAUNCH_ISO = "2026-09-23T17:00:00Z";
 
 export const PRODUCTS = [
@@ -21,16 +21,16 @@ export const PRODUCTS = [
     href: "/forge",
     codename: "FORGE",
     designation: "SYS-01",
-    role: "The kernel",
-    blurb: "Native parametric CAD on a real geometry kernel — solids made to be made.",
+    role: "Mechanical CAD",
+    blurb: "A real CAD kernel. Solid parts, simulation and drawings you can manufacture.",
   },
   {
     key: "studio",
     href: "/studio",
     codename: "STUDIO",
     designation: "SYS-02",
-    role: "The surface",
-    blurb: "A creation environment where scenes, materials, and motion come together.",
+    role: "3D creation",
+    blurb: "The breadth of Blender, Maya and Houdini. Model, light, and render — in words.",
   },
   {
     key: "archie",
@@ -38,7 +38,7 @@ export const PRODUCTS = [
     codename: "ARCHIE",
     designation: "SYS-00",
     role: "The model",
-    blurb: "The local model fleet that turns plain language into precise geometry.",
+    blurb: "You speak. It plans and builds, in both apps. Local, private, and fast.",
   },
 ] as const;
 
@@ -53,11 +53,11 @@ export const nav = {
 
 export const footer = {
   brand: "ArchDisc",
-  tagline: "Describe it. It gets built.",
-  pre: "Three systems. Not yet public.",
+  tagline: "Describe it. Archie builds it.",
+  pre: "Two apps. One model.",
   columns: [
     {
-      title: "Systems",
+      title: "Product",
       links: [
         { label: "Forge", href: "/forge" },
         { label: "Studio", href: "/studio" },
@@ -66,12 +66,12 @@ export const footer = {
       ],
     },
     {
-      title: "Signal",
+      title: "Company",
       links: [
-        { label: "Request clearance", href: "/access" },
+        { label: "Manifesto", href: "/manifesto" },
+        { label: "Early access", href: "/access" },
         { label: "Dispatch", href: "/dispatch" },
         { label: "Status", href: "/status" },
-        { label: "Manifesto", href: "/manifesto" },
       ],
     },
     {
@@ -82,6 +82,6 @@ export const footer = {
       ],
     },
   ],
-  attribution: "Built with care. Free to use.",
-  bottomLine: "Nothing leaves your machine.",
+  attribution: "Satvik Adyanthaya & Jeff Munkondaya · University of Rochester",
+  bottomLine: "Free to use — the source stays ours.",
 };

@@ -1,74 +1,74 @@
 @import "tailwindcss";
 
 /* ============================================================================
-   ArchDisc — "Bold Editorial × Bento"
-   Massive confident type · hairline-rule editorial structure · Cohere-grade
-   color blocking in rounded bento cards (coral / forest / lilac / cream).
+   ArchDisc — "Dull Monochrome × Clay" (deck-aligned)
+   Stark bone/charcoal/near-black, ONE muted clay accent, giant editorial type,
+   industry imagery unified by a desaturated warm treatment.
    ========================================================================== */
 
 @theme {
-  /* ---- Base — warm cream + a true warm near-black ---- */
-  --color-paper: #f1eee9;
-  --color-paper-2: #e8e3d7;
-  --color-surface: #ffffff;
-  --color-surface-2: #faf8f3;
-  --color-ink: #16150f;
-  --color-ink-soft: #3a392e;
-  --color-ink-mid: #56544a;
-  --color-muted: #6b6a5d;
-  --color-faint: #9a968a;
-  --color-line: #dcd7cb;
-  --color-line-strong: #c8c2b3;
+  /* ---- Dull, warm monochrome base ---- */
+  --color-paper: #ece7dd;
+  --color-paper-2: #e1dace;
+  --color-surface: #f4efe6;
+  --color-surface-2: #faf6ee;
+  --color-ink: #16140d;
+  --color-ink-soft: #39352a;
+  --color-ink-mid: #54503f;
+  --color-muted: #6f6857;
+  --color-faint: #9b9483;
+  --color-line: #d6cfbe;
+  --color-line-strong: #c2baa6;
 
-  /* ---- Bold accent blocks — confident, never washed out ---- */
-  --color-coral: #ff6a4d;
-  --color-coral-deep: #ea5238;
-  --color-forest: #20402f;
-  --color-forest-deep: #16301f;
-  --color-lilac: #c2a8f3;
-  --color-lilac-deep: #a583ea;
-  --color-sky: #c3d3f1;
-  --color-butter: #f4c44e;
-  --color-night: #16150f;
+  /* ---- The single muted accent — clay (from the deck) ---- */
+  --color-clay: #a76f4e;
+  --color-clay-deep: #8a5a3d;
+  --color-clay-soft: #c79a7e;
+  --color-night: #131109;
 
-  /* ---- Legacy token names kept alive (mapped onto the new accents) so older
-     components keep compiling; the new look is coral/forest/lilac led. ---- */
-  --color-iris-violet: #a583ea;
-  --color-iris-magenta: #ff6a4d;
-  --color-iris-coral: #ff6a4d;
-  --color-iris-amber: #f4c44e;
-  --color-signal: #20402f;
-  --color-vault: #16150f;
-  --color-vault-2: #1f1e15;
+  /* ---- Legacy token names remapped onto the dull palette (older classes) ---- */
+  --color-coral: #a76f4e;
+  --color-coral-deep: #8a5a3d;
+  --color-forest: #26241a;
+  --color-lilac: #b3a892;
+  --color-sky: #b9b6a8;
+  --color-butter: #c79a7e;
+  --color-iris-violet: #8a5a3d;
+  --color-iris-magenta: #a76f4e;
+  --color-iris-coral: #a76f4e;
+  --color-iris-amber: #c79a7e;
+  --color-signal: #a76f4e;
+  --color-vault: #131109;
+  --color-vault-2: #1c1910;
 
-  /* ---- Three voices: Archivo (heavy display) · Geist (body) · Geist Mono ---- */
+  /* ---- Three voices ---- */
   --font-display: var(--font-archivo), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
 
-  /* ---- Display scale — BIG. Edge-to-edge headlines. ---- */
-  --text-mega: clamp(3.4rem, 0.2rem + 13vw, 13rem);
-  --text-mega--line-height: 0.84;
+  /* ---- Display scale — BIG, stark ---- */
+  --text-mega: clamp(3.4rem, 0.1rem + 13.5vw, 14rem);
+  --text-mega--line-height: 0.82;
   --text-mega--letter-spacing: -0.045em;
   --text-mega--font-weight: 800;
 
-  --text-display: clamp(2.7rem, 1rem + 7.4vw, 7rem);
-  --text-display--line-height: 0.9;
+  --text-display: clamp(2.7rem, 1rem + 7.6vw, 7.5rem);
+  --text-display--line-height: 0.88;
   --text-display--letter-spacing: -0.04em;
   --text-display--font-weight: 800;
 
-  --text-h1: clamp(2.3rem, 1.3rem + 4.4vw, 4.5rem);
-  --text-h1--line-height: 0.96;
+  --text-h1: clamp(2.3rem, 1.3rem + 4.6vw, 4.75rem);
+  --text-h1--line-height: 0.95;
   --text-h1--letter-spacing: -0.035em;
   --text-h1--font-weight: 800;
 
-  --text-h2: clamp(1.9rem, 1.25rem + 2.9vw, 3.2rem);
-  --text-h2--line-height: 1.0;
+  --text-h2: clamp(1.9rem, 1.25rem + 3vw, 3.4rem);
+  --text-h2--line-height: 0.98;
   --text-h2--letter-spacing: -0.03em;
   --text-h2--font-weight: 700;
 
   --text-h3: clamp(1.25rem, 1.05rem + 0.9vw, 1.75rem);
-  --text-h3--line-height: 1.12;
+  --text-h3--line-height: 1.1;
   --text-h3--letter-spacing: -0.02em;
   --text-h3--font-weight: 700;
 
@@ -77,7 +77,6 @@
   --text-h4--letter-spacing: -0.012em;
   --text-h4--font-weight: 600;
 
-  /* ---- Body (Geist) ---- */
   --text-lead: clamp(1.125rem, 1.02rem + 0.45vw, 1.4rem);
   --text-lead--line-height: 1.5;
   --text-lead--letter-spacing: -0.011em;
@@ -90,50 +89,64 @@
   --text-body-sm--line-height: 1.55;
   --text-body-sm--letter-spacing: -0.003em;
 
-  /* ---- Instrument (Geist Mono) — the tiny editorial labels ---- */
   --text-label: 0.6875rem;
   --text-label--line-height: 1;
-  --text-label--letter-spacing: 0.16em;
+  --text-label--letter-spacing: 0.18em;
   --text-label--font-weight: 500;
 
   --text-label-lg: 0.75rem;
   --text-label-lg--line-height: 1.1;
-  --text-label-lg--letter-spacing: 0.14em;
+  --text-label-lg--letter-spacing: 0.15em;
   --text-label-lg--font-weight: 500;
 
   --text-spec: 0.8125rem;
   --text-spec--line-height: 1.5;
   --text-spec--letter-spacing: 0;
 
-  --text-stat: clamp(3rem, 1.6rem + 5vw, 6rem);
-  --text-stat--line-height: 0.9;
+  --text-stat: clamp(3rem, 1.6rem + 5vw, 6.5rem);
+  --text-stat--line-height: 0.88;
   --text-stat--letter-spacing: -0.04em;
   --text-stat--font-weight: 800;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-servo: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* ---- Big, soft radii (Cohere-grade) ---- */
-  --radius-sm: 10px;
-  --radius: 18px;
-  --radius-lg: 28px;
-  --radius-xl: 40px;
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
 }
 
-/* Dark sections (forest or night) re-map tokens so utilities invert. */
+/* Stark dark sections re-map tokens. */
 [data-theme="vault"] {
-  --color-paper: #16150f;
-  --color-paper-2: #1f1e15;
-  --color-surface: #20402f;
-  --color-surface-2: #24241a;
-  --color-ink: #f3f0e8;
-  --color-ink-soft: #d9d6cb;
-  --color-ink-mid: #b6b3a6;
-  --color-muted: #918d80;
-  --color-faint: #6f6c5f;
-  --color-line: #2b2a20;
-  --color-line-strong: #3a3930;
+  --color-paper: #131109;
+  --color-paper-2: #1b180f;
+  --color-surface: #1f1b11;
+  --color-surface-2: #262215;
+  --color-ink: #efe9dc;
+  --color-ink-soft: #d2ccbc;
+  --color-ink-mid: #b0a994;
+  --color-muted: #8b8472;
+  --color-faint: #645e4e;
+  --color-line: #2a261a;
+  --color-line-strong: #3a3526;
   color-scheme: dark;
+}
+
+/* Reset back to the light palette inside a dark section (e.g. a form panel). */
+[data-theme="light"] {
+  --color-paper: #ece7dd;
+  --color-paper-2: #e1dace;
+  --color-surface: #f4efe6;
+  --color-surface-2: #faf6ee;
+  --color-ink: #16140d;
+  --color-ink-soft: #39352a;
+  --color-ink-mid: #54503f;
+  --color-muted: #6f6857;
+  --color-faint: #9b9483;
+  --color-line: #d6cfbe;
+  --color-line-strong: #c2baa6;
+  color-scheme: light;
 }
 
 :root { color-scheme: light; }
@@ -152,15 +165,9 @@ body {
   font-family: var(--font-sans);
 }
 
-h1, h2, h3 {
-  font-family: var(--font-display);
-  font-weight: 800;
-}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 800; }
 
-::selection {
-  background-color: var(--color-coral);
-  color: #ffffff;
-}
+::selection { background-color: var(--color-clay); color: #fff; }
 
 ::-webkit-scrollbar { width: 11px; height: 11px; }
 ::-webkit-scrollbar-thumb {
@@ -170,9 +177,7 @@ h1, h2, h3 {
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-faint); }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 @layer components {
   .font-display { font-family: var(--font-display); font-weight: 800; }
@@ -186,7 +191,6 @@ h1, h2, h3 {
     text-transform: uppercase;
     color: var(--color-muted);
   }
-
   .u-spec {
     font-family: var(--font-mono);
     font-size: var(--text-spec);
@@ -194,7 +198,6 @@ h1, h2, h3 {
     font-variant-numeric: tabular-nums slashed-zero;
     font-feature-settings: "tnum" 1, "zero" 1;
   }
-
   .u-stat {
     font-family: var(--font-display);
     font-size: var(--text-stat);
@@ -204,53 +207,38 @@ h1, h2, h3 {
     font-variant-numeric: tabular-nums slashed-zero;
     font-feature-settings: "tnum" 1, "zero" 1;
   }
-
-  /* Accent fill — a confident solid-coral with a faint gradient lift. */
-  .iris-fill {
-    background-image: linear-gradient(120deg, var(--color-coral), var(--color-coral-deep));
-  }
-  /* Accent text — coral → lilac, rich (used sparingly on highlight words). */
-  .iris-text {
-    background: linear-gradient(95deg, var(--color-coral) 0%, var(--color-lilac-deep) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    background-size: 160% 100%;
-  }
-  .iris-text-anim { animation: iris-pan 8s var(--ease-out-soft) infinite alternate; }
-
-  .u-cipher {
-    font-family: var(--font-mono);
-    font-variant-numeric: tabular-nums slashed-zero;
-  }
-
-  /* Editorial hairline rule with corner ticks (the JW/brutalist row divider). */
+  /* Accent is a flat clay now (stark, not gradient). */
+  .iris-fill { background-color: var(--color-clay); }
+  .iris-text { color: var(--color-clay); }
+  .u-cipher { font-family: var(--font-mono); font-variant-numeric: tabular-nums slashed-zero; }
   .edge-rule { border-top: 1px solid color-mix(in srgb, var(--color-ink) 20%, transparent); }
+
+  /* Industry imagery → unified, dull, warm. Desaturate + slight contrast,
+     and a faint clay wash so every photo sits in the same monochrome world. */
+  .plate-img {
+    filter: grayscale(0.62) contrast(1.04) brightness(0.97);
+  }
+  .plate-wash::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: color-mix(in srgb, var(--color-clay) 100%, transparent);
+    mix-blend-mode: color;
+    opacity: 0.16;
+    pointer-events: none;
+  }
 }
 
-h1, h2, h3, .font-display {
-  font-feature-settings: "ss01" 0, "ss02" 0;
-}
+h1, h2, h3, .font-display { font-feature-settings: "ss01" 0, "ss02" 0; }
 
-@keyframes iris-pan { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @keyframes signal-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
 .signal-dot { animation: signal-pulse 1.8s var(--ease-out-soft) infinite; }
-@keyframes blob-float {
-  0% { transform: translate(0,0) scale(1); }
-  33% { transform: translate(6%,-4%) scale(1.06); }
-  66% { transform: translate(-5%,5%) scale(0.95); }
-  100% { transform: translate(0,0) scale(1); }
-}
-.iris-blob {
-  position: absolute; border-radius: 50%;
-  animation: blob-float var(--blob-dur, 26s) ease-in-out infinite;
-  animation-delay: var(--blob-delay, 0s);
-  will-change: transform;
-}
 @keyframes caret-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
 .caret { animation: caret-blink 1.05s step-end infinite; }
+/* legacy (no longer used as fog, kept so old classes are harmless) */
+.iris-blob { display: none; }
 
 @media (prefers-reduced-motion: reduce) {
-  .iris-text-anim, .signal-dot, .iris-blob, .caret, .arc-marquee { animation: none !important; }
+  .signal-dot, .caret, .arc-marquee { animation: none !important; }
 }
