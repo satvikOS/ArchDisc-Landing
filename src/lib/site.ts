@@ -1,62 +1,75 @@
 /**
- * Global site constants + information architecture for the multi-page ArchDisc site.
- * Per-page copy lives in each page; this is only the shared shell.
- * TODO(satvik): confirm APP_URL (early-access / download entry).
+ * Global site constants + information architecture.
+ * An original message to the maker/engineer community — no pitch-deck copy,
+ * no founders, no gatekeeping. Honest and direct. Every link resolves to a real page.
  */
 
-export const APP_URL = "https://app.archdisc.com";
-export const CTA = "Open ArchDisc";
+export const PRODUCTS = [
+  {
+    key: "forge",
+    href: "/forge",
+    codename: "FORGE",
+    designation: "SYS-01",
+    role: "Mechanical CAD",
+    blurb: "A real geometry kernel. Solid parts, simulation and drawings made to be manufactured.",
+  },
+  {
+    key: "studio",
+    href: "/studio",
+    codename: "STUDIO",
+    designation: "SYS-02",
+    role: "3D creation",
+    blurb: "Model, light and render — a full 3D suite you reach for in plain words.",
+  },
+  {
+    key: "archie",
+    href: "/archie",
+    codename: "ARCHIE",
+    designation: "SYS-00",
+    role: "The model",
+    blurb: "The one that builds. Local, private, and made to run on your own machine.",
+  },
+] as const;
 
 export const nav = {
   links: [
-    { href: "/studio", label: "Studio" },
     { href: "/forge", label: "Forge" },
+    { href: "/studio", label: "Studio" },
     { href: "/archie", label: "Archie" },
-    { href: "/precision", label: "Precision" },
+    { href: "/manifesto", label: "Manifesto" },
   ],
 };
 
 export const footer = {
-  brand: "ArchDisc — describe it, Archie builds it.",
-  pre: "Free to use · public release soon",
+  brand: "ArchDisc",
+  tagline: "Make anything real.",
+  pre: "Coming soon",
   columns: [
     {
-      title: "Platform",
+      title: "Product",
       links: [
-        { label: "Overview", href: "/" },
-        { label: "Studio", href: "/studio" },
         { label: "Forge", href: "/forge" },
+        { label: "Studio", href: "/studio" },
         { label: "Archie", href: "/archie" },
         { label: "Precision", href: "/precision" },
       ],
     },
     {
-      title: "Product",
+      title: "More",
       links: [
-        { label: "How it works", href: "/#how-it-works" },
-        { label: "Precision", href: "/precision" },
-        { label: "Pricing", href: "#" },
-        { label: "What's free", href: "#" },
+        { label: "Manifesto", href: "/manifesto" },
+        { label: "Dispatch", href: "/dispatch" },
+        { label: "Status", href: "/status" },
       ],
     },
     {
-      title: "Resources",
+      title: "Legal",
       links: [
-        { label: "Docs", href: "#" },
-        { label: "Tool-call schema", href: "#" },
-        { label: "Changelog", href: "#" },
-        { label: "Status", href: "#" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { label: "About", href: "#" },
-        { label: "Careers", href: "#" },
-        { label: "Contact", href: "#" },
+        { label: "Privacy", href: "/privacy" },
+        { label: "Terms", href: "/terms" },
       ],
     },
   ],
-  attribution: "Built on OpenCASCADE 7.9.3 · Free to use",
-  bottomLine: "Monochrome by design.",
+  attribution: "",
+  bottomLine: "Free to use. Local. Private.",
 };
