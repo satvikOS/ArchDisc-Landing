@@ -17,7 +17,7 @@ export type Dossier = {
 };
 
 /**
- * Per-system content for the classified dossiers. Grounded in what each system
+ * Per-system content for the product dossiers. Grounded in what each system
  * actually is — described truthfully, framed as not-yet-public. No invented
  * benchmark numbers.
  */

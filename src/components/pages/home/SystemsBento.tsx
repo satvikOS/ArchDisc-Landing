@@ -21,7 +21,7 @@ const CARDS: Card[] = [
     codename: "Forge",
     role: "Mechanical CAD",
     blurb: "A real geometry kernel. Solid parts, simulation and drawings made to be manufactured.",
-    img: "/img/cad-render2.jpg",
+    img: "/img/hero-model2.jpg",
   },
   {
     key: "studio",
@@ -30,7 +30,7 @@ const CARDS: Card[] = [
     codename: "Studio",
     role: "3D creation",
     blurb: "Model, light and render — a full 3D suite, reached in plain words.",
-    img: "/img/abstract-1.jpg",
+    img: "/img/render-a.jpg",
   },
   {
     key: "archie",
@@ -39,7 +39,7 @@ const CARDS: Card[] = [
     codename: "Archie",
     role: "The model",
     blurb: "The model at the center of both. Local, private, on your own machine.",
-    img: "/img/abstract-3.jpg",
+    img: "/img/abstract-1.jpg",
   },
 ];
 

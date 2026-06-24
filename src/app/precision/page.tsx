@@ -44,7 +44,7 @@ const PILLARS = [
 
 export default function PrecisionPage() {
   return (
-    <>
+    <div className="grade-cyan">
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative isolate overflow-hidden pt-20 pb-16 md:pt-28 md:pb-24">
         <div className="atmos -z-10" aria-hidden />
@@ -153,6 +153,6 @@ export default function PrecisionPage() {
           </Reveal>
         </Container>
       </section>
-    </>
+    </div>
   );
 }

@@ -18,19 +18,13 @@ const SECTIONS: LegalSection[] = [
     h: "What's here today",
     p: [
       "Right now ArchDisc is a preview. Nothing on this site is an offer of a finished product, a delivery date, or a guarantee that any described feature ships exactly as described.",
-      "The countdown is our honest intent, not a contract.",
-    ],
-  },
-  {
-    h: "Requesting clearance",
-    p: [
-      "Leaving your email asks us to notify you when ArchDisc opens. It doesn't create an account, a purchase, or an entitlement, and we may let clearance holders in over several stages.",
+      "“Coming soon” is our honest intent, not a contract.",
     ],
   },
   {
     h: "Free to use",
     p: [
-      "When ArchDisc opens, it's free to use. We build and maintain the technology; you get to make things with it.",
+      "When ArchDisc opens, it's free to use. We build and maintain the technology; you make things with it.",
       "“Free to use” is exactly that — it isn't a transfer of ownership of the software or its underlying source.",
     ],
   },
@@ -47,9 +41,14 @@ const SECTIONS: LegalSection[] = [
     ],
   },
   {
-    h: "No warranties, and changes",
+    h: "No warranties",
     p: [
       "This site and the preview are provided as-is, without warranties. We do our best, but a pre-release is a pre-release.",
+    ],
+  },
+  {
+    h: "Changes and contact",
+    p: [
       "We may update these terms before launch; we'll date the page when we do. Questions: hello@archdisc.com.",
     ],
   },
@@ -57,12 +56,14 @@ const SECTIONS: LegalSection[] = [
 
 export default function TermsPage() {
   return (
-    <LegalPage
-      kicker="Legal · terms"
-      title="Terms"
-      updated="2026.06.23"
-      intro="ArchDisc is pre-release and this website is informational. By using it you agree to the following, which we've kept short and plain."
-      sections={SECTIONS}
-    />
+    <div className="grade-steel">
+      <LegalPage
+        kicker="Legal · terms"
+        title="Terms"
+        updated="2026.06.24"
+        intro="ArchDisc is pre-release and this website is informational. By using it you agree to the following, which we've kept short and plain."
+        sections={SECTIONS}
+      />
+    </div>
   );
 }

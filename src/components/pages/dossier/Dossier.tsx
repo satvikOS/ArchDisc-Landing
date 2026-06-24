@@ -7,15 +7,21 @@ import type { Dossier as DossierData } from "@/lib/dossiers";
 
 const IMG: Record<string, { hero: string; band: string }> = {
   forge: { hero: "/img/hero-model2.jpg", band: "/img/cad-blueprint.jpg" },
-  studio: { hero: "/img/abstract-1.jpg", band: "/img/cad-render.jpg" },
-  archie: { hero: "/img/abstract-3.jpg", band: "/img/cad-raw.jpg" },
+  studio: { hero: "/img/render-a.jpg", band: "/img/cad-render.jpg" },
+  archie: { hero: "/img/abstract-1.jpg", band: "/img/cad-raw.jpg" },
+};
+
+const GRADE: Record<string, string> = {
+  forge: "",
+  studio: "grade-teal",
+  archie: "grade-violet",
 };
 
 export function Dossier({ d }: { d: DossierData }) {
   const img = IMG[d.key] ?? IMG.forge;
 
   return (
-    <>
+    <div className={GRADE[d.key] ?? ""}>
       {/* ── Hero (split) ─────────────────────────────────────── */}
       <section className="relative isolate overflow-hidden">
         <div className="atmos -z-10" aria-hidden />
@@ -52,7 +58,7 @@ export function Dossier({ d }: { d: DossierData }) {
 
           <Reveal delay={0.1} y={26} className="order-1 lg:order-2">
             <figure className="relative overflow-hidden rounded-2xl border border-line-strong shadow-[0_40px_120px_-50px_rgba(109,140,255,0.4)]">
-              <Plate src={img.hero} alt={`${d.codename} — ${d.role}`} priority sizes="(max-width:1024px) 100vw, 54vw" className="aspect-[4/3] w-full" />
+              <Plate src={img.hero} alt={`${d.codename} — ${d.role}`} priority sizes="(max-width:1024px) 100vw, 54vw" className="aspect-[4/3] w-full breathe" />
               <div aria-hidden className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(6,8,14,0.1), rgba(6,8,14,0) 42%, rgba(6,8,14,0.7))" }} />
               <figcaption className="absolute inset-x-0 bottom-0 p-5 font-mono text-[11px] uppercase tracking-[0.16em] text-white/80">
                 {d.role} — coming soon
@@ -161,6 +167,6 @@ export function Dossier({ d }: { d: DossierData }) {
           </Reveal>
         </Container>
       </section>
-    </>
+    </div>
   );
 }

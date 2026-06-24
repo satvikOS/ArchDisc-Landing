@@ -22,9 +22,15 @@ export default function HomePage() {
     <>
       <HomeHero />
       <Ticker />
-      <Pipeline />
-      <SystemsBento />
-      <Closing />
+      <div className="grade-steel">
+        <Pipeline />
+      </div>
+      <div className="grade-violet">
+        <SystemsBento />
+      </div>
+      <div className="grade-cyan">
+        <Closing />
+      </div>
     </>
   );
 }

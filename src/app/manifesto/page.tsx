@@ -34,7 +34,7 @@ const PRINCIPLES = [
 
 export default function ManifestoPage() {
   return (
-    <>
+    <div className="grade-steel">
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative isolate overflow-hidden">
         <div className="atmos -z-10" aria-hidden />
@@ -139,6 +139,6 @@ export default function ManifestoPage() {
           </Reveal>
         </Container>
       </section>
-    </>
+    </div>
   );
 }

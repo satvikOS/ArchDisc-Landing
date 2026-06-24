@@ -1,17 +1,8 @@
 /**
  * Global site constants + information architecture.
  * An original message to the maker/engineer community — no pitch-deck copy,
- * no founders, no early-access funnel. Every link resolves to a real page.
+ * no founders, no gatekeeping. Honest and direct. Every link resolves to a real page.
  */
-
-export const ACCESS_URL = "/manifesto";
-export const CLEARANCE_CTA = "Read the manifesto";
-
-/** Back-compat aliases (older components import these). */
-export const APP_URL = ACCESS_URL;
-export const CTA = CLEARANCE_CTA;
-
-export const LAUNCH_ISO = "2026-09-23T17:00:00Z";
 
 export const PRODUCTS = [
   {

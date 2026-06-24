@@ -3,7 +3,7 @@ import { LegalPage, type LegalSection } from "@/components/pages/legal/LegalPage
 
 const TITLE = "Privacy";
 const DESCRIPTION =
-  "What this site collects (only your clearance request) and what the products collect (nothing — they run locally). Plainly stated.";
+  "ArchDisc is pre-release. This website collects nothing about you, and the products are built to run entirely on your own machine.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -17,52 +17,49 @@ const SECTIONS: LegalSection[] = [
   {
     h: "What this site collects",
     p: [
-      "If you request clearance, we receive the email you enter, plus anything optional you add — a name, what you build, and which system interests you most.",
-      "Our server also sees the standard request metadata any web server sees: your IP address and browser user-agent. We use these only to prevent abuse of the form.",
-    ],
-  },
-  {
-    h: "What we do with it",
-    p: [
-      "We hold your email so we can send a single message when ArchDisc opens. We don't sell it, rent it, or hand it to advertisers.",
-      "If we route submissions through an operational relay (for example, to reach our own inbox), the same details pass to that relay and nowhere else.",
-    ],
-  },
-  {
-    h: "What the products collect",
-    p: [
-      "Nothing leaves your machine. Forge, Studio and Archie are built to run locally. Your geometry, prompts and files stay with you — we don't receive them.",
+      "Right now, nothing. There is no signup form, no email capture, and no account on this site. Browsing these pages doesn't send us personal information about you.",
     ],
   },
   {
     h: "Cookies and analytics",
     p: [
-      "This site does not set tracking cookies and does not run third-party analytics. There's nothing here following you around.",
+      "This site sets no tracking cookies and runs no third-party analytics. There is nothing here following you around.",
     ],
   },
   {
-    h: "Removing your details",
+    h: "What the products collect",
     p: [
-      "Want off the list? Email us and we'll delete your entry. No hoops.",
+      "Nothing leaves your machine. Forge, Studio and Archie are built to run locally — your geometry, prompts and files stay with you. We don't receive them.",
     ],
   },
   {
-    h: "Changes and contact",
+    h: "Server logs",
     p: [
-      "If any of this changes before launch, we'll update this page and change the date at the top.",
-      "Questions: hello@archdisc.com.",
+      "Like any website, our host may keep standard, short-lived request logs (such as an IP address and browser type) to keep the site running and secure. We don't use them to build a profile of you.",
     ],
+  },
+  {
+    h: "If that ever changes",
+    p: [
+      "If we add something that collects information — for example, an optional email list closer to launch — we'll update this page and tell you exactly what we take, and why, before you give it.",
+    ],
+  },
+  {
+    h: "Contact",
+    p: ["Questions about any of this: hello@archdisc.com."],
   },
 ];
 
 export default function PrivacyPage() {
   return (
-    <LegalPage
-      kicker="Legal · privacy"
-      title="Privacy"
-      updated="2026.06.23"
-      intro="ArchDisc is pre-release. This page covers the only place we currently collect anything: the clearance form on this website. The products themselves run locally and don't send your work anywhere."
-      sections={SECTIONS}
-    />
+    <div className="grade-slate">
+      <LegalPage
+        kicker="Legal · privacy"
+        title="Privacy"
+        updated="2026.06.24"
+        intro="ArchDisc is pre-release. The short version: this website doesn't collect anything about you, and the products are built to run entirely on your own machine."
+        sections={SECTIONS}
+      />
+    </div>
   );
 }

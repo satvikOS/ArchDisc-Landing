@@ -59,7 +59,7 @@ export function HomeHero() {
               alt="A turbofan engine — the kind of complex machine real CAD is built to make."
               priority
               sizes="(max-width: 1024px) 100vw, 55vw"
-              className="aspect-[4/3] w-full"
+              className="aspect-[4/3] w-full breathe"
               position="center"
             />
             <div

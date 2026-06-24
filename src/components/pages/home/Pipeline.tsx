@@ -4,7 +4,7 @@ import { Reveal } from "@/components/motion/Reveal";
 const STAGES = [
   { n: "01", name: "Raw model", img: "/img/cad-raw.jpg", cap: "Real geometry, the moment it exists — not a mesh, a solid." },
   { n: "02", name: "Sketch", img: "/img/cad-sketch.jpg", cap: "Dimensioned and constrained. Intentional, not approximate." },
-  { n: "03", name: "Render", img: "/img/cad-render.jpg", cap: "How it looks when it’s finished, lit, and yours." },
+  { n: "03", name: "Render", img: "/img/render-a.jpg", cap: "How it looks when it’s finished, lit, and yours." },
   { n: "04", name: "Blueprint", img: "/img/cad-blueprint.jpg", cap: "The drawing a machine shop can actually build from." },
 ];
 

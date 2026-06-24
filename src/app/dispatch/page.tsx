@@ -27,7 +27,7 @@ const ENTRIES: Entry[] = [
 
 export default function DispatchPage() {
   return (
-    <>
+    <div className="grade-slate">
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative isolate overflow-hidden pt-20 pb-12 md:pt-28 md:pb-16">
         <div className="atmos -z-10" aria-hidden />
@@ -103,6 +103,6 @@ export default function DispatchPage() {
           </Reveal>
         </Container>
       </section>
-    </>
+    </div>
   );
 }

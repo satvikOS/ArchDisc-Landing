@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Archivo, Instrument_Serif } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
@@ -18,13 +18,6 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const archivo = Archivo({
-  variable: "--font-archivo",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  display: "swap",
-});
-
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
   subsets: ["latin"],
@@ -33,9 +26,9 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
-const TITLE = "ArchDisc — describe it, it gets built";
+const TITLE = "ArchDisc — make anything real";
 const DESCRIPTION =
-  "Three systems for AI-native design and engineering: Forge, the native CAD kernel · Studio, the creation surface · and Archie, the model that drives them. Not yet public. Request clearance.";
+  "Real mechanical design from a single sentence — raw model, sketch, render, and manufacturable blueprint. Forge for CAD, Studio for 3D creation, and Archie, the local model that builds in both. Free to use, local, private. Coming soon.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://archdisc.com"),
@@ -73,7 +66,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f1eee7",
+  themeColor: "#090c14",
   width: "device-width",
   initialScale: 1,
 };
@@ -85,7 +78,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} ${instrumentSerif.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable}`}
     >
       <body className="min-h-dvh bg-paper text-ink-soft antialiased">
         <InstrumentProvider>
