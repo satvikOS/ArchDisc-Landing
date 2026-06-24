@@ -1,26 +1,28 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-/** A small mono "instrument" chip — designation tags, status pills, codenames. */
+/** A bold word-chip / tag — Cohere-style rounded pill. */
 export function Chip({
   children,
   tone = "line",
   className,
 }: {
   children: ReactNode;
-  tone?: "line" | "signal" | "iris" | "solid";
+  tone?: "line" | "coral" | "forest" | "solid" | "iris" | "signal";
   className?: string;
 }) {
   const tones: Record<string, string> = {
-    line: "border border-line text-muted",
-    signal: "border border-signal/35 text-signal",
-    iris: "border border-iris-magenta/35 text-iris-magenta",
+    line: "border border-line-strong bg-surface text-ink-soft",
+    coral: "border border-coral/30 bg-coral/10 text-coral-deep",
+    iris: "border border-coral/30 bg-coral/10 text-coral-deep",
+    forest: "border border-forest/25 bg-forest/10 text-forest",
+    signal: "border border-forest/25 bg-forest/10 text-forest",
     solid: "bg-ink text-paper",
   };
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-mono text-[10.5px] uppercase tracking-[0.14em]",
+        "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.12em]",
         tones[tone],
         className,
       )}

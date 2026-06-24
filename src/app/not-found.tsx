@@ -1,14 +1,12 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
-import { GradientField } from "@/components/visual/GradientField";
 import { BigWord } from "@/components/fx/BigWord";
 import { ACCESS_URL, CLEARANCE_CTA } from "@/lib/site";
 
 export default function NotFound() {
   return (
     <section className="relative isolate flex min-h-[72dvh] items-center overflow-hidden py-24">
-      <GradientField intensity={0.9} />
       <BigWord
         variant="ghost"
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-[clamp(8rem,30vw,26rem)]"

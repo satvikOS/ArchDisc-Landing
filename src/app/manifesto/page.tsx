@@ -3,7 +3,6 @@ import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Chip } from "@/components/ui/Chip";
 import { Reveal } from "@/components/motion/Reveal";
-import { GradientField } from "@/components/visual/GradientField";
 import { Vault } from "@/components/visual/Vault";
 import { BigWord } from "@/components/fx/BigWord";
 import { SignalCountdown } from "@/components/fx/SignalCountdown";
@@ -40,7 +39,6 @@ export default function ManifestoPage() {
   return (
     <>
       <section className="relative isolate overflow-hidden pt-20 pb-16 md:pt-28 md:pb-20">
-        <GradientField intensity={0.9} />
         <BigWord variant="ghost" className="absolute -top-2 left-1/2 -translate-x-1/2 text-[clamp(5rem,22vw,20rem)]">
           Manifesto
         </BigWord>

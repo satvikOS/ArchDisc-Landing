@@ -6,23 +6,20 @@ type Variant = "primary" | "accent" | "secondary" | "ghost";
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "group relative inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-[transform,background-color,border-color,box-shadow,color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-iris-magenta/40 focus-visible:ring-offset-2 focus-visible:ring-offset-paper disabled:cursor-not-allowed disabled:opacity-50 active:translate-y-0";
+  "group relative inline-flex items-center justify-center gap-2 rounded-full font-medium transition-[transform,background-color,border-color,box-shadow,color] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral/50 focus-visible:ring-offset-2 focus-visible:ring-offset-paper disabled:cursor-not-allowed disabled:opacity-50";
 
 const variants: Record<Variant, string> = {
-  primary:
-    "bg-ink text-paper hover:-translate-y-0.5 hover:shadow-[0_10px_30px_-12px_rgba(12,19,34,0.5)]",
-  // The one bold move — iridescent fill with a soft glow on hover.
-  accent:
-    "iris-fill text-white [background-size:160%_160%] hover:-translate-y-0.5 hover:shadow-[0_14px_40px_-12px_rgba(216,60,200,0.55)]",
+  primary: "bg-ink text-paper hover:-translate-y-0.5 hover:bg-ink/90",
+  accent: "bg-coral text-white hover:-translate-y-0.5 hover:bg-coral-deep",
   secondary:
-    "border border-line-strong bg-surface text-ink hover:-translate-y-0.5 hover:border-ink/30 hover:shadow-[0_10px_30px_-16px_rgba(12,19,34,0.4)]",
+    "border border-line-strong bg-surface text-ink hover:-translate-y-0.5 hover:border-ink/40",
   ghost: "text-ink-soft hover:text-ink",
 };
 
 const sizes: Record<Size, string> = {
   sm: "h-9 px-4 text-[13px]",
   md: "h-11 px-5 text-[14px]",
-  lg: "h-12 px-6 text-[15px]",
+  lg: "h-13 px-7 text-[15px]",
 };
 
 type ButtonProps = {
@@ -42,7 +39,6 @@ export function Button({
   ...rest
 }: ButtonProps) {
   const classes = cn(base, variants[variant], sizes[size], className);
-
   if (href) {
     const external = href.startsWith("http");
     return (
@@ -55,7 +51,6 @@ export function Button({
       </Link>
     );
   }
-
   return (
     <button className={classes} {...rest}>
       {children}

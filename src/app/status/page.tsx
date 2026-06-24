@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Chip } from "@/components/ui/Chip";
 import { Reveal } from "@/components/motion/Reveal";
-import { GradientField } from "@/components/visual/GradientField";
 import { BigWord } from "@/components/fx/BigWord";
 import { SignalCountdown } from "@/components/fx/SignalCountdown";
 import { Button } from "@/components/ui/Button";
@@ -41,7 +40,6 @@ export default function StatusPage() {
   return (
     <>
       <section className="relative isolate overflow-hidden pt-20 pb-12 md:pt-28 md:pb-16">
-        <GradientField intensity={0.8} />
         <BigWord variant="ghost" className="absolute -top-2 left-1/2 -translate-x-1/2 text-[clamp(4rem,18vw,16rem)]">
           Status
         </BigWord>

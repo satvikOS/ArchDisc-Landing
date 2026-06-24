@@ -1,7 +1,6 @@
 import { Container } from "@/components/ui/Container";
 import { Chip } from "@/components/ui/Chip";
 import { Reveal } from "@/components/motion/Reveal";
-import { GradientField } from "@/components/visual/GradientField";
 
 export type LegalSection = { h: string; p: string[] };
 
@@ -21,7 +20,6 @@ export function LegalPage({
   return (
     <>
       <section className="relative isolate overflow-hidden pt-20 pb-10 md:pt-28 md:pb-14">
-        <GradientField intensity={0.6} />
         <Container className="relative max-w-3xl">
           <Reveal>
             <Chip tone="line">{kicker}</Chip>

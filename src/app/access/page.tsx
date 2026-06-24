@@ -3,7 +3,6 @@ import { ShieldCheck, Hand, Lock, BellRing } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Chip } from "@/components/ui/Chip";
 import { Reveal } from "@/components/motion/Reveal";
-import { GradientField } from "@/components/visual/GradientField";
 import { BigWord } from "@/components/fx/BigWord";
 import { SignalCountdown } from "@/components/fx/SignalCountdown";
 import { ClearanceForm } from "@/components/forms/ClearanceForm";
@@ -47,7 +46,6 @@ export default function AccessPage() {
     <>
       {/* Hero + form */}
       <section className="relative isolate overflow-hidden pt-20 pb-20 md:pt-28 md:pb-28">
-        <GradientField intensity={0.95} />
         <BigWord variant="ghost" rotate={-6} className="absolute -bottom-8 -right-4 text-[clamp(4rem,16vw,15rem)]">
           Admit&nbsp;one
         </BigWord>

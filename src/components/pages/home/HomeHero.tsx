@@ -1,116 +1,95 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowDown } from "lucide-react";
 import { motion } from "motion/react";
-import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/motion/Reveal";
-import { GradientField } from "@/components/visual/GradientField";
-import { LockedProbe } from "@/components/common/LockedProbe";
-import { BigWord } from "@/components/fx/BigWord";
 import { SignalCountdown } from "@/components/fx/SignalCountdown";
-import { Chip } from "@/components/ui/Chip";
-import { stagger, riseIn } from "@/lib/motion";
+import { fadeUp, stagger } from "@/lib/motion";
 import { usePrefersReducedMotion } from "@/lib/artkit";
 import { ACCESS_URL, CLEARANCE_CTA } from "@/lib/site";
 
-const HEAD = ["Three", "systems,", "behind", "the", "curtain."];
+const ROWS: { label: string; word: string; arrow: "lead" | "trail" | "none"; accent?: boolean }[] = [
+  { label: "001 — say it", word: "Describe", arrow: "trail" },
+  { label: "002 — it reasons", word: "it gets", arrow: "lead" },
+  { label: "003 — it's real", word: "Built.", arrow: "none", accent: true },
+];
 
 export function HomeHero() {
   const reduce = usePrefersReducedMotion();
-  const init = reduce ? false : "hidden";
 
   return (
-    <section
-      id="hero"
-      className="relative isolate scroll-mt-24 overflow-hidden pt-20 pb-16 md:pt-28 md:pb-24"
-    >
-      <GradientField intensity={0.9} />
+    <section id="hero" className="relative scroll-mt-24 pt-8 pb-10 md:pt-10 md:pb-14">
+      <div className="mx-auto w-full max-w-[1680px] px-5 md:px-10">
+        {/* top instrument bar */}
+        <div className="flex items-center justify-between gap-4 border-b border-ink/15 pb-3">
+          <span className="u-label text-ink">ArchDisc — a private viewing</span>
+          <span className="hidden items-center gap-2 sm:inline-flex">
+            <span className="signal-dot h-1.5 w-1.5 rounded-full bg-coral" aria-hidden />
+            <span className="u-label text-ink">opens in</span>
+            <SignalCountdown inline className="text-ink" />
+          </span>
+        </div>
 
-      {/* funnily enlarged, off-kilter */}
-      <BigWord
-        variant="outline"
-        rotate={-7}
-        className="absolute -right-6 top-10 hidden text-[clamp(4rem,11vw,9rem)] opacity-80 lg:block"
-      >
-        Psst.
-      </BigWord>
+        {/* giant editorial rows */}
+        <motion.h1
+          className="mt-2"
+          variants={stagger(0.1, 0.05)}
+          initial={reduce ? false : "hidden"}
+          animate="show"
+        >
+          {ROWS.map((r) => (
+            <motion.span
+              key={r.label}
+              variants={fadeUp}
+              className="block border-b border-ink/15 pt-4 pb-1 md:pt-6"
+            >
+              <span className="u-label mb-1 block text-faint">{r.label}</span>
+              <span className="flex items-center gap-3 md:gap-6">
+                {r.arrow === "lead" && (
+                  <ArrowRight className="shrink-0 text-coral" strokeWidth={2.5} size={64} />
+                )}
+                <span
+                  className={
+                    "font-display text-mega font-[800] uppercase leading-[0.84] tracking-[-0.045em] " +
+                    (r.accent ? "iris-text" : "text-ink")
+                  }
+                >
+                  {r.word}
+                </span>
+                {r.arrow === "trail" && (
+                  <ArrowRight className="ml-auto shrink-0 text-ink" strokeWidth={2.5} size={64} />
+                )}
+                {r.accent && (
+                  <span className="ml-auto hidden h-10 w-10 shrink-0 rounded-full bg-coral md:block" aria-hidden />
+                )}
+              </span>
+            </motion.span>
+          ))}
+        </motion.h1>
 
-      <Container className="relative grid items-center gap-12 lg:grid-cols-[46fr_54fr] lg:gap-16">
-        <div className="flex flex-col items-start">
-          <Reveal>
-            <Chip tone="iris">
-              <span className="signal-dot h-1.5 w-1.5 rounded-full bg-iris-magenta" aria-hidden />
-              A private viewing · opens soon
-            </Chip>
-          </Reveal>
-
-          <motion.h1
-            className="mt-6 max-w-[14ch] text-balance text-mega font-display font-semibold text-ink"
-            variants={stagger(0.05, 0.05)}
-            initial={init}
-            animate="show"
-          >
-            {HEAD.map((w, i) => (
-              <motion.span key={i} variants={riseIn} className="mr-[0.22em] inline-block">
-                {i === 4 ? <span className="iris-text iris-text-anim">{w}</span> : w}
-              </motion.span>
-            ))}
-          </motion.h1>
-
-          <Reveal delay={0.12}>
-            <p className="mt-6 max-w-[52ch] text-pretty text-lead text-muted">
-              ArchDisc is one place to design and engineer with an AI at the center —{" "}
-              <span className="text-ink">Forge</span> for real CAD,{" "}
-              <span className="text-ink">Studio</span> for creation, and{" "}
-              <span className="text-ink">Archie</span>, the model that turns plain language
-              into precise, buildable geometry. None of it is public yet. This is your
-              early look through the gap in the door.
+        {/* sub bar: claim + CTAs */}
+        <Reveal delay={0.15}>
+          <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <p className="max-w-[46ch] text-pretty text-lead text-ink-soft">
+              One place to design and engineer with an AI at the center —{" "}
+              <span className="font-medium text-ink">Forge</span>,{" "}
+              <span className="font-medium text-ink">Studio</span>, and{" "}
+              <span className="font-medium text-ink">Archie</span>, the model that turns
+              plain language into precise, buildable geometry. None of it is public yet.
             </p>
-          </Reveal>
-
-          <Reveal delay={0.18}>
-            <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+            <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center">
               <Button href={ACCESS_URL} size="lg" variant="accent">
                 {CLEARANCE_CTA}
                 <ArrowRight size={17} className="transition-transform duration-200 group-hover:translate-x-0.5" />
               </Button>
-              <Button href="#exhibition" size="lg" variant="secondary">
-                Take the tour
+              <Button href="#systems" size="lg" variant="secondary">
+                See the systems <ArrowDown size={16} />
               </Button>
             </div>
-          </Reveal>
-
-          <Reveal delay={0.24}>
-            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-              <div>
-                <span className="u-label text-faint">Doors open in</span>
-                <div className="mt-1.5">
-                  <SignalCountdown inline className="text-ink" />
-                </div>
-              </div>
-              <p className="u-spec max-w-[34ch] text-faint">
-                Free to use · local &amp; private · nothing leaves your machine.
-              </p>
-            </div>
-          </Reveal>
-        </div>
-
-        {/* The interactive exhibit, behind glass */}
-        <Reveal delay={0.1} y={24} className="relative">
-          <BigWord
-            variant="ghost"
-            rotate={-90}
-            className="absolute -left-[4.5rem] top-1/2 hidden -translate-y-1/2 text-[clamp(3rem,6vw,5rem)] lg:block"
-          >
-            Soon
-          </BigWord>
-          <LockedProbe />
-          <p className="mt-3 pl-1 font-mono text-[11px] uppercase tracking-[0.14em] text-faint">
-            Please <span className="text-iris-magenta">do</span> touch the art.
-          </p>
+          </div>
         </Reveal>
-      </Container>
+      </div>
     </section>
   );
 }

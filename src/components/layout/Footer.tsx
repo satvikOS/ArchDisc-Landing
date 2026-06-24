@@ -10,7 +10,7 @@ export function Footer() {
 
   return (
     <footer className="relative border-t border-line bg-surface">
-      <div className="iris-rule" aria-hidden />
+      <div className="h-1 w-full bg-coral" aria-hidden />
       <Container className="py-16">
         <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
           <div className="max-w-xs">
