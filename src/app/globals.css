@@ -1,86 +1,89 @@
 @import "tailwindcss";
 
 /* ============================================================================
-   ArchDisc — dark, dull, industrial. Near-black warm base, bone type, one
-   deep clay accent. Imagery = the stages of mechanical CAD (raw model →
-   sketch → render → blueprint), unified by a desaturated treatment.
+   ArchDisc — dark, atmospheric, blueprint-blue (Routable/Mintlify-inspired).
+   Cool navy-black base, pale-cool type, an indigo "blueprint" accent with soft
+   atmospheric glow, and an italic-serif accent face for emphasis words.
    ========================================================================== */
 
 @theme {
-  /* ---- Dark, warm, dull base ---- */
-  --color-paper: #100e09;
-  --color-paper-2: #16130c;
-  --color-surface: #1b1810;
-  --color-surface-2: #221d14;
-  --color-ink: #ece6d8;
-  --color-ink-soft: #c7c1b1;
-  --color-ink-mid: #a39c8b;
-  --color-muted: #847d6c;
-  --color-faint: #5b5547;
-  --color-line: #2a2618;
-  --color-line-strong: #3b3524;
+  /* ---- Cool, deep navy-black base ---- */
+  --color-paper: #0a0d15;
+  --color-paper-2: #0e121d;
+  --color-surface: #141929;
+  --color-surface-2: #1a2033;
+  --color-ink: #e9ecf5;
+  --color-ink-soft: #b9c0d4;
+  --color-ink-mid: #939bb4;
+  --color-muted: #767e98;
+  --color-faint: #525a73;
+  --color-line: #1d2435;
+  --color-line-strong: #2c3550;
 
-  /* ---- One deep, muted accent ---- */
-  --color-clay: #b07a4f;
-  --color-clay-deep: #8f5f3a;
-  --color-clay-soft: #c89c78;
-  --color-night: #0a0905;
+  /* ---- The blueprint accent (indigo-blue) — name kept as `clay` so the
+     whole codebase's text-clay / bg-clay usages flip color in one place. ---- */
+  --color-clay: #6d8cff;
+  --color-clay-deep: #4f6ef0;
+  --color-clay-soft: #a6b8ff;
+  --color-night: #06080e;
 
-  /* ---- Legacy names remapped onto the dark palette ---- */
-  --color-coral: #b07a4f;
-  --color-coral-deep: #8f5f3a;
-  --color-forest: #1b2a1f;
-  --color-lilac: #9a9486;
-  --color-sky: #9aa0a6;
-  --color-butter: #c89c78;
-  --color-iris-violet: #8f5f3a;
-  --color-iris-magenta: #b07a4f;
-  --color-iris-coral: #b07a4f;
-  --color-iris-amber: #c89c78;
-  --color-signal: #b07a4f;
-  --color-vault: #0a0905;
-  --color-vault-2: #14110b;
+  /* ---- Legacy names remapped onto the blueprint palette ---- */
+  --color-coral: #6d8cff;
+  --color-coral-deep: #4f6ef0;
+  --color-forest: #18233a;
+  --color-lilac: #9aa3c4;
+  --color-sky: #8fa6d8;
+  --color-butter: #a6b8ff;
+  --color-iris-violet: #4f6ef0;
+  --color-iris-magenta: #6d8cff;
+  --color-iris-coral: #6d8cff;
+  --color-iris-amber: #a6b8ff;
+  --color-signal: #6d8cff;
+  --color-vault: #06080e;
+  --color-vault-2: #0e121d;
 
+  /* ---- Voices: Archivo (display) · Geist (body) · Geist Mono · Instrument Serif (accent italic) ---- */
   --font-display: var(--font-archivo), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
+  --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
 
-  --text-mega: clamp(3.4rem, 0.1rem + 13.5vw, 14rem);
-  --text-mega--line-height: 0.82;
-  --text-mega--letter-spacing: -0.045em;
-  --text-mega--font-weight: 800;
+  --text-mega: clamp(3.2rem, 0.4rem + 12vw, 12rem);
+  --text-mega--line-height: 0.9;
+  --text-mega--letter-spacing: -0.035em;
+  --text-mega--font-weight: 700;
 
-  --text-display: clamp(2.7rem, 1rem + 7.6vw, 7.5rem);
-  --text-display--line-height: 0.88;
-  --text-display--letter-spacing: -0.04em;
-  --text-display--font-weight: 800;
+  --text-display: clamp(2.6rem, 1rem + 6.6vw, 6.25rem);
+  --text-display--line-height: 0.96;
+  --text-display--letter-spacing: -0.03em;
+  --text-display--font-weight: 700;
 
-  --text-h1: clamp(2.3rem, 1.3rem + 4.6vw, 4.75rem);
-  --text-h1--line-height: 0.95;
-  --text-h1--letter-spacing: -0.035em;
-  --text-h1--font-weight: 800;
+  --text-h1: clamp(2.2rem, 1.3rem + 4vw, 4.25rem);
+  --text-h1--line-height: 1.0;
+  --text-h1--letter-spacing: -0.03em;
+  --text-h1--font-weight: 700;
 
-  --text-h2: clamp(1.9rem, 1.25rem + 3vw, 3.4rem);
-  --text-h2--line-height: 0.98;
-  --text-h2--letter-spacing: -0.03em;
+  --text-h2: clamp(1.85rem, 1.25rem + 2.7vw, 3.1rem);
+  --text-h2--line-height: 1.02;
+  --text-h2--letter-spacing: -0.025em;
   --text-h2--font-weight: 700;
 
-  --text-h3: clamp(1.25rem, 1.05rem + 0.9vw, 1.75rem);
-  --text-h3--line-height: 1.1;
-  --text-h3--letter-spacing: -0.02em;
-  --text-h3--font-weight: 700;
+  --text-h3: clamp(1.25rem, 1.05rem + 0.9vw, 1.7rem);
+  --text-h3--line-height: 1.14;
+  --text-h3--letter-spacing: -0.018em;
+  --text-h3--font-weight: 600;
 
   --text-h4: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
-  --text-h4--line-height: 1.28;
-  --text-h4--letter-spacing: -0.012em;
+  --text-h4--line-height: 1.3;
+  --text-h4--letter-spacing: -0.01em;
   --text-h4--font-weight: 600;
 
   --text-lead: clamp(1.125rem, 1.02rem + 0.45vw, 1.4rem);
-  --text-lead--line-height: 1.5;
+  --text-lead--line-height: 1.55;
   --text-lead--letter-spacing: -0.011em;
 
   --text-body: clamp(0.9375rem, 0.92rem + 0.12vw, 1.0625rem);
-  --text-body--line-height: 1.62;
+  --text-body--line-height: 1.65;
   --text-body--letter-spacing: -0.006em;
 
   --text-body-sm: 0.875rem;
@@ -101,10 +104,10 @@
   --text-spec--line-height: 1.5;
   --text-spec--letter-spacing: 0;
 
-  --text-stat: clamp(3rem, 1.6rem + 5vw, 6.5rem);
-  --text-stat--line-height: 0.88;
-  --text-stat--letter-spacing: -0.04em;
-  --text-stat--font-weight: 800;
+  --text-stat: clamp(2.8rem, 1.6rem + 4.4vw, 5.5rem);
+  --text-stat--line-height: 0.92;
+  --text-stat--letter-spacing: -0.03em;
+  --text-stat--font-weight: 700;
 
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-servo: cubic-bezier(0.16, 1, 0.3, 1);
@@ -121,7 +124,7 @@
   --color-paper-2: #e1dace;
   --color-surface: #f4efe6;
   --color-surface-2: #faf6ee;
-  --color-ink: #16140d;
+  --color-ink: #14130d;
   --color-ink-soft: #39352a;
   --color-ink-mid: #54503f;
   --color-muted: #6f6857;
@@ -148,9 +151,9 @@ body {
   font-family: var(--font-sans);
 }
 
-h1, h2, h3 { font-family: var(--font-display); font-weight: 800; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; }
 
-::selection { background-color: var(--color-clay); color: #fff; }
+::selection { background-color: var(--color-clay); color: #06080e; }
 
 ::-webkit-scrollbar { width: 11px; height: 11px; }
 ::-webkit-scrollbar-thumb {
@@ -163,7 +166,16 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 @layer components {
-  .font-display { font-family: var(--font-display); font-weight: 800; }
+  .font-display { font-family: var(--font-display); font-weight: 700; }
+
+  /* Routable-style emphasis: an italic serif accent word. */
+  .accent-serif {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    color: var(--color-clay-soft);
+  }
 
   .u-label {
     font-family: var(--font-mono);
@@ -186,24 +198,34 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; }
     font-size: var(--text-stat);
     line-height: var(--text-stat--line-height);
     letter-spacing: var(--text-stat--letter-spacing);
-    font-weight: 800;
+    font-weight: 700;
     font-variant-numeric: tabular-nums slashed-zero;
     font-feature-settings: "tnum" 1, "zero" 1;
   }
   .iris-fill { background-color: var(--color-clay); }
   .iris-text { color: var(--color-clay); }
   .u-cipher { font-family: var(--font-mono); font-variant-numeric: tabular-nums slashed-zero; }
-  .edge-rule { border-top: 1px solid color-mix(in srgb, var(--color-ink) 18%, transparent); }
+  .edge-rule { border-top: 1px solid color-mix(in srgb, var(--color-ink) 15%, transparent); }
 
-  /* Imagery → unified, dull, slightly warm; reads as one dark system. */
-  .plate-img { filter: grayscale(0.5) contrast(1.06) brightness(0.92); }
+  /* Soft atmospheric blueprint glow (Routable/Mintlify hero clouds). */
+  .atmos {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(60% 50% at 78% 8%, color-mix(in srgb, var(--color-clay) 22%, transparent), transparent 70%),
+      radial-gradient(50% 45% at 12% 0%, color-mix(in srgb, var(--color-iris-violet) 16%, transparent), transparent 70%);
+  }
+
+  /* Imagery → unified into the cool, dull, blueprint world. */
+  .plate-img { filter: grayscale(0.62) contrast(1.05) brightness(0.86); }
   .plate-wash::after {
     content: "";
     position: absolute;
     inset: 0;
     background: var(--color-clay);
     mix-blend-mode: color;
-    opacity: 0.14;
+    opacity: 0.22;
     pointer-events: none;
   }
 }

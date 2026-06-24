@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
 import { Chip } from "@/components/ui/Chip";
 import { Reveal } from "@/components/motion/Reveal";
-import { Vault } from "@/components/visual/Vault";
-import { BigWord } from "@/components/fx/BigWord";
-import { SignalCountdown } from "@/components/fx/SignalCountdown";
-import { ACCESS_URL, CLEARANCE_CTA } from "@/lib/site";
+import { Plate } from "@/components/visual/Plate";
 
-const TITLE = "Manifesto — why the cloth stays on";
+const TITLE = "Manifesto — make anything real";
 const DESCRIPTION =
-  "ArchDisc is one idea in three parts — Forge, Studio, and Archie. We build the thing, not the demo of the thing: real geometry, run locally, opened when it's worth standing in front of.";
+  "Engineering software has spent forty years asking people to translate themselves into menus. ArchDisc puts a real CAD kernel — solids, sketches, simulation, manufacturable drawings — behind plain language, running on your own machine. The tools were the barrier, not you.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -20,50 +16,59 @@ export const metadata: Metadata = {
   twitter: { title: TITLE, description: DESCRIPTION },
 };
 
-const STATEMENTS = [
-  "ArchDisc is one idea in three parts. Forge makes real geometry. Studio makes the world around it. Archie — the model — is the hand that moves between them, turning what you say into what gets built. Apart, they're tools. Together, they're a way of working.",
-  "Design software has spent forty years asking people to translate themselves into menus. We think the machine should meet you where you think — in plain language — and hand back something real: a solid you could machine, a scene you could ship. Not a picture of the answer. The answer.",
-  "So why can't you see it yet? Because a private viewing is a promise. The work goes up when it's worth standing in front of — when the kernel doesn't lie, when the model stops surprising us in the wrong ways, when the room is finished. We'd rather be late and real than early and fake.",
-  "Everything runs on your machine. Nothing you make leaves it. It's free to use — we build and keep the technology; you make things with it. That's the whole arrangement, and it isn't going to change.",
+const BELIEFS = [
+  "Plenty of people can picture the thing they want to build. Almost none of them have ten years of CAD to make it. That gap was never about talent. It was about software that made you learn it before it would let you build anything.",
+  "So the machine should meet you where you actually think — in plain language — and hand back something real. Not a picture of the answer. A solid you could machine. A drawing a shop can hold. A scene you could ship.",
+  "Real geometry has always been the hard part, and it has always lived behind a paywall and a manual. We put a genuine kernel underneath the words: OpenCASCADE solids, constrained sketches, real FEA, exports a fabricator trusts — STEP, IGES, DXF — driven by a sentence.",
+  "It runs on your machine. The model is local, on Apple Silicon, and nothing you make leaves the room. Your design is yours before it's anyone else's, and it stays that way whether or not you're online.",
+  "And it's free to use. We build and keep the technology honest; you make things with it. That's the whole arrangement, and it isn't going to change.",
 ];
 
 const PRINCIPLES = [
-  { t: "Real over rendered", b: "Geometry you can actually build — not images of it." },
-  { t: "Local over cloud", b: "It runs where your work lives. Nothing leaves the machine." },
-  { t: "Plain language over menus", b: "Describe it; the tools move. The menu was never the point." },
-  { t: "Late and real over early and fake", b: "We open the doors when it's worth walking through them." },
-  { t: "Free to use", b: "Make things with it. We keep the lights on and the kernel honest." },
+  { t: "Real over rendered", b: "Geometry you can actually build — solids and drawings, not images of them." },
+  { t: "Local over cloud", b: "It runs where your work lives. The model is on your machine; nothing leaves it." },
+  { t: "Plain language over menus", b: "Describe it and the tools move. The menu was never the point." },
+  { t: "Honest over impressive", b: "A kernel that doesn't lie beats a demo that does. We ship the thing, not the trick." },
+  { t: "Free to use", b: "Make things with it. We keep the lights on and the geometry true." },
 ];
 
 export default function ManifestoPage() {
   return (
     <>
-      <section className="relative isolate overflow-hidden pt-20 pb-16 md:pt-28 md:pb-20">
-        <BigWord variant="ghost" className="absolute -top-2 left-1/2 -translate-x-1/2 text-[clamp(5rem,22vw,20rem)]">
-          Manifesto
-        </BigWord>
-        <Container className="relative">
+      {/* ── Hero ─────────────────────────────────────────────── */}
+      <section className="relative isolate overflow-hidden">
+        <div className="atmos -z-10" aria-hidden />
+        <Container className="relative pt-20 pb-16 md:pt-28 md:pb-20">
           <Reveal>
-            <Chip tone="iris">Manifesto · why the cloth stays on</Chip>
+            <Chip tone="iris">Manifesto</Chip>
           </Reveal>
           <Reveal delay={0.06}>
-            <h1 className="mt-6 max-w-[18ch] text-balance text-display font-display font-semibold leading-[0.96] text-ink">
-              We&rsquo;re building the thing, not the{" "}
-              <span className="iris-text iris-text-anim">demo</span> of the thing.
+            <h1 className="mt-7 max-w-[20ch] text-balance font-display text-display font-[700] leading-[0.96] tracking-[-0.03em] text-ink">
+              The tools were the barrier.{" "}
+              <span className="accent-serif text-[1.06em]">Not you.</span>
             </h1>
+          </Reveal>
+          <Reveal delay={0.14}>
+            <p className="mt-7 max-w-[56ch] text-pretty text-lead text-ink-soft">
+              Real engineering — solids, sketches, simulation, and drawings a shop can build
+              from — should belong to everyone who can picture it. Free to use, local to your
+              machine, spoken in plain language. This is what we believe and why we&rsquo;re
+              building it.
+            </p>
           </Reveal>
         </Container>
       </section>
 
-      <section className="relative overflow-hidden border-y border-line bg-paper-2/50 py-24 md:py-32">
-        <Container className="relative max-w-3xl">
+      {/* ── Beliefs ──────────────────────────────────────────── */}
+      <section className="border-y border-line bg-paper-2/50 py-24 md:py-32">
+        <Container className="max-w-3xl">
           <div className="space-y-10">
-            {STATEMENTS.map((s, i) => (
+            {BELIEFS.map((s, i) => (
               <Reveal key={i} delay={Math.min(i * 0.04, 0.16)}>
                 <p
                   className={
                     i === 0
-                      ? "text-balance font-display text-[clamp(1.6rem,1.1rem+2.2vw,2.6rem)] font-medium leading-[1.12] tracking-[-0.02em] text-ink"
+                      ? "text-balance font-display text-[clamp(1.6rem,1.1rem+2.2vw,2.6rem)] font-[700] leading-[1.12] tracking-[-0.025em] text-ink"
                       : "text-pretty text-lead text-ink-soft"
                   }
                 >
@@ -75,19 +80,41 @@ export default function ManifestoPage() {
         </Container>
       </section>
 
-      <section className="relative overflow-hidden py-24 md:py-32">
-        <BigWord variant="outline" rotate={-90} className="absolute -left-10 top-1/2 hidden -translate-y-1/2 text-[clamp(3rem,8vw,7rem)] lg:block">
-          Real
-        </BigWord>
-        <Container className="relative">
+      {/* ── Image band ───────────────────────────────────────── */}
+      <section className="relative">
+        <div className="relative h-[42vh] w-full overflow-hidden md:h-[54vh]">
+          <div className="absolute inset-0">
+            <Plate src="/img/cad-render.jpg" alt="" sizes="100vw" className="h-full w-full" />
+          </div>
+          <div
+            aria-hidden
+            className="absolute inset-0"
+            style={{ background: "linear-gradient(180deg, rgba(10,13,21,0.7), rgba(10,13,21,0.35) 50%, rgba(10,13,21,0.92))" }}
+          />
+          <div className="absolute inset-0 flex items-end">
+            <div className="mx-auto w-full max-w-[1680px] px-5 pb-8 md:px-10">
+              <p className="max-w-[24ch] text-balance font-display text-h2 font-[700] text-ink">
+                Made to be <span className="accent-serif">built</span>, not just shown.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Principles ───────────────────────────────────────── */}
+      <section className="py-24 md:py-32">
+        <Container>
           <Reveal>
-            <span className="u-label text-faint">What we hold to</span>
+            <span className="u-label text-clay">What we hold to</span>
           </Reveal>
           <div className="mt-10 divide-y divide-line border-y border-line">
             {PRINCIPLES.map((p, i) => (
               <Reveal key={p.t} delay={Math.min(i * 0.05, 0.25)}>
                 <div className="flex flex-col gap-2 py-6 sm:flex-row sm:items-baseline sm:gap-10">
-                  <h3 className="font-display text-h3 text-ink sm:w-[34%] sm:shrink-0">{p.t}</h3>
+                  <div className="flex items-center gap-2.5 sm:w-[34%] sm:shrink-0">
+                    <span className="h-2 w-2 rounded-full bg-clay" aria-hidden />
+                    <h3 className="font-display text-h3 text-ink">{p.t}</h3>
+                  </div>
                   <p className="text-pretty text-lead text-muted">{p.b}</p>
                 </div>
               </Reveal>
@@ -96,24 +123,22 @@ export default function ManifestoPage() {
         </Container>
       </section>
 
-      <Vault className="py-28 md:py-36">
-        <BigWord variant="outline" className="absolute left-1/2 top-8 -translate-x-1/2 text-[clamp(5rem,20vw,18rem)] opacity-70">
-          Soon
-        </BigWord>
-        <Container className="relative flex flex-col items-center text-center">
+      {/* ── Closing ──────────────────────────────────────────── */}
+      <section className="border-t border-line py-24 md:py-32">
+        <Container className="flex flex-col items-center text-center">
           <Reveal>
-            <h2 className="max-w-[16ch] text-balance text-h1 text-ink">The cloth comes off soon.</h2>
+            <span className="inline-flex items-center gap-2 rounded-full border border-line-strong bg-surface/40 px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-soft backdrop-blur-sm">
+              <span className="signal-dot h-1.5 w-1.5 rounded-full bg-clay" aria-hidden />
+              Coming soon
+            </span>
           </Reveal>
-          <Reveal delay={0.1}>
-            <div className="mt-10"><SignalCountdown /></div>
-          </Reveal>
-          <Reveal delay={0.16}>
-            <div className="mt-8">
-              <Button href={ACCESS_URL} size="lg" variant="accent">{CLEARANCE_CTA}</Button>
-            </div>
+          <Reveal delay={0.06}>
+            <p className="mt-7 max-w-[18ch] text-balance font-display text-display font-[700] leading-[0.98] tracking-[-0.03em] text-ink">
+              Soon, anyone can <span className="accent-serif">make</span> anything real.
+            </p>
           </Reveal>
         </Container>
-      </Vault>
+      </section>
     </>
   );
 }

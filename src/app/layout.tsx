@@ -1,11 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Archivo } from "next/font/google";
+import { Geist, Geist_Mono, Archivo, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Grain } from "@/components/visual/Grain";
 import { InstrumentProvider } from "@/lib/instrument";
-import { Console } from "@/components/fx/Console";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,6 +22,14 @@ const archivo = Archivo({
   variable: "--font-archivo",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -78,7 +85,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} ${instrumentSerif.variable}`}
     >
       <body className="min-h-dvh bg-paper text-ink-soft antialiased">
         <InstrumentProvider>
@@ -86,7 +93,6 @@ export default function RootLayout({
           <Nav />
           <main>{children}</main>
           <Footer />
-          <Console />
         </InstrumentProvider>
       </body>
     </html>

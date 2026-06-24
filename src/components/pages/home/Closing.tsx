@@ -22,7 +22,7 @@ export function Closing() {
         </Reveal>
         <Reveal delay={0.06}>
           <h2 className="mt-7 max-w-[16ch] text-balance font-display text-display font-[800] leading-[0.9] tracking-[-0.04em] text-ink">
-            The tools were the barrier. <span className="text-clay-soft">Not you.</span>
+            The tools were the barrier. <span className="accent-serif">not you.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.12}>

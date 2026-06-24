@@ -1,4 +1,3 @@
-import type { Solid3DVariant } from "@/components/artifacts/Solid3D";
 
 export type SpecRow = { label: string; value: string };
 export type Room = { title: string; body: string };
@@ -13,9 +12,6 @@ export type Dossier = {
   what: string;
   specs: SpecRow[];
   rooms: Room[];
-  whyVeiled: string;
-  showProbe: boolean;
-  variant: Solid3DVariant;
   metaTitle: string;
   metaDescription: string;
 };
@@ -53,13 +49,9 @@ export const DOSSIERS: Record<string, Dossier> = {
       { title: "CAM & drawings", body: "Toolpaths and proper engineering drawings, with tolerances, out the other side." },
       { title: "Interop", body: "Bring geometry in and send it out in the formats the rest of the shop already speaks." },
     ],
-    whyVeiled:
-      "Real CAD is unforgiving — a kernel either produces a valid solid or it lies to you. We're not opening the doors until ours never lies.",
-    showProbe: true,
-    variant: "bracket",
-    metaTitle: "Forge — the kernel, classified",
+    metaTitle: "Forge — native mechanical CAD",
     metaDescription:
-      "Forge is mechanical CAD on a native, from-source geometry kernel — real sketching, assemblies, FEA, CAM and drawings, driven by Archie. Not yet public. Request clearance.",
+      "Forge is mechanical CAD on a native, from-source geometry kernel — real sketching, assemblies, FEA, CAM and drawings, driven by Archie. Not yet public. Coming soon.",
   },
   studio: {
     key: "studio",
@@ -86,13 +78,9 @@ export const DOSSIERS: Record<string, Dossier> = {
       { title: "Motion", body: "Bring the scene to life: sequences and movement, directed in words." },
       { title: "Archie drives", body: "Describe the room; the tools move. The same model that builds parts arranges scenes." },
     ],
-    whyVeiled:
-      "A studio is chaos until opening night — half-built sets, paint still wet. Ours is mid-installation, and we'd rather you saw it finished.",
-    showProbe: false,
-    variant: "knot",
-    metaTitle: "Studio — the surface, classified",
+    metaTitle: "Studio — 3D creation",
     metaDescription:
-      "Studio is ArchDisc's creation surface — real-time scenes, PBR materials, light and motion, arranged by Archie in plain language. Not yet public. Request clearance.",
+      "Studio is ArchDisc's creation surface — real-time scenes, PBR materials, light and motion, arranged by Archie in plain language. Not yet public. Coming soon.",
   },
   archie: {
     key: "archie",
@@ -119,12 +107,8 @@ export const DOSSIERS: Record<string, Dossier> = {
       { title: "Coherence", body: "It checks its own work — validity, intent, and the editable tree it leaves behind." },
       { title: "Drives both", body: "One model, two rooms: it builds in Forge and composes in Studio." },
     ],
-    whyVeiled:
-      "A model is only as good as its last bad answer. Archie is still in training, and we'll unveil it when it stops surprising us in the wrong ways.",
-    showProbe: true,
-    variant: "vessel",
-    metaTitle: "Archie — the model, classified",
+    metaTitle: "Archie — the model that builds",
     metaDescription:
-      "Archie is ArchDisc's local model fleet — it turns plain language into precise, inspectable tool-calls and drives Forge and Studio on your own machine. Not yet public. Request clearance.",
+      "Archie is ArchDisc's local model fleet — it turns plain language into precise, inspectable tool-calls and drives Forge and Studio on your own machine. Not yet public. Coming soon.",
   },
 };

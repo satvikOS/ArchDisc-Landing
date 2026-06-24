@@ -4,7 +4,7 @@ import { ArrowDown } from "lucide-react";
 import { motion } from "motion/react";
 import { Reveal } from "@/components/motion/Reveal";
 import { Plate } from "@/components/visual/Plate";
-import { fadeUp, stagger } from "@/lib/motion";
+import { fadeUp } from "@/lib/motion";
 import { usePrefersReducedMotion } from "@/lib/artkit";
 
 export function HomeHero() {
@@ -12,36 +12,27 @@ export function HomeHero() {
 
   return (
     <section className="relative isolate overflow-hidden">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{ background: "radial-gradient(120% 90% at 80% 10%, rgba(176,122,79,0.10), transparent 60%)" }}
-      />
+      <div className="atmos -z-10" aria-hidden />
       <div className="mx-auto grid w-full max-w-[1680px] items-center gap-10 px-5 pt-14 pb-16 md:px-10 md:pt-16 lg:min-h-[88vh] lg:grid-cols-[45fr_55fr] lg:gap-14">
         {/* ── message ── */}
         <div className="order-2 lg:order-1">
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full border border-line-strong px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-soft">
+            <span className="inline-flex items-center gap-2 rounded-full border border-line-strong bg-surface/40 px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-ink-soft backdrop-blur-sm">
               <span className="signal-dot h-1.5 w-1.5 rounded-full bg-clay" aria-hidden />
               Coming soon
             </span>
           </Reveal>
 
           <motion.h1
-            className="mt-7 max-w-[13ch]"
-            variants={stagger(0.12, 0.06)}
+            className="mt-7 max-w-[15ch] font-display text-display font-[700] leading-[0.98] tracking-[-0.03em] text-ink"
+            variants={fadeUp}
             initial={reduce ? false : "hidden"}
             animate="show"
           >
-            <motion.span variants={fadeUp} className="block font-display text-display font-[800] uppercase leading-[0.86] tracking-[-0.04em] text-ink">
-              Make anything
-            </motion.span>
-            <motion.span variants={fadeUp} className="block font-display text-display font-[800] uppercase leading-[0.86] tracking-[-0.04em] text-clay-soft">
-              real.
-            </motion.span>
+            Make anything <span className="accent-serif text-[1.06em]">real.</span>
           </motion.h1>
 
-          <Reveal delay={0.2}>
+          <Reveal delay={0.16}>
             <p className="mt-7 max-w-[52ch] text-pretty text-lead text-ink-soft">
               Real mechanical design — raw model, sketch, render, and manufacturable drawing
               — from a single sentence. Built for everyone who could picture it, but never
@@ -49,7 +40,7 @@ export function HomeHero() {
             </p>
           </Reveal>
 
-          <Reveal delay={0.3}>
+          <Reveal delay={0.26}>
             <a
               href="#pipeline"
               className="mt-9 inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.16em] text-ink-soft transition-colors hover:text-clay"
@@ -62,7 +53,7 @@ export function HomeHero() {
 
         {/* ── the model ── */}
         <Reveal delay={0.1} y={26} className="order-1 lg:order-2">
-          <figure className="relative overflow-hidden rounded-2xl border border-line-strong">
+          <figure className="relative overflow-hidden rounded-2xl border border-line-strong shadow-[0_40px_120px_-50px_rgba(109,140,255,0.45)]">
             <Plate
               src="/img/hero-model.jpg"
               alt="A turbofan engine — the kind of complex machine real CAD is built to make."
@@ -74,7 +65,7 @@ export function HomeHero() {
             <div
               aria-hidden
               className="absolute inset-0"
-              style={{ background: "linear-gradient(180deg, rgba(10,9,5,0.15) 0%, rgba(10,9,5,0.0) 40%, rgba(10,9,5,0.7) 100%)" }}
+              style={{ background: "linear-gradient(180deg, rgba(6,8,14,0.12) 0%, rgba(6,8,14,0.0) 42%, rgba(6,8,14,0.72) 100%)" }}
             />
             <figcaption className="absolute inset-x-0 bottom-0 flex items-center justify-between gap-3 p-5">
               <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-white/85">
