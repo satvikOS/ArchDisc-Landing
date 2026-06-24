@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google";
+import { Geist, Geist_Mono, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
-import { TexturePass } from "@/components/visual/TexturePass";
+import { Grain } from "@/components/visual/Grain";
 import { InstrumentProvider } from "@/lib/instrument";
+import { Console } from "@/components/fx/Console";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,21 +19,24 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const bricolage = Bricolage_Grotesque({
+  variable: "--font-bricolage",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
+
+const TITLE = "ArchDisc — describe it, it gets built";
+const DESCRIPTION =
+  "Three systems for AI-native design and engineering: Forge, the native CAD kernel · Studio, the creation surface · and Archie, the model that drives them. Not yet public. Request clearance.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://archdisc.com"),
   title: {
-    default: "ArchDisc — Design, engineered.",
+    default: TITLE,
     template: "%s · ArchDisc",
   },
-  description:
-    "One platform for 3D creation and mechanical CAD, driven by Archie — an AI copilot that turns plain language into precise, manufacturable geometry. Runs on a native CAD kernel and a local model fleet.",
+  description: DESCRIPTION,
   applicationName: "ArchDisc",
   keywords: [
     "ArchDisc",
@@ -43,28 +47,26 @@ export const metadata: Metadata = {
     "Archie",
     "Studio",
     "Forge",
-    "OpenCASCADE",
     "parametric design",
+    "coming soon",
   ],
   authors: [{ name: "ArchDisc" }],
   openGraph: {
     type: "website",
     siteName: "ArchDisc",
-    title: "ArchDisc — Design, engineered.",
-    description:
-      "Describe it. Archie builds it — as precise, manufacturable geometry. One platform for 3D creation and mechanical CAD.",
+    title: TITLE,
+    description: DESCRIPTION,
     url: "/",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ArchDisc — Design, engineered.",
-    description:
-      "Describe it. Archie builds it. One platform for 3D creation and mechanical CAD.",
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#fafafa",
+  themeColor: "#f1eee7",
   width: "device-width",
   initialScale: 1,
 };
@@ -76,14 +78,15 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} ${bricolage.variable}`}
     >
       <body className="min-h-dvh bg-paper text-ink-soft antialiased">
         <InstrumentProvider>
-          <TexturePass />
+          <Grain />
           <Nav />
           <main>{children}</main>
           <Footer />
+          <Console />
         </InstrumentProvider>
       </body>
     </html>

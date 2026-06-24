@@ -1,54 +1,79 @@
 @import "tailwindcss";
 
-@theme {
-  /* ---- Monochrome palette — ink #11151C on near-white. Zero chroma anywhere. ---- */
-  --color-paper: #fafafa;
-  --color-surface: #ffffff;
-  --color-ink: #11151c;
-  --color-ink-soft: #2c313a;
-  --color-ink-mid: #4a4f58;
-  --color-muted: #6a7079;
-  --color-faint: #9aa0a8;
-  --color-line: #ececee;
-  --color-line-strong: #dcdce0;
+/* ============================================================================
+   ArchDisc — "New Nature, Classified"
+   Warm-light editorial base (Cohere) · bright optimistic spectrum (Ai2) ·
+   dramatic dark "vault" inserts for the secretive coming-soon energy.
+   ========================================================================== */
 
-  /* ---- Three type voices: Space Grotesk (display) · Geist (body) · Geist Mono (instrument) ---- */
-  --font-display: var(--font-space-grotesk), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+@theme {
+  /* ---- Warm-light base — Cohere-grounded off-white, deep navy ink ---- */
+  --color-paper: #f1eee7;          /* warm off-white canvas */
+  --color-paper-2: #e9e4d9;        /* deeper warm band for alternating sections */
+  --color-surface: #fbfaf6;        /* raised cards */
+  --color-surface-2: #ffffff;
+  --color-ink: #0c1322;            /* deep warm navy-black — primary text */
+  --color-ink-soft: #353c4e;
+  --color-ink-mid: #4d5567;
+  --color-muted: #656c7e;
+  --color-faint: #9298a6;
+  --color-line: #e4dfd5;
+  --color-line-strong: #d4cec1;
+
+  /* ---- Iridescent spectrum — the brand's energy (used with restraint) ---- */
+  --color-iris-violet: #6d4aff;
+  --color-iris-magenta: #d83cc8;
+  --color-iris-coral: #ff6a5e;
+  --color-iris-amber: #f4a93c;
+  --color-signal: #14c2b2;         /* cool counter-accent — valid / online / live */
+  --color-signal-deep: #0a8d82;
+
+  /* ---- Vault — dark classified inserts ---- */
+  --color-vault: #0a0e1a;
+  --color-vault-2: #121829;
+
+  /* ---- Three type voices: Bricolage (display) · Geist (body) · Geist Mono (instrument) ---- */
+  --font-display: var(--font-bricolage), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
 
-  /* ---- Display scale (Space Grotesk) ---- */
-  --text-display: clamp(3.25rem, 1.6rem + 6.6vw, 6.5rem);
+  /* ---- Display scale (Bricolage Grotesque) — confident, oversized ---- */
+  --text-mega: clamp(3.5rem, 1.2rem + 9vw, 8rem);
+  --text-mega--line-height: 0.9;
+  --text-mega--letter-spacing: -0.045em;
+  --text-mega--font-weight: 600;
+
+  --text-display: clamp(3rem, 1.5rem + 6.2vw, 6rem);
   --text-display--line-height: 0.94;
   --text-display--letter-spacing: -0.04em;
   --text-display--font-weight: 600;
 
-  --text-h1: clamp(2.5rem, 1.5rem + 4.4vw, 4.25rem);
-  --text-h1--line-height: 0.98;
+  --text-h1: clamp(2.4rem, 1.5rem + 4vw, 4rem);
+  --text-h1--line-height: 0.99;
   --text-h1--letter-spacing: -0.035em;
   --text-h1--font-weight: 600;
 
-  --text-h2: clamp(1.9rem, 1.35rem + 2.6vw, 3rem);
+  --text-h2: clamp(1.85rem, 1.3rem + 2.5vw, 2.9rem);
   --text-h2--line-height: 1.04;
   --text-h2--letter-spacing: -0.03em;
   --text-h2--font-weight: 600;
 
   --text-h3: clamp(1.2rem, 1.04rem + 0.75vw, 1.6rem);
-  --text-h3--line-height: 1.18;
+  --text-h3--line-height: 1.16;
   --text-h3--letter-spacing: -0.02em;
   --text-h3--font-weight: 600;
 
-  --text-h4: clamp(1.0625rem, 1rem + 0.3vw, 1.1875rem);
-  --text-h4--line-height: 1.32;
+  --text-h4: clamp(1.0625rem, 1rem + 0.3vw, 1.2rem);
+  --text-h4--line-height: 1.3;
   --text-h4--letter-spacing: -0.012em;
   --text-h4--font-weight: 500;
 
   /* ---- Body scale (Geist Sans) ---- */
-  --text-lead: clamp(1.125rem, 1.06rem + 0.34vw, 1.3125rem);
+  --text-lead: clamp(1.125rem, 1.04rem + 0.4vw, 1.35rem);
   --text-lead--line-height: 1.5;
   --text-lead--letter-spacing: -0.011em;
 
-  --text-body: clamp(0.9375rem, 0.92rem + 0.1vw, 1rem);
+  --text-body: clamp(0.9375rem, 0.92rem + 0.1vw, 1.0625rem);
   --text-body--line-height: 1.62;
   --text-body--letter-spacing: -0.006em;
 
@@ -59,25 +84,49 @@
   /* ---- Instrument scale (Geist Mono) ---- */
   --text-label: 0.6875rem;
   --text-label--line-height: 1;
-  --text-label--letter-spacing: 0.16em;
+  --text-label--letter-spacing: 0.18em;
   --text-label--font-weight: 500;
 
   --text-label-lg: 0.75rem;
   --text-label-lg--line-height: 1.1;
-  --text-label-lg--letter-spacing: 0.14em;
+  --text-label-lg--letter-spacing: 0.15em;
   --text-label-lg--font-weight: 500;
 
   --text-spec: 0.8125rem;
   --text-spec--line-height: 1.5;
   --text-spec--letter-spacing: 0;
 
-  --text-stat: clamp(2.25rem, 1.6rem + 2.8vw, 3.4rem);
-  --text-stat--line-height: 1;
-  --text-stat--letter-spacing: -0.02em;
-  --text-stat--font-weight: 500;
+  --text-stat: clamp(2.5rem, 1.6rem + 3.4vw, 4rem);
+  --text-stat--line-height: 0.96;
+  --text-stat--letter-spacing: -0.03em;
+  --text-stat--font-weight: 600;
 
   /* ---- Motion ---- */
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-servo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ---- Radii — softer, modern (Cohere/Ai2 rounded) ---- */
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+}
+
+/* ---- Vault scope: dark sections re-map the same tokens so every utility
+   (text-ink, bg-paper, border-line …) auto-inverts inside a <Vault>. ---- */
+[data-theme="vault"] {
+  --color-paper: #0a0e1a;
+  --color-paper-2: #0c1120;
+  --color-surface: #121829;
+  --color-surface-2: #161d31;
+  --color-ink: #f3f1ea;
+  --color-ink-soft: #cdd2de;
+  --color-ink-mid: #aab1c2;
+  --color-muted: #858da0;
+  --color-faint: #5b6479;
+  --color-line: #222a3e;
+  --color-line-strong: #303a54;
+  color-scheme: dark;
 }
 
 :root {
@@ -86,7 +135,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: 5.5rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -98,14 +147,14 @@ body {
   font-family: var(--font-sans);
 }
 
-/* Headings default to the display voice (Space Grotesk). */
+/* Headings default to the display voice (Bricolage Grotesque). */
 h1, h2, h3 {
   font-family: var(--font-display);
 }
 
 ::selection {
-  background-color: var(--color-ink);
-  color: var(--color-paper);
+  background-color: var(--color-iris-magenta);
+  color: #ffffff;
 }
 
 ::-webkit-scrollbar {
@@ -122,16 +171,12 @@ h1, h2, h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
 }
 
 @layer components {
   /* Display family helper for spans/elements that aren't h1–h3. */
-  .font-display {
-    font-family: var(--font-display);
-  }
+  .font-display { font-family: var(--font-display); }
 
   /* Instrument voice — labels: uppercase, wide-tracked mono. */
   .u-label {
@@ -144,7 +189,7 @@ h1, h2, h3 {
     color: var(--color-muted);
   }
 
-  /* Instrument voice — specs / tool-calls / dimensions / IDs: natural case, aligned numerals, slashed zero. */
+  /* Instrument voice — specs / tool-calls / dimensions / IDs. */
   .u-spec {
     font-family: var(--font-mono);
     font-size: var(--text-spec);
@@ -156,7 +201,7 @@ h1, h2, h3 {
 
   /* Instrument voice — big quantified numerals. */
   .u-stat {
-    font-family: var(--font-mono);
+    font-family: var(--font-display);
     font-size: var(--text-stat);
     line-height: var(--text-stat--line-height);
     letter-spacing: var(--text-stat--letter-spacing);
@@ -164,11 +209,98 @@ h1, h2, h3 {
     font-variant-numeric: tabular-nums slashed-zero;
     font-feature-settings: "tnum" 1, "zero" 1;
   }
+
+  /* The iridescent gradient — text clip. The brand's one bold move. */
+  .iris-text {
+    background: linear-gradient(
+      100deg,
+      var(--color-iris-violet) 0%,
+      #c130b6 36%,
+      #ef5340 66%,
+      #d98a2a 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 180% 100%;
+  }
+  .iris-text-anim { animation: iris-pan 9s var(--ease-out-soft) infinite alternate; }
+
+  /* Iridescent surface fill (for chips, rules, glows). */
+  .iris-fill {
+    background: linear-gradient(
+      100deg,
+      var(--color-iris-violet),
+      var(--color-iris-magenta) 40%,
+      var(--color-iris-coral) 70%,
+      var(--color-iris-amber)
+    );
+  }
+
+  /* Hairline divider with an iridescent wash. */
+  .iris-rule {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-iris-violet),
+      var(--color-iris-magenta),
+      var(--color-iris-coral),
+      var(--color-iris-amber),
+      transparent
+    );
+    opacity: 0.7;
+  }
+
+  /* Mono "classified" glyph stream used by the decrypt mechanic. */
+  .u-cipher {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums slashed-zero;
+    letter-spacing: 0.02em;
+  }
 }
 
-/* Display headings: suppress decorative alternates so Space Grotesk never
-   competes with the mono instrument voice. */
+/* Display headings: tabular off, no decorative alternates. */
 h1, h2, h3, .font-display {
   font-feature-settings: "ss01" 0, "ss02" 0;
-  font-variant-numeric: normal;
+}
+
+/* ---- Keyframes ---- */
+@keyframes iris-pan {
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes signal-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+.signal-dot { animation: signal-pulse 1.8s var(--ease-out-soft) infinite; }
+
+/* Drifting iridescent blobs — the ambient "new nature" gradient mesh. */
+@keyframes blob-float {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(7%, -5%) scale(1.08); }
+  66%  { transform: translate(-6%, 6%) scale(0.94); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+.iris-blob {
+  position: absolute;
+  border-radius: 50%;
+  animation: blob-float var(--blob-dur, 26s) ease-in-out infinite;
+  animation-delay: var(--blob-delay, 0s);
+  will-change: transform;
+}
+
+/* Caret blink for the locked probe / console. */
+@keyframes caret-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+.caret { animation: caret-blink 1.05s step-end infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .iris-text-anim, .signal-dot, .iris-blob, .caret, .arc-marquee {
+    animation: none !important;
+  }
 }

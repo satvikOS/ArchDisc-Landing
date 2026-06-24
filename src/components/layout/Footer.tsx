@@ -2,28 +2,34 @@ import Link from "next/link";
 import { Logo } from "@/components/brand/Logo";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { footer, APP_URL, CTA } from "@/lib/site";
+import { SignalCountdown } from "@/components/fx/SignalCountdown";
+import { footer, ACCESS_URL, CLEARANCE_CTA } from "@/lib/site";
 
 export function Footer() {
   const year = 2026;
 
   return (
-    <footer className="border-t border-line bg-surface">
+    <footer className="relative border-t border-line bg-surface">
+      <div className="iris-rule" aria-hidden />
       <Container className="py-16">
-        <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
           <div className="max-w-xs">
             <Logo />
-            <p className="mt-4 text-body-sm leading-relaxed text-muted">
-              {footer.brand}
-            </p>
-            <p className="mt-3 inline-flex items-center gap-2 rounded-[2px] border border-line px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-faint">
-              <span className="h-1.5 w-1.5 rounded-full bg-ink/50" aria-hidden />
+            <p className="mt-4 font-display text-h4 text-ink">{footer.tagline}</p>
+            <p className="mt-3 inline-flex items-center gap-2 rounded-full border border-line px-3 py-1 font-mono text-[11px] uppercase tracking-[0.12em] text-faint">
+              <span className="signal-dot h-1.5 w-1.5 rounded-full bg-signal" aria-hidden />
               {footer.pre}
             </p>
-            <div className="mt-6 flex flex-col gap-2">
-              <Button href={APP_URL} size="sm">
-                {CTA}
+            <div className="mt-6">
+              <Button href={ACCESS_URL} size="sm" variant="accent">
+                {CLEARANCE_CTA}
               </Button>
+            </div>
+            <div className="mt-6">
+              <span className="u-label text-faint">Opens in</span>
+              <div className="mt-2">
+                <SignalCountdown inline className="text-ink" />
+              </div>
             </div>
           </div>
 
@@ -35,7 +41,7 @@ export function Footer() {
                   <li key={l.label}>
                     <Link
                       href={l.href}
-                      className="inline-flex items-center gap-1.5 text-body-sm text-muted transition-colors hover:text-ink"
+                      className="inline-flex items-center text-body-sm text-muted transition-colors hover:text-ink"
                     >
                       {l.label}
                     </Link>

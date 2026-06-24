@@ -1,62 +1,87 @@
 /**
- * Global site constants + information architecture for the multi-page ArchDisc site.
- * Per-page copy lives in each page; this is only the shared shell.
- * TODO(satvik): confirm APP_URL (early-access / download entry).
+ * Global site constants + information architecture.
+ * Every link here resolves to a real, built page — no "#" stubs.
  */
 
-export const APP_URL = "https://app.archdisc.com";
-export const CTA = "Open ArchDisc";
+/** The single conversion destination while the products are pre-release. */
+export const ACCESS_URL = "/access";
+export const CLEARANCE_CTA = "Request clearance";
+
+/** Back-compat aliases (older components import these). */
+export const APP_URL = ACCESS_URL;
+export const CTA = CLEARANCE_CTA;
+
+/** Public-release target. Edit this one constant to move the countdown.
+ *  When it passes, the UI flips to "SIGNAL LIVE" rather than going negative. */
+export const LAUNCH_ISO = "2026-09-23T17:00:00Z";
+
+export const PRODUCTS = [
+  {
+    key: "forge",
+    href: "/forge",
+    codename: "FORGE",
+    designation: "SYS-01",
+    role: "The kernel",
+    blurb: "Native parametric CAD on a real geometry kernel — solids made to be made.",
+  },
+  {
+    key: "studio",
+    href: "/studio",
+    codename: "STUDIO",
+    designation: "SYS-02",
+    role: "The surface",
+    blurb: "A creation environment where scenes, materials, and motion come together.",
+  },
+  {
+    key: "archie",
+    href: "/archie",
+    codename: "ARCHIE",
+    designation: "SYS-00",
+    role: "The model",
+    blurb: "The local model fleet that turns plain language into precise geometry.",
+  },
+] as const;
 
 export const nav = {
   links: [
-    { href: "/studio", label: "Studio" },
     { href: "/forge", label: "Forge" },
+    { href: "/studio", label: "Studio" },
     { href: "/archie", label: "Archie" },
-    { href: "/precision", label: "Precision" },
+    { href: "/manifesto", label: "Manifesto" },
   ],
 };
 
 export const footer = {
-  brand: "ArchDisc — describe it, Archie builds it.",
-  pre: "Free to use · public release soon",
+  brand: "ArchDisc",
+  tagline: "Describe it. It gets built.",
+  pre: "Three systems. Not yet public.",
   columns: [
     {
-      title: "Platform",
+      title: "Systems",
       links: [
-        { label: "Overview", href: "/" },
-        { label: "Studio", href: "/studio" },
         { label: "Forge", href: "/forge" },
+        { label: "Studio", href: "/studio" },
         { label: "Archie", href: "/archie" },
         { label: "Precision", href: "/precision" },
       ],
     },
     {
-      title: "Product",
+      title: "Signal",
       links: [
-        { label: "How it works", href: "/#how-it-works" },
-        { label: "Precision", href: "/precision" },
-        { label: "Pricing", href: "#" },
-        { label: "What's free", href: "#" },
+        { label: "Request clearance", href: "/access" },
+        { label: "Dispatch", href: "/dispatch" },
+        { label: "Status", href: "/status" },
+        { label: "Manifesto", href: "/manifesto" },
       ],
     },
     {
-      title: "Resources",
+      title: "Legal",
       links: [
-        { label: "Docs", href: "#" },
-        { label: "Tool-call schema", href: "#" },
-        { label: "Changelog", href: "#" },
-        { label: "Status", href: "#" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { label: "About", href: "#" },
-        { label: "Careers", href: "#" },
-        { label: "Contact", href: "#" },
+        { label: "Privacy", href: "/privacy" },
+        { label: "Terms", href: "/terms" },
       ],
     },
   ],
-  attribution: "Built on OpenCASCADE 7.9.3 · Free to use",
-  bottomLine: "Monochrome by design.",
+  attribution: "Built with care. Free to use.",
+  bottomLine: "Nothing leaves your machine.",
 };

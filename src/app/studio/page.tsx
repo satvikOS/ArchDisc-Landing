@@ -1,46 +1,17 @@
 import type { Metadata } from "next";
-import { StudioHero } from "@/components/pages/studio/StudioHero";
-import { Capabilities } from "@/components/pages/studio/Capabilities";
-import { SculptToShade } from "@/components/pages/studio/SculptToShade";
-import { FurnitureComposer } from "@/components/pages/studio/FurnitureComposer";
-import { RenderInValue } from "@/components/pages/studio/RenderInValue";
-import { ArchieDrives } from "@/components/pages/studio/ArchieDrives";
-import { FreeToUseStrip } from "@/components/common/FreeToUseStrip";
-import { FinalCta } from "@/components/common/FinalCta";
+import { Dossier } from "@/components/pages/dossier/Dossier";
+import { DOSSIERS } from "@/lib/dossiers";
 
-const META_TITLE = "Studio — 3D creation, driven by Archie";
-const META_DESCRIPTION =
-  "Studio is ArchDisc's 3D content-creation surface: modeling, sculpting, UV, shading, rigging, animation, VFX, simulation, a game engine, and a GPU path tracer — Blender/Maya/Houdini-class breadth, with a parametric furniture library and scene composer. Describe a scene; Archie composes, lights, and frames it. Free to use, local, private, public release soon.";
+const d = DOSSIERS.studio;
 
 export const metadata: Metadata = {
-  title: META_TITLE,
-  description: META_DESCRIPTION,
-  openGraph: {
-    title: META_TITLE,
-    description: META_DESCRIPTION,
-    url: "/studio",
-  },
-  twitter: {
-    title: META_TITLE,
-    description: META_DESCRIPTION,
-  },
+  title: d.metaTitle,
+  description: d.metaDescription,
+  alternates: { canonical: "/studio" },
+  openGraph: { title: d.metaTitle, description: d.metaDescription, url: "/studio" },
+  twitter: { title: d.metaTitle, description: d.metaDescription },
 };
 
 export default function StudioPage() {
-  return (
-    <>
-      <StudioHero />
-      <Capabilities />
-      <SculptToShade />
-      <FurnitureComposer />
-      <RenderInValue />
-      <ArchieDrives />
-      <FreeToUseStrip />
-      <FinalCta
-        eyebrow="Open the studio"
-        headline="Describe a scene. Watch it take shape."
-        subhead="Model, sculpt, animate, and render — Blender/Maya/Houdini-class breadth in one app, driven by Archie. Free to use, local, private."
-      />
-    </>
-  );
+  return <Dossier d={d} />;
 }
