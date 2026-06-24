@@ -11,7 +11,6 @@ type Card = {
   role: string;
   blurb: string;
   img: string;
-  pos: string;
 };
 
 const CARDS: Card[] = [
@@ -21,9 +20,8 @@ const CARDS: Card[] = [
     designation: "SYS-01",
     codename: "Forge",
     role: "Mechanical CAD",
-    blurb: "A real CAD kernel. Solid parts, simulation and drawings you can manufacture.",
-    img: "/img/forge-gears.jpg",
-    pos: "center",
+    blurb: "A real geometry kernel. Solid parts, simulation and drawings made to be manufactured.",
+    img: "/img/cad-render2.jpg",
   },
   {
     key: "studio",
@@ -31,9 +29,8 @@ const CARDS: Card[] = [
     designation: "SYS-02",
     codename: "Studio",
     role: "3D creation",
-    blurb: "Model, light and render — the breadth of a full 3D suite, driven in plain words.",
-    img: "/img/studio-ceramic.jpg",
-    pos: "center",
+    blurb: "Model, light and render — a full 3D suite, reached in plain words.",
+    img: "/img/abstract-1.jpg",
   },
   {
     key: "archie",
@@ -41,9 +38,8 @@ const CARDS: Card[] = [
     designation: "SYS-00",
     codename: "Archie",
     role: "The model",
-    blurb: "The spine. You speak, it plans and builds — in both apps, on your own machine.",
-    img: "/img/abstract-1.jpg",
-    pos: "center",
+    blurb: "The model at the center of both. Local, private, on your own machine.",
+    img: "/img/abstract-3.jpg",
   },
 ];
 
@@ -51,19 +47,18 @@ function SystemCard({ c }: { c: Card }) {
   return (
     <Link
       href={c.href}
-      className="group relative block overflow-hidden rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 focus-visible:ring-offset-4 focus-visible:ring-offset-paper"
+      className="group relative block overflow-hidden rounded-xl border border-line focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay/50 focus-visible:ring-offset-4 focus-visible:ring-offset-paper"
     >
       <Plate
         src={c.img}
         alt={`${c.role} — ${c.codename}`}
         sizes="(max-width: 1024px) 100vw, 33vw"
-        position={c.pos}
         className="aspect-[4/5] w-full transition-transform duration-[1.2s] ease-out group-hover:scale-[1.04]"
       />
       <div
         aria-hidden
         className="absolute inset-0"
-        style={{ background: "linear-gradient(180deg, rgba(19,17,9,0.45) 0%, rgba(19,17,9,0.05) 38%, rgba(19,17,9,0.88) 100%)" }}
+        style={{ background: "linear-gradient(180deg, rgba(10,9,5,0.5) 0%, rgba(10,9,5,0.05) 36%, rgba(10,9,5,0.92) 100%)" }}
       />
       <div className="absolute inset-0 flex flex-col justify-between p-6">
         <div className="flex items-center justify-between">
@@ -93,16 +88,16 @@ function SystemCard({ c }: { c: Card }) {
 
 export function SystemsBento() {
   return (
-    <section id="systems" className="scroll-mt-24 py-20 md:py-28">
+    <section id="systems" className="scroll-mt-24 border-t border-line py-20 md:py-28">
       <div className="mx-auto w-full max-w-[1680px] px-5 md:px-10">
-        <div className="flex flex-col justify-between gap-6 border-b border-ink/15 pb-8 md:flex-row md:items-end">
+        <div className="flex flex-col justify-between gap-6 border-b border-line pb-8 md:flex-row md:items-end">
           <Reveal>
-            <h2 className="max-w-[14ch] text-balance text-h1 text-ink">Two apps. One model.</h2>
+            <h2 className="max-w-[14ch] text-balance text-h1 text-ink">Three systems.</h2>
           </Reveal>
           <Reveal delay={0.05}>
-            <p className="max-w-[44ch] text-pretty text-lead text-muted">
-              Archie is the spine; Studio and Forge are the surfaces it acts on. You change
-              what you want, not the tool. None of it is public yet — step into any room.
+            <p className="max-w-[46ch] text-pretty text-lead text-muted">
+              Forge for mechanical CAD, Studio for 3D creation, and Archie — the model at
+              the center of both. None of it is public yet. Step into any room.
             </p>
           </Reveal>
         </div>

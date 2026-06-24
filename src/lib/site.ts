@@ -1,18 +1,16 @@
 /**
  * Global site constants + information architecture.
- * Grounded in the ArchDisc pitch deck: "Describe it. Archie builds it.",
- * "Two apps. One model.", "Free to dream. Pay to grow — the source stays ours."
- * Every link resolves to a real, built page.
+ * An original message to the maker/engineer community — no pitch-deck copy,
+ * no founders, no early-access funnel. Every link resolves to a real page.
  */
 
-export const ACCESS_URL = "/access";
-export const CLEARANCE_CTA = "Get early access";
+export const ACCESS_URL = "/manifesto";
+export const CLEARANCE_CTA = "Read the manifesto";
 
 /** Back-compat aliases (older components import these). */
 export const APP_URL = ACCESS_URL;
 export const CTA = CLEARANCE_CTA;
 
-/** Public-release target. Edit this one constant to move the countdown. */
 export const LAUNCH_ISO = "2026-09-23T17:00:00Z";
 
 export const PRODUCTS = [
@@ -22,7 +20,7 @@ export const PRODUCTS = [
     codename: "FORGE",
     designation: "SYS-01",
     role: "Mechanical CAD",
-    blurb: "A real CAD kernel. Solid parts, simulation and drawings you can manufacture.",
+    blurb: "A real geometry kernel. Solid parts, simulation and drawings made to be manufactured.",
   },
   {
     key: "studio",
@@ -30,7 +28,7 @@ export const PRODUCTS = [
     codename: "STUDIO",
     designation: "SYS-02",
     role: "3D creation",
-    blurb: "The breadth of Blender, Maya and Houdini. Model, light, and render — in words.",
+    blurb: "Model, light and render — a full 3D suite you reach for in plain words.",
   },
   {
     key: "archie",
@@ -38,7 +36,7 @@ export const PRODUCTS = [
     codename: "ARCHIE",
     designation: "SYS-00",
     role: "The model",
-    blurb: "You speak. It plans and builds, in both apps. Local, private, and fast.",
+    blurb: "The one that builds. Local, private, and made to run on your own machine.",
   },
 ] as const;
 
@@ -53,8 +51,8 @@ export const nav = {
 
 export const footer = {
   brand: "ArchDisc",
-  tagline: "Describe it. Archie builds it.",
-  pre: "Two apps. One model.",
+  tagline: "Make anything real.",
+  pre: "Coming soon",
   columns: [
     {
       title: "Product",
@@ -66,10 +64,9 @@ export const footer = {
       ],
     },
     {
-      title: "Company",
+      title: "More",
       links: [
         { label: "Manifesto", href: "/manifesto" },
-        { label: "Early access", href: "/access" },
         { label: "Dispatch", href: "/dispatch" },
         { label: "Status", href: "/status" },
       ],
@@ -82,6 +79,6 @@ export const footer = {
       ],
     },
   ],
-  attribution: "Satvik Adyanthaya & Jeff Munkondaya · University of Rochester",
-  bottomLine: "Free to use — the source stays ours.",
+  attribution: "",
+  bottomLine: "Free to use. Local. Private.",
 };

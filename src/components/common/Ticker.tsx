@@ -2,14 +2,15 @@ import { Marquee } from "@/components/fx/Marquee";
 import { cn } from "@/lib/utils";
 
 const DEFAULT = [
-  "Describe it · Archie builds it",
-  "Two apps · one model",
+  "Make anything real",
+  "Raw model",
+  "Sketch",
+  "Render",
+  "Blueprint",
   "Forge — mechanical CAD",
   "Studio — 3D creation",
-  "Archie — the spine",
-  "Free to use",
-  "Local & private",
-  "Public release soon",
+  "Free to use · local · private",
+  "Coming soon",
 ];
 
 /** A running exhibition strip — the marquee of an unopened show. */
