@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MosaicApps } from "@/components/decor/Mosaics";
+
 import { Reveal } from "@/components/motion/Reveal";
 import { VesselSketch } from "@/components/decor/HandDrawn";
 import { DimLine } from "@/components/decor/EngMarks";
@@ -21,7 +21,7 @@ export function TwoApps() {
           bell housing · verified ✓
         </figcaption>
       </figure>
-      <MosaicApps className="pointer-events-none absolute inset-0 h-full w-full" />
+      <div aria-hidden className="fig-pattern opacity-[0.08]" style={{ backgroundPosition: "100% 0%", backgroundSize: "800px auto", filter: "sepia(1) hue-rotate(250deg) saturate(2)" }} />
       <div className="relative z-10 mx-auto w-full max-w-[1560px] px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>

@@ -254,6 +254,13 @@ html.lenis, html.lenis body { height: auto; }
   }
   .checker-sm { background-size: 14px 14px; }
 
+  /* the user's own Figma glyph-quilt pattern — per-section unique crop + tint */
+  .fig-pattern {
+    background-image: url("/patterns/glyphs.png");
+    background-size: 1100px auto;
+    position: absolute; inset: 0; pointer-events: none;
+  }
+
   /* handwritten voice (Caveat) — margin notes, scattered-part captions */
   .hand { font-family: var(--font-hand); font-weight: 600; }
 

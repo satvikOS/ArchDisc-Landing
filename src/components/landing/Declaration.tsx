@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { MosaicFlow } from "@/components/decor/Mosaics";
+
 import { Reveal } from "@/components/motion/Reveal";
 import { ScribbleTangle, CurlyArrowLoop, WavyArrow, DartArrow, FlangeSketch } from "@/components/decor/HandDrawn";
 
@@ -8,7 +8,7 @@ const MODALITIES = ["text", "images", "video"];
 export function Declaration() {
   return (
     <section id="matter" className="relative overflow-hidden border-y-[2.5px] border-ink bg-peach py-14 md:py-20">
-      <MosaicFlow className="pointer-events-none absolute inset-0 h-full w-full" />
+      <div aria-hidden className="fig-pattern opacity-[0.09]" style={{ backgroundPosition: "0% 20%", filter: "sepia(1) hue-rotate(-18deg) saturate(2.4)" }} />
       <div className="relative z-10 mx-auto max-w-5xl px-5 text-center">
         <Reveal>
           <span className="inline-flex items-center border-[2.5px] border-ink bg-cream px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">
@@ -66,7 +66,7 @@ export function Declaration() {
               <div className="flex h-32 w-32 rotate-45 items-center justify-center bg-sage" aria-hidden>
                 <span className="-rotate-45 font-mono text-[15px] font-bold uppercase text-cream">plan</span>
               </div>
-              <figcaption className="font-mono text-[13px] font-bold uppercase tracking-[0.14em] text-ink">archie plans it</figcaption>
+              <figcaption className="mt-12 font-mono text-[13px] font-bold uppercase tracking-[0.14em] text-ink">archie plans it</figcaption>
             </figure>
             <DartArrow className="h-18 w-32 shrink-0 text-violet" aria-hidden />
             <figure className="flex flex-col items-center">
@@ -77,7 +77,7 @@ export function Declaration() {
               =
             </span>
             <figure className="flex flex-col items-center">
-              <div className="part-tile relative h-48 w-72 bg-peach">
+              <div className="part-tile relative h-48 w-72 border-[2.5px] border-ink bg-peach">
                 <Image
                   src="/parts/valve-housing.png"
                   alt="The real part Archie built and verified."

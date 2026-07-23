@@ -44,6 +44,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden border-b-[2.5px] border-ink bg-cream">
       {/* ── rich art tiles spread CLEANLY across the background ── */}
+      <div aria-hidden className="fig-pattern opacity-[0.06]" style={{ backgroundPosition: "20% 50%", backgroundSize: "2400px auto", filter: "sepia(1) hue-rotate(10deg) saturate(2)" }} />
       <div aria-hidden className="pointer-events-none absolute inset-0 opacity-30">
         <QuarterTargetPixel className="absolute -right-8 -top-8 h-[30rem] w-[30rem] opacity-95 lg:h-[44rem] lg:w-[44rem]" />
         <BarcodeBars className="absolute -bottom-14 right-[16%] h-[26rem] w-[26rem] opacity-95" />
@@ -90,16 +91,12 @@ export function Hero() {
         </h1>
 
         {/* the model — floating at the side like every other part */}
-        <div className="pointer-events-none relative ml-auto w-[320px] max-w-[74vw] lg:absolute lg:right-8 lg:top-24 lg:z-10 lg:w-[400px]">
+        <div className="pointer-events-none relative ml-auto w-[320px] max-w-[74vw] lg:absolute lg:right-[24%] lg:top-[34%] lg:z-10 lg:w-[400px]">
           <span className="hand absolute -top-5 left-2 -rotate-3 text-[22px] text-brown">built from one line ↓</span>
           <BuildScene className="h-[220px] w-full lg:h-[270px]" startDelay={TYPE_MS} />
-          <div className="flex items-center gap-2 border-[2.5px] border-ink bg-cream px-2.5 py-1.5">
-            <span className={`h-2 w-2 shrink-0 border-2 border-ink ${done ? "bg-lime" : "bg-coral"}`} aria-hidden />
-            <code className="u-mono truncate text-[11.5px] text-ink">
-              › {typed}
-              {!done && <span className="caret text-coral">▌</span>}
-            </code>
-          </div>
+          <p className="hand mt-1 rotate-1 text-center text-[20px] leading-tight text-brown">
+            “{typed}”{!done && <span className="caret text-coral">▌</span>}{done && " — verified ✓"}
+          </p>
         </div>
 
         <motion.div

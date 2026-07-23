@@ -1,4 +1,4 @@
-import { MosaicPipeline } from "@/components/decor/Mosaics";
+
 import { Reveal } from "@/components/motion/Reveal";
 import { CenterMark } from "@/components/decor/EngMarks";
 
@@ -62,7 +62,7 @@ export function TheSystem() {
   return (
     <section id="system" className="relative scroll-mt-24 overflow-hidden border-y-[2.5px] border-ink bg-sky py-12 md:py-16">
       <CenterMark className="pointer-events-none absolute -right-8 top-16 hidden h-32 w-32 text-ink/40 md:block" aria-hidden />
-      <MosaicPipeline className="pointer-events-none absolute inset-0 h-full w-full" />
+      <div aria-hidden className="fig-pattern opacity-[0.10]" style={{ backgroundPosition: "60% 70%", backgroundSize: "1500px auto", filter: "sepia(1) hue-rotate(190deg) saturate(1.6)" }} />
       <div className="relative z-10 mx-auto w-full max-w-[1500px] px-4 md:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
