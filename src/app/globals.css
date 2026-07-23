@@ -40,8 +40,24 @@
   --color-vault: #06080e;
   --color-vault-2: #0d111c;
 
-  /* Voices: Geist (display + body, the refined grotesque) · Geist Mono · Instrument Serif (accent) */
-  --font-display: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  /* ── Coming-to-market reveal: extended semantic tokens ──
+     Warm generative "spark" — spent ONLY at the instant a sentence resolves
+     into geometry. One cool trust-accent (clay) + one warm energy-accent (spark). */
+  --color-spark: #ff9f6b;
+  --color-spark-soft: #ffc9a6;
+  --color-spark-deep: #f5793f;
+  /* Dedicated visible focus ring — distinct from the glowing accent so keyboard
+     focus is never lost against a lit edge. */
+  --color-focus: #8fa6d8;
+  /* Per-app grading anchors (Studio = violet imagination, Forge = blue engineering). */
+  --color-studio: #9d7eff;
+  --color-forge: #6d8cff;
+  /* Light "render viewport" tint — the lightbox parts sit on. */
+  --color-lightbox: #eaf0fb;
+  --color-lightbox-2: #cdd6ea;
+
+  /* Voices: Bricolage Grotesque (display) · Geist (body/UI) · Geist Mono (HUD) · Instrument Serif (italic accent) */
+  --font-display: var(--font-bricolage), var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
   --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
@@ -222,4 +238,127 @@ h1, h2, h3, .font-display { font-feature-settings: "ss01" 0, "ss02" 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .signal-dot, .caret, .breathe, .atmos { animation: none !important; }
+}
+
+/* ============================================================================
+   Coming-to-market reveal — bespoke utilities.
+   Each section is a distinct designed moment; these are the shared primitives.
+   ========================================================================== */
+@layer components {
+  /* Visible, non-accent focus ring on every interactive element. */
+  .a-focus {
+    outline: none;
+  }
+  .a-focus:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* Faint blueprint grid backdrop (very low contrast — scaffolding, not decor). */
+  .blueprint-grid {
+    background-image:
+      linear-gradient(to right, color-mix(in srgb, var(--color-line) 60%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in srgb, var(--color-line) 60%, transparent) 1px, transparent 1px);
+    background-size: 72px 72px;
+    -webkit-mask-image: radial-gradient(120% 100% at 50% 0%, #000 30%, transparent 78%);
+    mask-image: radial-gradient(120% 100% at 50% 0%, #000 30%, transparent 78%);
+  }
+
+  /* Mono HUD eyebrow — section index / label voice. */
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-family: var(--font-mono); font-size: var(--text-label);
+    letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-muted);
+  }
+  .eyebrow::before {
+    content: ""; width: 1.6rem; height: 1px; background: var(--color-line-strong);
+  }
+
+  /* The one warm-accent gradient — reserved for the generative instant. */
+  .spark-text {
+    background: linear-gradient(96deg, var(--color-spark) 0%, var(--color-spark-soft) 60%, var(--color-clay-soft) 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  /* Luminous accent headline (used sparingly — hero verb, closing line). */
+  .glow-accent { color: var(--color-clay); text-shadow: 0 0 34px color-mix(in srgb, var(--color-clay) 45%, transparent); }
+
+  /* Engineering-HUD panel: layered raised surface + hairline frame. */
+  .hud-panel {
+    position: relative; background: color-mix(in srgb, var(--color-surface) 84%, transparent);
+    border: 1px solid var(--color-line); border-radius: var(--radius-lg);
+    backdrop-filter: blur(6px);
+  }
+  .hud-panel::before {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+    box-shadow: inset 0 1px 0 0 color-mix(in srgb, #fff 5%, transparent);
+  }
+
+  /* "Render viewport" lightbox — the real Archie parts sit on a cool light table.
+     The part PNGs have white backgrounds; multiply dissolves the white and keeps
+     only the shaded geometry. Deliberate high-contrast punctuation on the void. */
+  .part-lightbox {
+    background: linear-gradient(158deg, #f7f9fd 0%, #e9eef7 62%, #dde4f0 100%);
+    border: 1px solid var(--color-line-strong);
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
+  }
+  .part-lightbox img {
+    mix-blend-mode: multiply;
+    filter: contrast(1.14) brightness(0.95) saturate(1.04);
+  }
+
+  /* Per-app color wash for the Studio / Forge diptych — reads the graded
+     --color-clay so each half is legibly violet vs blue at a glance. */
+  .app-wash {
+    background:
+      radial-gradient(95% 78% at 22% 0%, color-mix(in srgb, var(--color-clay) 16%, transparent), transparent 60%),
+      color-mix(in srgb, var(--color-surface) 82%, var(--color-paper));
+  }
+
+  /* Vertical continuity flowline — hands the eye down between beats; draws in. */
+  .flowline {
+    width: 1px; background: linear-gradient(to bottom,
+      transparent, var(--color-line-strong) 12%, var(--color-clay) 50%, var(--color-line-strong) 88%, transparent);
+    transform-origin: top; }
+
+  /* Slow, weighty auto-rotation cue dot on the 3D stage. */
+  .stage-ring {
+    background:
+      radial-gradient(60% 60% at 50% 40%, color-mix(in srgb, var(--color-clay) 20%, transparent), transparent 70%);
+  }
+}
+
+/* Section-grade anchors for the two-apps beat (kept alongside the existing set). */
+.grade-forge  { --color-clay: #6d8cff; --color-clay-soft: #aebfff; --color-clay-deep: #4f6ef0; --color-iris-violet: #5b78e8; }
+.grade-studio { --color-clay: #9d7eff; --color-clay-soft: #cabbff; --color-clay-deep: #7d5cf2; --color-iris-violet: #6f5cf2; }
+
+@keyframes flow-draw { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes spark-flash {
+  0% { opacity: 0; transform: scale(0.6); }
+  40% { opacity: 1; }
+  100% { opacity: 0; transform: scale(2.4); }
+}
+.spark-flash { animation: spark-flash 0.9s var(--ease-out-soft) forwards; }
+@keyframes hud-scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(400%); } }
+
+/* Kinetic marquee band. */
+.marquee-track { animation: marquee 42s linear infinite; will-change: transform; }
+.marquee-track.reverse { animation-direction: reverse; }
+/* Outlined display type for the marquee (editorial, non-generic). */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in srgb, var(--color-ink) 34%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spark-flash, .flowline, .marquee-track { animation: none !important; }
+}
+
+/* Windows High Contrast / forced-colors: background-clip:text + text-stroke
+   don't paint, so restore meaning-bearing text to a system color. */
+@media (forced-colors: active) {
+  .spark-text { color: CanvasText; -webkit-text-fill-color: CanvasText; }
+  .text-outline { color: CanvasText; -webkit-text-stroke: 0; }
+  .glow-accent { text-shadow: none; }
 }
