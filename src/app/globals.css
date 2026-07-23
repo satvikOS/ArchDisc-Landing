@@ -1,151 +1,109 @@
 @import "tailwindcss";
 
 /* ============================================================================
-   ArchDisc — dark "blueprint", Routable/Mintlify-inspired.
-   Cool navy-black, a refined grotesque (Geist) + italic-serif accent, soft
-   cloudy atmospherics, per-page color grading, and breathing imagery.
+   ArchDisc — WARM MAXIMALIST / NEO-BRUTALIST system.
+   Cream ground, thick black outlines, hard offset shadows, flat color blocks,
+   playful sticker motifs, and a loud, mixed, futuristic type stack.
+   Deliberate color theory: warm dominants (olive/brown/coral) + cool pops
+   (periwinkle/lavender/lime/sky), unified by black ink + cream.
    ========================================================================== */
 
 @theme {
-  --color-paper: #090c14;
-  --color-paper-2: #0d111c;
-  --color-surface: #131826;
-  --color-surface-2: #191f30;
-  --color-ink: #eef1f8;
-  --color-ink-soft: #bcc3d6;
-  --color-ink-mid: #969eb6;
-  --color-muted: #79819a;
-  --color-faint: #565e76;
-  --color-line: #1c2333;
-  --color-line-strong: #2b3450;
+  /* ---- ground + ink ---- */
+  --color-cream:    #f4efdf;
+  --color-cream-2:  #ece4cd;
+  --color-cream-3:  #e2d8bb;
+  --color-paper:    #f4efdf; /* alias */
+  --color-ink:      #1a1710; /* warm near-black — text + EVERY border */
+  --color-ink-soft: #40392c;
+  --color-ink-mute: #6b6152;
 
-  /* The blueprint accent (name kept as `clay` so all usages flip in one place).
-     Per-page .grade-* classes override these to re-grade a whole page. */
-  --color-clay: #6d8cff;
-  --color-clay-deep: #4f6ef0;
-  --color-clay-soft: #aebfff;
-  --color-night: #06080e;
+  /* ---- warm dominants ---- */
+  --color-olive:  #9a8722;
+  --color-gold:   #cba52c;
+  --color-brown:  #5c3222;
+  --color-coral:  #e0522f;
+  --color-rust:   #bf3f22;
+  --color-peach:  #ecc9a3;
 
-  --color-coral: #6d8cff;
-  --color-coral-deep: #4f6ef0;
-  --color-forest: #16233a;
-  --color-lilac: #9aa3c4;
-  --color-sky: #8fa6d8;
-  --color-butter: #aebfff;
-  --color-iris-violet: #6d6cf2;
-  --color-iris-magenta: #6d8cff;
-  --color-iris-coral: #6d8cff;
-  --color-iris-amber: #aebfff;
-  --color-signal: #6d8cff;
-  --color-vault: #06080e;
-  --color-vault-2: #0d111c;
+  /* ---- cool pops ---- */
+  --color-peri:   #5757df;
+  --color-peri-2: #7d7dff;
+  --color-lav:    #b7a4de;
+  --color-lime:   #93ce45;
+  --color-sky:    #8fbbe6;
+  --color-sage:   #2f4a2c;
+  --color-violet: #7a4fcb;
+  --color-magenta:#c247b0;
 
-  /* ── Coming-to-market reveal: extended semantic tokens ──
-     Warm generative "spark" — spent ONLY at the instant a sentence resolves
-     into geometry. One cool trust-accent (clay) + one warm energy-accent (spark). */
-  --color-spark: #ff9f6b;
-  --color-spark-soft: #ffc9a6;
-  --color-spark-deep: #f5793f;
-  /* Dedicated visible focus ring — distinct from the glowing accent so keyboard
-     focus is never lost against a lit edge. */
-  --color-focus: #8fa6d8;
-  /* Per-app grading anchors (Studio = violet imagination, Forge = blue engineering). */
-  --color-studio: #9d7eff;
-  --color-forge: #6d8cff;
-  /* Light "render viewport" tint — the lightbox parts sit on. */
-  --color-lightbox: #eaf0fb;
-  --color-lightbox-2: #cdd6ea;
+  /* backward-compat aliases (a few older utilities referenced these) */
+  --color-clay:   #5757df;
+  --color-line:   #1a1710;
+  --color-muted:  #6b6152;
 
-  /* Voices: Bricolage Grotesque (display) · Geist (body/UI) · Geist Mono (HUD) · Instrument Serif (italic accent) */
-  --font-display: var(--font-bricolage), var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
-  --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+  /* ---- voices: Unbounded (display) · Space Grotesk (body) · Space Mono · Instrument Serif ---- */
+  --font-display: var(--font-unbounded), ui-sans-serif, system-ui, sans-serif;
+  --font-sans:    var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    var(--font-space-mono), ui-monospace, "SF Mono", monospace;
+  --font-serif:   var(--font-instrument-serif), Georgia, "Times New Roman", serif;
 
-  --text-mega: clamp(2.9rem, 0.8rem + 9vw, 9rem);
-  --text-mega--line-height: 0.98;
-  --text-mega--letter-spacing: -0.03em;
-  --text-mega--font-weight: 600;
+  /* ---- type scale (maximalist, big) ---- */
+  --text-mega: clamp(3rem, 0.4rem + 11vw, 10.5rem);
+  --text-mega--line-height: 0.9;
+  --text-mega--letter-spacing: -0.02em;
+  --text-mega--font-weight: 800;
 
-  --text-display: clamp(2.4rem, 1.1rem + 5.6vw, 5.5rem);
-  --text-display--line-height: 1.02;
-  --text-display--letter-spacing: -0.028em;
-  --text-display--font-weight: 600;
+  --text-display: clamp(2.3rem, 1rem + 5.6vw, 5.2rem);
+  --text-display--line-height: 0.96;
+  --text-display--letter-spacing: -0.015em;
+  --text-display--font-weight: 800;
 
-  --text-h1: clamp(2.05rem, 1.3rem + 3.4vw, 3.9rem);
-  --text-h1--line-height: 1.04;
-  --text-h1--letter-spacing: -0.025em;
-  --text-h1--font-weight: 600;
+  --text-h1: clamp(2rem, 1.2rem + 3.2vw, 3.7rem);
+  --text-h1--line-height: 0.98;
+  --text-h1--letter-spacing: -0.015em;
+  --text-h1--font-weight: 800;
 
-  --text-h2: clamp(1.75rem, 1.25rem + 2.4vw, 2.9rem);
-  --text-h2--line-height: 1.06;
-  --text-h2--letter-spacing: -0.022em;
-  --text-h2--font-weight: 600;
+  --text-h2: clamp(1.6rem, 1.1rem + 2.2vw, 2.7rem);
+  --text-h2--line-height: 1.02;
+  --text-h2--letter-spacing: -0.01em;
+  --text-h2--font-weight: 700;
 
-  --text-h3: clamp(1.2rem, 1.05rem + 0.8vw, 1.6rem);
-  --text-h3--line-height: 1.18;
-  --text-h3--letter-spacing: -0.015em;
-  --text-h3--font-weight: 600;
+  --text-h3: clamp(1.15rem, 1rem + 0.7vw, 1.55rem);
+  --text-h3--line-height: 1.1;
+  --text-h3--font-weight: 700;
 
-  --text-h4: clamp(1.0625rem, 1rem + 0.32vw, 1.2rem);
-  --text-h4--line-height: 1.32;
-  --text-h4--letter-spacing: -0.008em;
-  --text-h4--font-weight: 600;
+  --text-lead: clamp(1.1rem, 1rem + 0.45vw, 1.4rem);
+  --text-lead--line-height: 1.5;
+  --text-lead--font-weight: 500;
 
-  --text-lead: clamp(1.125rem, 1.02rem + 0.45vw, 1.4rem);
-  --text-lead--line-height: 1.58;
-  --text-lead--letter-spacing: -0.011em;
-
-  --text-body: clamp(0.9375rem, 0.92rem + 0.12vw, 1.0625rem);
-  --text-body--line-height: 1.68;
-  --text-body--letter-spacing: -0.006em;
+  --text-body: clamp(0.95rem, 0.92rem + 0.14vw, 1.075rem);
+  --text-body--line-height: 1.62;
 
   --text-body-sm: 0.875rem;
-  --text-body-sm--line-height: 1.58;
-  --text-body-sm--letter-spacing: -0.003em;
+  --text-body-sm--line-height: 1.5;
 
-  --text-label: 0.6875rem;
+  --text-label: 0.72rem;
   --text-label--line-height: 1;
-  --text-label--letter-spacing: 0.2em;
-  --text-label--font-weight: 500;
-
-  --text-label-lg: 0.75rem;
-  --text-label-lg--line-height: 1.1;
-  --text-label-lg--letter-spacing: 0.16em;
-  --text-label-lg--font-weight: 500;
+  --text-label--letter-spacing: 0.14em;
+  --text-label--font-weight: 700;
 
   --text-spec: 0.8125rem;
-  --text-spec--line-height: 1.5;
-  --text-spec--letter-spacing: 0;
+  --text-spec--line-height: 1.45;
 
-  --text-stat: clamp(2.6rem, 1.6rem + 3.6vw, 5rem);
-  --text-stat--line-height: 0.98;
-  --text-stat--letter-spacing: -0.03em;
-  --text-stat--font-weight: 600;
-
-  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --text-stat: clamp(2.6rem, 1.4rem + 4vw, 5.5rem);
+  --text-stat--line-height: 0.9;
+  --text-stat--letter-spacing: -0.02em;
+  --text-stat--font-weight: 800;
 
   --radius-sm: 8px;
   --radius: 14px;
   --radius-lg: 22px;
-  --radius-xl: 30px;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-pop: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* ---- Per-page / per-section color grading (override the accent + atmos hue) ---- */
-.grade-teal   { --color-clay: #3fd2c4; --color-clay-soft: #a3ece5; --color-clay-deep: #1fa99b; --color-iris-violet: #2fae9f; }
-.grade-violet { --color-clay: #9d7eff; --color-clay-soft: #cabbff; --color-clay-deep: #7d5cf2; --color-iris-violet: #6f5cf2; }
-.grade-cyan   { --color-clay: #4ab6ff; --color-clay-soft: #abdcff; --color-clay-deep: #2a93e6; --color-iris-violet: #4f8fe6; }
-.grade-steel  { --color-clay: #8298c9; --color-clay-soft: #c3d1ec; --color-clay-deep: #5e77a8; --color-iris-violet: #6f8bd0; }
-.grade-slate  { --color-clay: #8ea3c6; --color-clay-soft: #c8d4e8; --color-clay-deep: #6c84ac; --color-iris-violet: #7689bd; }
-.grade-rose   { --color-clay: #e07a9b; --color-clay-soft: #f3bcce; --color-clay-deep: #c25677; --color-iris-violet: #b65f9a; }
-
-[data-theme="light"] {
-  --color-paper: #ece7dd; --color-paper-2: #e1dace; --color-surface: #f4efe6; --color-surface-2: #faf6ee;
-  --color-ink: #14130d; --color-ink-soft: #39352a; --color-ink-mid: #54503f; --color-muted: #6f6857;
-  --color-faint: #9b9483; --color-line: #d6cfbe; --color-line-strong: #c2baa6; color-scheme: light;
-}
-
-:root { color-scheme: dark; }
+:root { color-scheme: light; }
 
 html {
   scroll-behavior: smooth;
@@ -154,211 +112,112 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 800; }
 
-body { background-color: var(--color-paper); color: var(--color-ink-soft); font-family: var(--font-sans); }
+::selection { background-color: var(--color-coral); color: var(--color-cream); }
 
-h1, h2, h3 { font-family: var(--font-display); font-weight: 600; }
-
-::selection { background-color: var(--color-clay); color: #06080e; }
-
-::-webkit-scrollbar { width: 11px; height: 11px; }
-::-webkit-scrollbar-thumb { background: var(--color-line-strong); border-radius: 999px; border: 3px solid var(--color-paper); }
-::-webkit-scrollbar-thumb:hover { background: var(--color-faint); }
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: var(--color-cream-2); }
+::-webkit-scrollbar-thumb { background: var(--color-ink); border: 3px solid var(--color-cream-2); border-radius: 0; }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 @layer components {
-  .font-display { font-family: var(--font-display); font-weight: 600; }
+  /* ---- Neo-brutalist primitives ---- */
+  .nb   { border: 2.5px solid var(--color-ink); }
+  .nb-2 { border: 2px solid var(--color-ink); }
+  .nb-3 { border: 3px solid var(--color-ink); }
 
-  /* Routable-style emphasis: an italic serif accent word. */
-  .accent-serif {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-weight: 400;
-    letter-spacing: -0.005em;
-    color: var(--color-clay-soft);
+  .nb-shadow    { box-shadow: 6px 6px 0 0 var(--color-ink); }
+  .nb-shadow-sm { box-shadow: 4px 4px 0 0 var(--color-ink); }
+  .nb-shadow-lg { box-shadow: 10px 10px 0 0 var(--color-ink); }
+
+  .nb-card {
+    border: 2.5px solid var(--color-ink);
+    border-radius: var(--radius);
+    box-shadow: 6px 6px 0 0 var(--color-ink);
   }
+  /* interactive lift — press toward the shadow on hover */
+  .nb-hover { transition: transform 0.14s var(--ease-out-soft), box-shadow 0.14s var(--ease-out-soft); }
+  .nb-hover:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 0 var(--color-ink); }
+  .nb-hover:active { transform: translate(2px, 2px); box-shadow: 3px 3px 0 0 var(--color-ink); }
 
-  .u-label {
-    font-family: var(--font-mono); font-size: var(--text-label);
-    line-height: var(--text-label--line-height); letter-spacing: var(--text-label--letter-spacing);
-    font-weight: var(--text-label--font-weight); text-transform: uppercase; color: var(--color-muted);
-  }
-  .u-spec {
-    font-family: var(--font-mono); font-size: var(--text-spec); line-height: var(--text-spec--line-height);
-    font-variant-numeric: tabular-nums slashed-zero; font-feature-settings: "tnum" 1, "zero" 1;
-  }
-  .u-stat {
-    font-family: var(--font-display); font-size: var(--text-stat); line-height: var(--text-stat--line-height);
-    letter-spacing: var(--text-stat--letter-spacing); font-weight: 600;
-    font-variant-numeric: tabular-nums slashed-zero; font-feature-settings: "tnum" 1, "zero" 1;
-  }
-  .iris-fill { background-color: var(--color-clay); }
-  .iris-text { color: var(--color-clay); }
-  .u-cipher { font-family: var(--font-mono); font-variant-numeric: tabular-nums slashed-zero; }
-  .edge-rule { border-top: 1px solid color-mix(in srgb, var(--color-ink) 14%, transparent); }
-
-  /* Soft, gloomy, cloudy atmosphere (Routable/Mintlify hero). Breathes. */
-  .atmos {
-    position: absolute; inset: 0; pointer-events: none; overflow: hidden;
-    background:
-      radial-gradient(46% 38% at 76% 4%, color-mix(in srgb, var(--color-clay) 28%, transparent), transparent 66%),
-      radial-gradient(40% 34% at 14% 10%, color-mix(in srgb, var(--color-iris-violet) 22%, transparent), transparent 64%),
-      radial-gradient(80% 55% at 52% -14%, color-mix(in srgb, var(--color-clay) 12%, transparent), transparent 72%);
-    filter: blur(14px);
-    animation: atmos-breathe 13s var(--ease-out-soft) infinite;
-  }
-  .atmos::after {
-    content: ""; position: absolute; inset: -20%;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
-    opacity: 0.035; mix-blend-mode: overlay;
-  }
-
-  /* Imagery — unified into the cool blueprint world, kept VISIBLE. */
-  .plate-img { filter: grayscale(0.42) contrast(1.03) brightness(0.98) saturate(0.9); }
-  .plate-wash::after {
-    content: ""; position: absolute; inset: 0;
-    background: var(--color-clay); mix-blend-mode: color; opacity: 0.12; pointer-events: none;
-  }
-
-  /* Slow ambient breathing for imagery / figures. */
-  .breathe { animation: breathe 9s var(--ease-out-soft) infinite; will-change: transform; }
-}
-
-h1, h2, h3, .font-display { font-feature-settings: "ss01" 0, "ss02" 0; }
-
-@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@keyframes signal-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-.signal-dot { animation: signal-pulse 2s var(--ease-out-soft) infinite; }
-@keyframes caret-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
-.caret { animation: caret-blink 1.05s step-end infinite; }
-@keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.025); } }
-@keyframes atmos-breathe { 0%, 100% { opacity: 0.85; transform: scale(1); } 50% { opacity: 1; transform: scale(1.06); } }
-.iris-blob { display: none; }
-
-@media (prefers-reduced-motion: reduce) {
-  .signal-dot, .caret, .breathe, .atmos { animation: none !important; }
-}
-
-/* ============================================================================
-   Coming-to-market reveal — bespoke utilities.
-   Each section is a distinct designed moment; these are the shared primitives.
-   ========================================================================== */
-@layer components {
-  /* Visible, non-accent focus ring on every interactive element. */
-  .a-focus {
-    outline: none;
-  }
-  .a-focus:focus-visible {
-    outline: 2px solid var(--color-focus);
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
-
-  /* Faint blueprint grid backdrop (very low contrast — scaffolding, not decor). */
-  .blueprint-grid {
-    background-image:
-      linear-gradient(to right, color-mix(in srgb, var(--color-line) 60%, transparent) 1px, transparent 1px),
-      linear-gradient(to bottom, color-mix(in srgb, var(--color-line) 60%, transparent) 1px, transparent 1px);
-    background-size: 72px 72px;
-    -webkit-mask-image: radial-gradient(120% 100% at 50% 0%, #000 30%, transparent 78%);
-    mask-image: radial-gradient(120% 100% at 50% 0%, #000 30%, transparent 78%);
-  }
-
-  /* Mono HUD eyebrow — section index / label voice. */
+  /* mono HUD eyebrow — a bordered pill/tab */
   .eyebrow {
-    display: inline-flex; align-items: center; gap: 0.6rem;
+    display: inline-flex; align-items: center; gap: 0.5rem;
     font-family: var(--font-mono); font-size: var(--text-label);
-    letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-muted);
-  }
-  .eyebrow::before {
-    content: ""; width: 1.6rem; height: 1px; background: var(--color-line-strong);
-  }
-
-  /* The one warm-accent gradient — reserved for the generative instant. */
-  .spark-text {
-    background: linear-gradient(96deg, var(--color-spark) 0%, var(--color-spark-soft) 60%, var(--color-clay-soft) 100%);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
+    letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700;
+    color: var(--color-ink); border: 2px solid var(--color-ink);
+    padding: 0.4em 0.8em; border-radius: 999px; background: var(--color-cream);
   }
 
-  /* Luminous accent headline (used sparingly — hero verb, closing line). */
-  .glow-accent { color: var(--color-clay); text-shadow: 0 0 34px color-mix(in srgb, var(--color-clay) 45%, transparent); }
-
-  /* Engineering-HUD panel: layered raised surface + hairline frame. */
-  .hud-panel {
-    position: relative; background: color-mix(in srgb, var(--color-surface) 84%, transparent);
-    border: 1px solid var(--color-line); border-radius: var(--radius-lg);
-    backdrop-filter: blur(6px);
-  }
-  .hud-panel::before {
-    content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
-    box-shadow: inset 0 1px 0 0 color-mix(in srgb, #fff 5%, transparent);
+  /* a "letter/word in a colored box" — the A/B motif */
+  .tag {
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 2.5px solid var(--color-ink); border-radius: 8px;
+    padding: 0.02em 0.28em; box-shadow: 3px 3px 0 0 var(--color-ink);
+    font-family: var(--font-display); font-weight: 800; line-height: 1;
   }
 
-  /* "Render viewport" lightbox — the real Archie parts sit on a cool light table.
-     The part PNGs have white backgrounds; multiply dissolves the white and keeps
-     only the shaded geometry. Deliberate high-contrast punctuation on the void. */
-  .part-lightbox {
-    background: linear-gradient(158deg, #f7f9fd 0%, #e9eef7 62%, #dde4f0 100%);
-    border: 1px solid var(--color-line-strong);
-    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.6);
+  /* the serif anti-design accent */
+  .accent-serif { font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -0.005em; }
+
+  .u-mono { font-family: var(--font-mono); }
+  .u-spec { font-family: var(--font-mono); font-size: var(--text-spec); font-variant-numeric: tabular-nums slashed-zero; }
+  .u-stat { font-family: var(--font-display); font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+  .u-label { font-family: var(--font-mono); font-size: var(--text-label); letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--color-ink); }
+
+  /* diagonal caution/hatch fill — as a background layer */
+  .hatch {
+    background-image: repeating-linear-gradient(45deg,
+      var(--color-ink) 0 2px, transparent 2px 9px);
   }
-  .part-lightbox img {
-    mix-blend-mode: multiply;
-    filter: contrast(1.14) brightness(0.95) saturate(1.04);
+  .hatch-soft {
+    background-image: repeating-linear-gradient(45deg,
+      color-mix(in srgb, var(--color-ink) 45%, transparent) 0 2px, transparent 2px 10px);
   }
 
-  /* Per-app color wash for the Studio / Forge diptych — reads the graded
-     --color-clay so each half is legibly violet vs blue at a glance. */
-  .app-wash {
-    background:
-      radial-gradient(95% 78% at 22% 0%, color-mix(in srgb, var(--color-clay) 16%, transparent), transparent 60%),
-      color-mix(in srgb, var(--color-surface) 82%, var(--color-paper));
+  /* dotted grid paper */
+  .dot-grid {
+    background-image: radial-gradient(color-mix(in srgb, var(--color-ink) 22%, transparent) 1.4px, transparent 1.4px);
+    background-size: 22px 22px;
   }
 
-  /* Vertical continuity flowline — hands the eye down between beats; draws in. */
-  .flowline {
-    width: 1px; background: linear-gradient(to bottom,
-      transparent, var(--color-line-strong) 12%, var(--color-clay) 50%, var(--color-line-strong) 88%, transparent);
-    transform-origin: top; }
+  /* focus ring (periwinkle, high-contrast, offset) */
+  .a-focus { outline: none; }
+  .a-focus:focus-visible { outline: 3px solid var(--color-peri); outline-offset: 3px; }
 
-  /* Slow, weighty auto-rotation cue dot on the 3D stage. */
-  .stage-ring {
-    background:
-      radial-gradient(60% 60% at 50% 40%, color-mix(in srgb, var(--color-clay) 20%, transparent), transparent 70%);
-  }
+  /* the real-part lightbox tiles: colored ground, multiply keeps only geometry */
+  .part-tile img { mix-blend-mode: multiply; filter: contrast(1.12) brightness(0.97); }
 }
 
-/* Section-grade anchors for the two-apps beat (kept alongside the existing set). */
-.grade-forge  { --color-clay: #6d8cff; --color-clay-soft: #aebfff; --color-clay-deep: #4f6ef0; --color-iris-violet: #5b78e8; }
-.grade-studio { --color-clay: #9d7eff; --color-clay-soft: #cabbff; --color-clay-deep: #7d5cf2; --color-iris-violet: #6f5cf2; }
-
-@keyframes flow-draw { from { transform: scaleY(0); } to { transform: scaleY(1); } }
-@keyframes spark-flash {
-  0% { opacity: 0; transform: scale(0.6); }
-  40% { opacity: 1; }
-  100% { opacity: 0; transform: scale(2.4); }
-}
-.spark-flash { animation: spark-flash 0.9s var(--ease-out-soft) forwards; }
-@keyframes hud-scan { 0% { transform: translateY(-100%); } 100% { transform: translateY(400%); } }
-
-/* Kinetic marquee band. */
-.marquee-track { animation: marquee 42s linear infinite; will-change: transform; }
+/* ---- kinetic marquee ---- */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-track { animation: marquee 30s linear infinite; will-change: transform; }
 .marquee-track.reverse { animation-direction: reverse; }
-/* Outlined display type for the marquee (editorial, non-generic). */
-.text-outline {
-  color: transparent;
-  -webkit-text-stroke: 1px color-mix(in srgb, var(--color-ink) 34%, transparent);
-}
+
+/* ---- playful ambient motion ---- */
+@keyframes spin-slow { from { transform: rotate(0); } to { transform: rotate(360deg); } }
+.spin-slow { animation: spin-slow 22s linear infinite; }
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.bob { animation: bob 4.5s var(--ease-out-soft) infinite; }
+@keyframes blink { 0%,49% { opacity: 1; } 50%,100% { opacity: 0; } }
+.caret { animation: blink 1s step-end infinite; }
+@keyframes pop-flash { 0% { opacity: 0; transform: scale(0.4); } 45% { opacity: 1; } 100% { opacity: 0; transform: scale(2.2); } }
+.pop-flash { animation: pop-flash 0.85s var(--ease-pop) forwards; }
+
+.font-display { font-family: var(--font-display); }
 
 @media (prefers-reduced-motion: reduce) {
-  .spark-flash, .flowline, .marquee-track { animation: none !important; }
+  .marquee-track, .spin-slow, .bob, .caret, .pop-flash { animation: none !important; }
 }
 
-/* Windows High Contrast / forced-colors: background-clip:text + text-stroke
-   don't paint, so restore meaning-bearing text to a system color. */
+/* forced-colors safety */
 @media (forced-colors: active) {
-  .spark-text { color: CanvasText; -webkit-text-fill-color: CanvasText; }
-  .text-outline { color: CanvasText; -webkit-text-stroke: 0; }
-  .glow-accent { text-shadow: none; }
+  .nb, .nb-2, .nb-3, .nb-card { border-color: CanvasText; }
 }

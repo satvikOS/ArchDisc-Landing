@@ -1,3 +1,5 @@
+import { Asterisk } from "@/components/decor/Stickers";
+
 const WORDS = [
   "bearing flange",
   "watertight",
@@ -6,31 +8,28 @@ const WORDS = [
   "three-port valve body",
   "manufacturable",
   "pump volute backplate",
-  "STEP · DXF",
+  "kernel-true",
 ];
-const HOT = new Set(["watertight", "verified", "manufacturable"]);
+const HOT = new Set(["watertight", "verified", "manufacturable", "kernel-true"]);
 
-/**
- * Full-bleed kinetic marquee — oversized outlined display type, one word filled
- * in accent per pass. Pure CSS scroll; static under reduced motion.
- */
 export function MarqueeBand() {
   const track = [...WORDS, ...WORDS];
   return (
     <section
       aria-hidden
-      className="relative isolate overflow-hidden border-y border-line py-8 md:py-12"
+      className="relative isolate overflow-hidden border-y-[2.5px] border-ink bg-ink py-5 md:py-7"
     >
-      <div className="flex w-max marquee-track">
+      <div className="flex w-max marquee-track items-center">
         {track.map((w, i) => (
-          <span
-            key={i}
-            className={`whitespace-nowrap px-6 font-display text-[8.5vw] font-semibold leading-none tracking-[-0.03em] md:px-8 md:text-[5.2vw] ${
-              HOT.has(w) ? "text-clay" : "text-outline"
-            }`}
-          >
-            {w}
-            <span className="px-6 align-middle text-[0.42em] text-clay/50 md:px-8">✦</span>
+          <span key={i} className="flex items-center">
+            <span
+              className={`whitespace-nowrap px-6 font-display text-[7vw] font-extrabold leading-none tracking-[-0.01em] md:px-8 md:text-[3.6vw] ${
+                HOT.has(w) ? "text-lime" : "text-cream"
+              }`}
+            >
+              {w}
+            </span>
+            <Asterisk className="h-6 w-6 shrink-0 spin-slow text-coral md:h-8 md:w-8" />
           </span>
         ))}
       </div>

@@ -51,15 +51,15 @@ export function BuildScene({
       camera.position.set(3.6, 2.7, 4.6);
       camera.lookAt(0, 0.15, 0);
 
-      // ── Lighting: matte anodized studio look, cool accent rim ──
-      scene.add(new THREE.HemisphereLight(0x9fb4e0, 0x0a0e18, 0.85));
-      const key = new THREE.DirectionalLight(0xffffff, 2.1);
+      // ── Lighting: flat matte "paper" look with a warm coral rim ──
+      scene.add(new THREE.HemisphereLight(0xfff3df, 0x9a8722, 1.05));
+      const key = new THREE.DirectionalLight(0xffffff, 1.35);
       key.position.set(5, 8, 4);
       scene.add(key);
-      const rim = new THREE.DirectionalLight(0x6d8cff, 1.1);
+      const rim = new THREE.DirectionalLight(0xe0522f, 0.7);
       rim.position.set(-6, 2, -4);
       scene.add(rim);
-      const warm = new THREE.DirectionalLight(0xffd7b0, 0.4);
+      const warm = new THREE.DirectionalLight(0x93ce45, 0.28);
       warm.position.set(-2, -4, 3);
       scene.add(warm);
 
@@ -117,15 +117,15 @@ export function BuildScene({
 
       // Merge by adding as sibling meshes under one group; orient flat (Z-up → Y-up).
       const material = new THREE.MeshStandardMaterial({
-        color: 0xaab8d0,
-        metalness: 0.38,
-        roughness: 0.52,
+        color: 0xf1e7cf,
+        metalness: 0.04,
+        roughness: 0.92,
       });
       const clip = new THREE.Plane(new THREE.Vector3(0, -1, 0), -0.35); // reveals bottom→top
       material.clippingPlanes = [clip];
 
       const edgeMat = new THREE.LineBasicMaterial({
-        color: 0x8fa6ff,
+        color: 0x1a1710,
         transparent: true,
         opacity: 0,
       });
@@ -159,7 +159,7 @@ export function BuildScene({
       const TOP = 1.15, BOTTOM = -0.35;
       const setReveal = (t: number) => {
         clip.constant = BOTTOM + (TOP - BOTTOM) * t;
-        edgeMat.opacity = Math.max(0, (t - 0.55) / 0.45) * 0.9;
+        edgeMat.opacity = Math.max(0, (t - 0.5) / 0.5);
       };
 
       // Pointer parallax (fine pointers only) — a subtle "alive" tilt.
@@ -213,7 +213,7 @@ export function BuildScene({
 
       if (reduce) {
         setReveal(1);
-        edgeMat.opacity = 0.9;
+        edgeMat.opacity = 1;
         renderOnce();
       } else {
         start();
