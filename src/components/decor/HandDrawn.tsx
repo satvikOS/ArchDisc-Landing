@@ -106,6 +106,39 @@ export function SpeedLines(p: P) {
   );
 }
 
+
+/** Thought-cloud with a gear — Archie thinking up the plan. */
+export function ThoughtPlan(p: P) {
+  return (
+    <svg {...base(p, "0 0 160 130")}>
+      <Sketch d="M40 70 C22 70 16 52 30 44 C24 28 44 16 58 24 C66 8 96 8 104 22 C122 14 140 30 132 46 C146 54 140 72 122 74 C120 88 98 94 86 86 C74 96 50 92 48 80 C44 78 42 74 40 70 Z" w={2.6} />
+      <Sketch d="M30 102 A6 6 0 1 0 30 101.9" w={2} ghost={false} />
+      <Sketch d="M16 118 A3.5 3.5 0 1 0 16 117.9" w={1.8} ghost={false} />
+      <g>
+        <Sketch d="M82 38 A16 16 0 1 0 82 70 A16 16 0 1 0 82 38" w={2.2} ghost={false} />
+        <Sketch d="M82 30 L82 38 M82 70 L82 78 M62 54 L70 54 M94 54 L102 54 M68 40 L73 45 M91 63 L96 68 M96 40 L91 45 M73 63 L68 68" w={2.2} ghost={false} />
+        <Sketch d="M76 54 A6 6 0 1 0 88 54 A6 6 0 1 0 76 54" w={1.8} ghost={false} />
+      </g>
+    </svg>
+  );
+}
+
+/** Pencil sketch of the three-port valve housing — matches the real part. */
+export function ValveSketch(p: P) {
+  return (
+    <svg {...base(p, "0 0 170 130")}>
+      <Dots id="hd-dots-valve" />
+      <path d="M40 44 L120 30 L150 52 L150 96 L70 112 L40 90 Z" fill="url(#hd-dots-valve)" opacity="0.4" />
+      <Sketch d="M40 44 L120 30 L150 52 L150 96 L70 112 L40 90 Z" w={2.6} />
+      <Sketch d="M60 40 A26 12 0 0 0 112 34 A26 12 0 0 0 60 40" w={2.2} />
+      <Sketch d="M72 39 A13 6 0 0 0 98 36 A13 6 0 0 0 72 39" w={1.8} ghost={false} />
+      <Sketch d="M150 66 A10 20 0 0 0 150 92 A10 20 0 0 0 150 66" w={2.2} ghost={false} />
+      <Sketch d="M46 62 A8 16 0 0 0 46 84 A8 16 0 0 0 46 62" w={2.2} ghost={false} />
+      <Sketch d="M84 70 A18 9 0 0 0 120 64 A18 9 0 0 0 84 70" w={1.8} ghost={false} />
+    </svg>
+  );
+}
+
 /** Doodled bearing flange — thick outline, stipple-filled plate. */
 export function FlangeSketch(p: P) {
   return (

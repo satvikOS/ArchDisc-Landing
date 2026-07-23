@@ -1,3 +1,4 @@
+import { BgApps } from "@/components/decor/Mosaics2";
 import Image from "next/image";
 
 import { Reveal } from "@/components/motion/Reveal";
@@ -21,7 +22,7 @@ export function TwoApps() {
           bell housing · verified ✓
         </figcaption>
       </figure>
-      <div aria-hidden className="fig-pattern opacity-[0.08]" style={{ backgroundPosition: "100% 0%", backgroundSize: "800px auto", filter: "sepia(1) hue-rotate(250deg) saturate(2)" }} />
+      <BgApps className="pointer-events-none absolute inset-0 h-full w-full" />
       <div className="relative z-10 mx-auto w-full max-w-[1560px] px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>

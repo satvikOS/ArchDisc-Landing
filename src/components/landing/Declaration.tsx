@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 import { Reveal } from "@/components/motion/Reveal";
-import { ScribbleTangle, CurlyArrowLoop, WavyArrow, DartArrow, FlangeSketch } from "@/components/decor/HandDrawn";
+import { ScribbleTangle, CurlyArrowLoop, WavyArrow, DartArrow, ThoughtPlan, ValveSketch } from "@/components/decor/HandDrawn";
 
 const MODALITIES = ["text", "images", "video"];
 
 export function Declaration() {
   return (
     <section id="matter" className="relative overflow-hidden border-y-[2.5px] border-ink bg-peach py-14 md:py-20">
-      <div aria-hidden className="fig-pattern opacity-[0.09]" style={{ backgroundPosition: "0% 20%", filter: "sepia(1) hue-rotate(-18deg) saturate(2.4)" }} />
+      <div aria-hidden className="fig-pattern opacity-[0.16]" style={{ backgroundPosition: "0% 20%", filter: "sepia(1) hue-rotate(-18deg) saturate(2.4)" }} />
       <div className="relative z-10 mx-auto max-w-5xl px-5 text-center">
         <Reveal>
           <span className="inline-flex items-center border-[2.5px] border-ink bg-cream px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">
@@ -38,7 +38,7 @@ export function Declaration() {
               Now it can make{" "}
               <span className="relative inline-block">
                 <span className="bubble text-gold">real things</span>
-                <svg className="pointer-events-none absolute -left-[6%] -top-[12%] h-[124%] w-[112%]" viewBox="0 0 100 40" preserveAspectRatio="none" fill="none" aria-hidden>
+                <svg className="pointer-events-none absolute -left-[12%] -top-[26%] h-[152%] w-[124%] -rotate-[5deg]" viewBox="0 0 100 40" preserveAspectRatio="none" fill="none" aria-hidden>
                   <path d="M10 22 C8 12 30 5 58 5 C84 5 97 12 95 21 C94 31 70 37 42 37 C18 37 8 31 10 22" stroke="var(--color-coral)" strokeWidth="2.2" strokeLinecap="round" opacity="0.9" /><path d="M13 24 C12 14 34 8 60 7 C83 7 94 14 93 22 C91 30 68 35 44 35 C22 35 12 30 13 24" stroke="var(--color-coral)" strokeWidth="1.6" strokeLinecap="round" opacity="0.55" />
                 </svg>
               </span>
@@ -63,14 +63,12 @@ export function Declaration() {
             </figure>
             <WavyArrow className="h-20 w-36 shrink-0 text-peri" aria-hidden />
             <figure className="flex flex-col items-center">
-              <div className="flex h-32 w-32 rotate-45 items-center justify-center bg-sage" aria-hidden>
-                <span className="-rotate-45 font-mono text-[15px] font-bold uppercase text-cream">plan</span>
-              </div>
-              <figcaption className="mt-12 font-mono text-[13px] font-bold uppercase tracking-[0.14em] text-ink">archie plans it</figcaption>
+              <ThoughtPlan className="h-36 w-44 text-ink" />
+              <figcaption className="mt-2 font-mono text-[13px] font-bold uppercase tracking-[0.14em] text-ink">archie plans it</figcaption>
             </figure>
             <DartArrow className="h-18 w-32 shrink-0 text-violet" aria-hidden />
             <figure className="flex flex-col items-center">
-              <FlangeSketch className="h-40 w-60 text-ink" />
+              <ValveSketch className="h-40 w-56 text-ink" />
               <figcaption className="font-mono text-[13px] font-bold uppercase tracking-[0.14em] text-ink">the kernel builds it</figcaption>
             </figure>
             <span className="font-display text-6xl font-extrabold text-ink" aria-hidden>

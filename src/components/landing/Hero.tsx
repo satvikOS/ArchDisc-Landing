@@ -44,8 +44,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden border-b-[2.5px] border-ink bg-cream">
       {/* ── rich art tiles spread CLEANLY across the background ── */}
-      <div aria-hidden className="fig-pattern opacity-[0.06]" style={{ backgroundPosition: "20% 50%", backgroundSize: "2400px auto", filter: "sepia(1) hue-rotate(10deg) saturate(2)" }} />
-      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-30">
+      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-40">
         <QuarterTargetPixel className="absolute -right-8 -top-8 h-[30rem] w-[30rem] opacity-95 lg:h-[44rem] lg:w-[44rem]" />
         <BarcodeBars className="absolute -bottom-14 right-[16%] h-[26rem] w-[26rem] opacity-95" />
         <AaSpecimen
