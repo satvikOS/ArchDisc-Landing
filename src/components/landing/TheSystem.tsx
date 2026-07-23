@@ -62,11 +62,11 @@ export function TheSystem() {
     <section id="system" className="relative scroll-mt-24 overflow-hidden border-y-[2.5px] border-ink bg-sky py-12 md:py-16">
       <CenterMark className="pointer-events-none absolute -right-8 top-16 hidden h-32 w-32 text-ink/40 md:block" aria-hidden />
       <div aria-hidden className="pointer-events-none absolute inset-0 opacity-40">
-        <div className="absolute -left-24 top-8 h-72 w-72 rounded-full bg-cream/80" />
-        <div className="absolute left-10 bottom-10 h-36 w-36 rotate-45 bg-magenta/80" />
-        <div className="absolute -right-12 bottom-16 h-56 w-56 rounded-tl-full bg-violet/75" />
-        <div className="absolute right-1/4 -top-10 h-28 w-52 rotate-6 bg-gold/90" />
-        <div className="absolute left-1/3 -bottom-8 h-24 w-24 rounded-full bg-coral/90" />
+        <div className="absolute -left-24 top-8 h-[28rem] w-[28rem] rounded-full bg-cream/80" />
+        <div className="absolute left-10 bottom-10 h-60 w-60 rotate-45 bg-magenta/80" />
+        <div className="absolute -right-12 bottom-16 h-[24rem] w-[24rem] rounded-tl-full bg-violet/75" />
+        <div className="absolute right-1/4 -top-10 h-44 w-80 rotate-6 bg-gold/90" />
+        <div className="absolute left-1/3 -bottom-8 h-44 w-44 rounded-full bg-coral/90" />
       </div>
       <div className="relative z-10 mx-auto w-full max-w-[1500px] px-4 md:px-8">
         <div className="mx-auto max-w-2xl text-center">

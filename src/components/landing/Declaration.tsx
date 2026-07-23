@@ -8,12 +8,12 @@ export function Declaration() {
   return (
     <section id="matter" className="relative overflow-hidden border-y-[2.5px] border-ink bg-peach py-14 md:py-20">
       <div aria-hidden className="pointer-events-none absolute inset-0 opacity-40">
-        <div className="absolute -left-20 top-10 h-64 w-64 rounded-full bg-peri/85" />
-        <div className="absolute left-8 bottom-24 h-40 w-40 rotate-12 bg-magenta/80" />
-        <div className="absolute -right-16 top-1/4 h-72 w-72 rounded-bl-full bg-violet/80" />
-        <div className="absolute right-10 bottom-10 h-32 w-32 rotate-45 bg-lime" />
-        <div className="absolute left-1/4 -top-8 h-24 w-48 -rotate-6 bg-gold/90" />
-        <div className="absolute right-1/4 -bottom-10 h-36 w-36 rounded-full bg-sky/90" />
+        <div className="absolute -left-20 top-10 h-[26rem] w-[26rem] rounded-full bg-peri/85" />
+        <div className="absolute left-8 bottom-24 h-64 w-64 rotate-12 bg-magenta/80" />
+        <div className="absolute -right-16 top-1/4 h-[30rem] w-[30rem] rounded-bl-full bg-violet/80" />
+        <div className="absolute right-10 bottom-10 h-56 w-56 rotate-45 bg-lime" />
+        <div className="absolute left-1/4 -top-8 h-36 w-80 -rotate-6 bg-gold/90" />
+        <div className="absolute right-1/4 -bottom-10 h-60 w-60 rounded-full bg-sky/90" />
       </div>
       <div className="relative z-10 mx-auto max-w-5xl px-5 text-center">
         <Reveal>

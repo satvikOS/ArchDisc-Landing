@@ -45,16 +45,16 @@ export function Hero() {
     <section className="relative overflow-hidden border-b-[2.5px] border-ink bg-cream">
       {/* ── rich art tiles spread CLEANLY across the background ── */}
       <div aria-hidden className="pointer-events-none absolute inset-0 opacity-45">
-        <QuarterTargetPixel className="absolute -right-8 -top-8 h-[24rem] w-[24rem] opacity-95 lg:h-[30rem] lg:w-[30rem]" />
-        <BarcodeBars className="absolute -bottom-14 right-[16%] h-72 w-72 opacity-95" />
+        <QuarterTargetPixel className="absolute -right-8 -top-8 h-[30rem] w-[30rem] opacity-95 lg:h-[44rem] lg:w-[44rem]" />
+        <BarcodeBars className="absolute -bottom-14 right-[16%] h-[26rem] w-[26rem] opacity-95" />
         <AaSpecimen
           c1="var(--color-sage)"
           c2="var(--color-brown)"
-          className="absolute -bottom-10 -left-6 text-[16vw] opacity-90 lg:text-[13vw]"
+          className="absolute -bottom-10 -left-6 text-[22vw] opacity-90 lg:text-[19vw]"
         />
-        <NumberSpecimen n="0110" className="absolute right-[38%] top-6 text-[7vw] text-coral opacity-90" />
-        <div className="absolute right-[30%] bottom-[8%] h-40 w-40 rounded-full bg-magenta/85" />
-        <div className="absolute left-[46%] top-[6%] h-32 w-32 rotate-45 bg-violet/85" />
+        <NumberSpecimen n="0110" className="absolute right-[38%] top-6 text-[11vw] text-coral opacity-90" />
+        <div className="absolute right-[30%] bottom-[8%] h-64 w-64 rounded-full bg-magenta/85" />
+        <div className="absolute left-[46%] top-[6%] h-52 w-52 rotate-45 bg-violet/85" />
         
       </div>
 
