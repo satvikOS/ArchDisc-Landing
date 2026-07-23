@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Mosaic13 } from "@/components/decor/Mosaic13";
 import { Reveal } from "@/components/motion/Reveal";
 import { VesselSketch } from "@/components/decor/HandDrawn";
 import { DimLine } from "@/components/decor/EngMarks";
@@ -20,13 +21,7 @@ export function TwoApps() {
           bell housing · verified ✓
         </figcaption>
       </figure>
-      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-40">
-        <div className="absolute -left-16 top-8 h-[24rem] w-[24rem] rounded-full bg-lime/85" />
-        <div className="absolute left-1/4 -top-10 h-44 w-80 rotate-6 bg-peri/85" />
-        <div className="absolute -right-14 top-1/3 h-[28rem] w-[28rem] rounded-bl-full bg-magenta/75" />
-        <div className="absolute right-1/3 -bottom-10 h-56 w-56 rotate-45 bg-gold/90" />
-        <div className="absolute left-10 bottom-8 h-44 w-44 rounded-full bg-violet/85" />
-      </div>
+      <Mosaic13 mix={2} className="pointer-events-none absolute inset-0 h-full w-full opacity-25" aria-hidden />
       <div className="relative z-10 mx-auto w-full max-w-[1560px] px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>

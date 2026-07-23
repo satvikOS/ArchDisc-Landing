@@ -53,8 +53,8 @@ export function Hero() {
           className="absolute -bottom-10 -left-6 text-[22vw] opacity-90 lg:text-[19vw]"
         />
         <NumberSpecimen n="0110" className="absolute right-[38%] top-6 text-[11vw] text-coral opacity-90" />
-        <div className="absolute right-[30%] bottom-[8%] h-64 w-64 rounded-full bg-magenta/85" />
-        <div className="absolute left-[46%] top-[6%] h-52 w-52 rotate-45 bg-violet/85" />
+        
+        
         
       </div>
 
