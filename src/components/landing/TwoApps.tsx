@@ -27,7 +27,7 @@ export function TwoApps() {
           </Reveal>
           <Reveal delay={0.06}>
             <h2 className="mt-6 font-display text-[clamp(2.2rem,1rem+4.6vw,4.8rem)] font-extrabold leading-[0.92] text-ink">
-              <span className="bubble">Two apps.</span> One{" "}
+              <span className="bubble text-sky">Two apps.</span> One{" "}
               <span className="inline-block -rotate-2 border-[3px] border-ink bg-coral px-2 text-cream">
                 model.
               </span>{" "}

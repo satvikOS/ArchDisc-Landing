@@ -257,13 +257,16 @@ html.lenis, html.lenis body { height: auto; }
   /* handwritten voice (Caveat) — margin notes, scattered-part captions */
   .hand { font-family: var(--font-hand); font-weight: 600; }
 
-  /* drawing-letters: hollow bubble/outline type */
+  /* TRUE bubble letters — fat blobby face + thick ink outline + hard offset
+     shadow (sticker style, per the "BUBBLE FONT" reference). Fill = currentColor. */
   .bubble {
-    -webkit-text-stroke: 2.8px var(--color-ink);
+    font-family: var(--font-bubble);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    -webkit-text-stroke: 2.5px var(--color-ink);
     paint-order: stroke fill;
-    color: transparent;
+    text-shadow: 0.045em 0.055em 0 var(--color-ink);
   }
-  .bubble-fill { -webkit-text-stroke: 2.8px var(--color-ink); paint-order: stroke fill; }
 
   /* ARCHDISC wordmark — black italic caps; warm colors flow on hover */
   .wordmark {

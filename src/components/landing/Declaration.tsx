@@ -36,7 +36,7 @@ export function Declaration() {
             <span className="mt-2 block font-display text-[clamp(2.6rem,1rem+6.5vw,6.4rem)] font-extrabold leading-[0.9]">
               Now it can make{" "}
               <RoughMark type="circle" color="var(--color-coral)" strokeWidth={3} padding={10}>
-                <span className="bubble">real things</span>
+                <span className="bubble text-gold">real things</span>
               </RoughMark>
               .
             </span>

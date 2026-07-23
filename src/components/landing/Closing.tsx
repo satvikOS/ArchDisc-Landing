@@ -21,7 +21,7 @@ export function Closing() {
         <Reveal delay={0.08}>
           <h2 className="mt-8 text-cream">
             <span className="block -rotate-1 font-display text-[clamp(2.4rem,1rem+7vw,7rem)] font-extrabold leading-[0.82]">Make</span>
-            <span className="bubble -mt-1 block font-display text-[clamp(3.2rem,0.4rem+12vw,12rem)] font-extrabold leading-[0.8] [-webkit-text-stroke-color:var(--color-cream)]">
+            <span className="bubble -mt-1 block text-[clamp(3rem,0.4rem+11vw,11rem)] leading-[0.92] text-lav">
               anything
             </span>
             <span className="relative mt-3 inline-block">

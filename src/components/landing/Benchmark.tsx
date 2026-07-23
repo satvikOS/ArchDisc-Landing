@@ -40,7 +40,7 @@ export function Benchmark() {
             <div className="flex flex-col justify-center bg-cream p-8 md:p-10">
               <p className="font-display text-[clamp(2rem,1rem+3.4vw,3.8rem)] font-extrabold leading-[0.92] text-ink">
                 <span className="mr-1 inline-block -rotate-3 border-[3px] border-ink bg-lime px-2">#1</span> among{" "}
-                <span className="bubble">local models</span>.
+                <span className="bubble text-peach">local models</span>.
               </p>
               <p className="mt-4 max-w-[40ch] font-mono text-[12px] font-bold uppercase tracking-[0.08em] text-ink-mute">
                 Near-frontier accuracy — running on your own machine.

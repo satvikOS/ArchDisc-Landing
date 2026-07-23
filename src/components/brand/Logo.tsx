@@ -18,9 +18,9 @@ export function LogoMark({ className }: { className?: string }) {
 /** Mark + wordmark lockup. */
 export function Logo({ className, markClassName }: { className?: string; markClassName?: string }) {
   return (
-    <span className={cn("inline-flex items-center gap-2.5 text-ink", className)}>
-      <LogoMark className={markClassName} />
-      <span className="wordmark text-[19px]">ArchDisc</span>
+    <span className={cn("inline-flex items-center gap-2.5 overflow-visible text-ink", className)}>
+      <LogoMark className={cn("h-10 w-10 shrink-0", markClassName)} />
+      <span className="wordmark whitespace-nowrap pr-2 text-[21px] leading-none">ArchDisc</span>
     </span>
   );
 }

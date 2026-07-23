@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b-[2.5px] border-ink bg-cream">
-      <div className="mx-auto flex h-16 w-full max-w-[1660px] items-center justify-between gap-4 px-4 md:px-8">
+      <div className="mx-auto flex h-[76px] w-full max-w-[1660px] items-center justify-between gap-4 overflow-visible px-4 md:px-8">
         <Link href="/" aria-label="ArchDisc — home" className="a-focus shrink-0 rounded-sm">
           <Logo />
         </Link>

@@ -72,7 +72,7 @@ export function TheSystem() {
             <h2 className="mt-6 font-display text-[clamp(2.2rem,1rem+4.6vw,4.8rem)] font-extrabold leading-[0.92] text-ink">
               Not a <span className="accent-serif inline-block -rotate-2 font-normal">magic</span> button. A{" "}
               <span className="inline-block rotate-1 border-[3px] border-ink bg-cream px-2">verified</span>{" "}
-              <span className="bubble">pipeline</span>.
+              <span className="bubble text-cream">pipeline</span>.
             </h2>
           </Reveal>
           <Reveal delay={0.12}>
