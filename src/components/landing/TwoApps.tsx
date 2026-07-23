@@ -3,7 +3,7 @@ import { Parallax } from "@/components/motion/Parallax";
 import { Target, Concentric, Pinwheel, Checker } from "@/components/decor/Stickers";
 
 const STATS = [
-  { v: "30B", l: "params · on-device" },
+  { v: "Local", l: "model · on-device" },
   { v: "#2", l: "on CADGenBench" },
   { v: "0", l: "cloud calls" },
   { v: "Free", l: "to create" },
