@@ -14,7 +14,7 @@ export function TwoApps() {
   return (
     <section id="universe" className="relative scroll-mt-24 overflow-hidden bg-peach py-12 md:py-16">
       {/* scattered part — floats at the right edge */}
-      <figure className="part-tile pointer-events-none absolute -right-14 top-14 hidden h-40 w-56 lg:block" aria-hidden>
+      <figure className="part-tile pointer-events-none absolute -right-14 top-14 z-10 hidden h-48 w-64 bg-peach lg:block" aria-hidden>
         <Image src="/parts/bell-housing.png" alt="" fill sizes="230px" className="object-contain" />
         <figcaption className="hand absolute -bottom-2 right-16 rotate-2 text-[18px] text-brown">
           bell housing · verified ✓

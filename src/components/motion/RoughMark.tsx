@@ -17,8 +17,10 @@ export function RoughMark({
   strokeWidth = 2,
   padding = 4,
   multiline = true,
+  animated = true,
   className,
 }: {
+  animated?: boolean;
   children: ReactNode;
   type?: "underline" | "circle" | "box" | "highlight" | "strike-through" | "crossed-off" | "bracket";
   color?: string;
@@ -43,9 +45,9 @@ export function RoughMark({
             strokeWidth,
             padding,
             multiline,
-            animate: !reduce,
+            animate: animated && !reduce,
             animationDuration: 900,
-            iterations: 2,
+            iterations: 1,
           });
           annotation.show();
           io.disconnect();
@@ -58,7 +60,7 @@ export function RoughMark({
       io.disconnect();
       annotation?.remove();
     };
-  }, [type, color, strokeWidth, padding, multiline, reduce]);
+  }, [type, color, strokeWidth, padding, multiline, reduce, animated]);
 
   return (
     <span ref={ref} className={className}>

@@ -51,46 +51,46 @@ export function Declaration() {
           </h2>
         </Reveal>
 
-        {/* the pencil flow — the TRUE pipeline: idea → say it → plan → build → verified */}
+        {/* the doodle flow — COMICALLY large, arrows only BETWEEN steps */}
         <Reveal delay={0.18}>
-          <div className="mx-auto mt-14 flex flex-wrap items-center justify-center gap-x-3 gap-y-10">
+          <div className="mx-auto mt-16 flex flex-wrap items-center justify-center gap-x-4 gap-y-12">
             <figure className="flex flex-col items-center">
-              <ScribbleTangle className="h-32 w-36 text-ink" />
-              <figcaption className="hand mt-1 -rotate-3 text-[22px] text-brown">your idea</figcaption>
+              <ScribbleTangle className="h-44 w-52 text-ink" />
+              <figcaption className="hand -rotate-3 text-[28px] text-brown">your idea</figcaption>
             </figure>
-            <CurlyArrowLoop className="h-20 w-28 text-ink" aria-hidden />
+            <CurlyArrowLoop className="h-24 w-36 shrink-0 text-ink" aria-hidden />
             <figure className="flex flex-col items-center">
-              <code className="u-mono max-w-[24ch] border-[2.5px] border-ink bg-cream px-3 py-2 text-[13px] font-bold text-ink">
+              <code className="u-mono max-w-[22ch] border-[3px] border-ink bg-cream px-5 py-4 text-[17px] font-bold text-ink">
                 “a bearing flange — Ø90 bore”
               </code>
-              <figcaption className="hand mt-3 rotate-2 text-[22px] text-brown">say it. one line.</figcaption>
+              <figcaption className="hand mt-4 rotate-2 text-[28px] text-brown">say it. one line.</figcaption>
             </figure>
-            <WavyArrow className="h-16 w-28 text-ink" aria-hidden />
+            <WavyArrow className="h-20 w-36 shrink-0 text-ink" aria-hidden />
             <figure className="flex flex-col items-center">
-              <div className="flex h-20 w-20 rotate-45 items-center justify-center bg-sage" aria-hidden>
-                <span className="-rotate-45 font-mono text-[11px] font-bold uppercase text-cream">plan</span>
+              <div className="flex h-32 w-32 rotate-45 items-center justify-center bg-sage" aria-hidden>
+                <span className="-rotate-45 font-mono text-[15px] font-bold uppercase text-cream">plan</span>
               </div>
-              <figcaption className="hand mt-5 -rotate-1 text-[22px] text-brown">archie plans it</figcaption>
+              <figcaption className="hand mt-8 -rotate-1 text-[28px] text-brown">archie plans it</figcaption>
             </figure>
-            <DartArrow className="h-14 w-24 text-ink" aria-hidden />
+            <DartArrow className="h-18 w-32 shrink-0 text-ink" aria-hidden />
             <figure className="flex flex-col items-center">
-              <FlangeSketch className="h-32 w-48 text-ink" />
-              <figcaption className="hand mt-1 rotate-1 text-[22px] text-brown">the kernel builds it</figcaption>
+              <FlangeSketch className="h-44 w-64 text-ink" />
+              <figcaption className="hand rotate-1 text-[28px] text-brown">the kernel builds it</figcaption>
             </figure>
-            <span className="font-display text-4xl font-extrabold text-ink" aria-hidden>
+            <span className="font-display text-6xl font-extrabold text-ink" aria-hidden>
               =
             </span>
             <figure className="flex flex-col items-center">
-              <div className="part-tile relative h-36 w-52">
+              <div className="part-tile relative h-48 w-72 bg-peach">
                 <Image
                   src="/parts/valve-housing.png"
                   alt="The real part Archie built and verified."
                   fill
-                  sizes="210px"
+                  sizes="290px"
                   className="object-contain"
                 />
               </div>
-              <figcaption className="hand mt-1 -rotate-2 text-[22px] text-coral">verified. real. ✓</figcaption>
+              <figcaption className="hand mt-1 -rotate-2 text-[28px] text-coral">verified. real. ✓</figcaption>
             </figure>
           </div>
         </Reveal>
@@ -99,7 +99,7 @@ export function Declaration() {
         <Reveal delay={0.26}>
           <p className="mx-auto mt-14 font-display text-[clamp(1.9rem,1rem+4vw,4.2rem)] font-extrabold leading-[0.95] text-ink">
             The beginning of{" "}
-            <RoughMark type="underline" color="var(--color-coral)" strokeWidth={4} padding={6}>
+            <RoughMark type="underline" color="var(--color-peri)" strokeWidth={4} padding={6} animated={false}>
               <span className="accent-serif font-normal text-brown">vibe designing</span>
             </RoughMark>
             .

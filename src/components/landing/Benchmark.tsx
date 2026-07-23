@@ -10,7 +10,7 @@ export function Benchmark() {
   return (
     <section id="benchmark" className="relative overflow-hidden border-b-[2.5px] border-ink bg-gold py-12 md:py-16">
       {/* scattered part — floats at the left edge, half off-canvas */}
-      <figure className="part-tile pointer-events-none absolute -left-16 bottom-6 hidden h-44 w-64 lg:block" aria-hidden>
+      <figure className="part-tile pointer-events-none absolute -left-16 bottom-6 z-10 hidden h-52 w-72 bg-gold lg:block" aria-hidden>
         <Image src="/parts/gearbox-housing.png" alt="" fill sizes="260px" className="object-contain" />
         <figcaption className="hand absolute -bottom-1 left-20 -rotate-3 text-[18px] text-brown">
           a gearbox, from one line
