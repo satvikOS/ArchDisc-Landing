@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Mosaic13 } from "@/components/decor/Mosaic13";
+import { MosaicFlow } from "@/components/decor/Mosaics";
 import { Reveal } from "@/components/motion/Reveal";
 import { ScribbleTangle, CurlyArrowLoop, WavyArrow, DartArrow, FlangeSketch } from "@/components/decor/HandDrawn";
 
@@ -8,7 +8,7 @@ const MODALITIES = ["text", "images", "video"];
 export function Declaration() {
   return (
     <section id="matter" className="relative overflow-hidden border-y-[2.5px] border-ink bg-peach py-14 md:py-20">
-      <Mosaic13 mix={0} className="pointer-events-none absolute inset-0 h-full w-full opacity-25" aria-hidden />
+      <MosaicFlow className="pointer-events-none absolute inset-0 h-full w-full" />
       <div className="relative z-10 mx-auto max-w-5xl px-5 text-center">
         <Reveal>
           <span className="inline-flex items-center border-[2.5px] border-ink bg-cream px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">

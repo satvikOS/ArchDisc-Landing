@@ -1,4 +1,4 @@
-import { Mosaic13 } from "@/components/decor/Mosaic13";
+import { MosaicFinale } from "@/components/decor/Mosaics";
 import { Reveal } from "@/components/motion/Reveal";
 import { Parallax } from "@/components/motion/Parallax";
 import { InkBurst, SpeedLines } from "@/components/decor/HandDrawn";
@@ -11,7 +11,7 @@ export function Closing() {
         <PixelSteps className="h-40 w-40 opacity-90" />
       </Parallax>
       <InkBurst className="pointer-events-none absolute right-14 top-16 hidden h-20 w-20 text-cream lg:block" aria-hidden />
-      <Mosaic13 mix={1} className="pointer-events-none absolute inset-0 h-full w-full opacity-30" aria-hidden />
+      <MosaicFinale className="pointer-events-none absolute inset-0 h-full w-full" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-5 text-center">
         <Reveal>

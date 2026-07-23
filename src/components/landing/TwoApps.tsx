@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Mosaic13 } from "@/components/decor/Mosaic13";
+import { MosaicApps } from "@/components/decor/Mosaics";
 import { Reveal } from "@/components/motion/Reveal";
 import { VesselSketch } from "@/components/decor/HandDrawn";
 import { DimLine } from "@/components/decor/EngMarks";
@@ -21,7 +21,7 @@ export function TwoApps() {
           bell housing · verified ✓
         </figcaption>
       </figure>
-      <Mosaic13 mix={2} className="pointer-events-none absolute inset-0 h-full w-full opacity-25" aria-hidden />
+      <MosaicApps className="pointer-events-none absolute inset-0 h-full w-full" />
       <div className="relative z-10 mx-auto w-full max-w-[1560px] px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
