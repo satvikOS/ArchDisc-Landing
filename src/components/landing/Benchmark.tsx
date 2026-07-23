@@ -1,17 +1,21 @@
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
-import { Parallax } from "@/components/motion/Parallax";
-import { Concentric, Checker } from "@/components/decor/Stickers";
+import { CircleGridTile } from "@/components/decor/ArtTiles";
+import { DatumFlag } from "@/components/decor/EngMarks";
 
 const HF = "https://huggingface.co/spaces/HuggingAI4Engineering/CADGenBench";
 
 export function Benchmark() {
   return (
     <section id="benchmark" className="relative overflow-hidden border-y-[2.5px] border-ink bg-peach py-20 md:py-28">
-      <Parallax y={40} className="pointer-events-none absolute -left-12 top-8 hidden md:block">
-        <Concentric className="h-36 w-36 text-brown" />
-      </Parallax>
-      <Checker n={4} a="var(--color-ink)" className="pointer-events-none absolute right-1/4 bottom-6 hidden h-14 w-14 -rotate-6 md:block" aria-hidden />
+      {/* scattered part — floats at the left edge, half off-canvas */}
+      <figure className="part-tile pointer-events-none absolute -left-16 bottom-6 hidden h-44 w-64 lg:block" aria-hidden>
+        <Image src="/parts/gearbox-housing.png" alt="" fill sizes="260px" className="object-contain" />
+        <figcaption className="hand absolute -bottom-1 left-20 -rotate-3 text-[18px] text-brown">
+          a gearbox, from one line
+        </figcaption>
+      </figure>
 
       <div className="relative mx-auto w-full max-w-[1180px] px-4 md:px-8">
         <Reveal>
@@ -21,9 +25,10 @@ export function Benchmark() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <div className="mt-8 grid grid-cols-1 overflow-hidden rounded-2xl border-[2.5px] border-ink nb-shadow-lg md:grid-cols-[minmax(220px,auto)_1fr_auto]">
+          <div className="mt-8 grid grid-cols-1 overflow-hidden border-[2.5px] border-ink md:grid-cols-[minmax(220px,auto)_1fr_auto]">
             {/* big number specimen */}
-            <div className="flex flex-col justify-center border-b-[2.5px] border-ink bg-olive p-8 text-ink md:border-b-0 md:border-r-[2.5px]">
+            <div className="relative flex flex-col justify-center overflow-hidden bg-olive p-8 text-ink">
+              <DatumFlag letter="A" className="absolute right-2 top-2 h-12 w-16" />
               <span className="font-mono text-[11px] font-bold uppercase tracking-[0.14em]">CADGenBench</span>
               <span className="specimen mt-1 text-[clamp(4.5rem,12vw,8.5rem)]">#2</span>
               <span className="font-mono text-[11px] font-bold uppercase tracking-[0.14em]">overall leaderboard</span>
@@ -32,21 +37,22 @@ export function Benchmark() {
             {/* claim */}
             <div className="flex flex-col justify-center bg-cream p-8 md:p-10">
               <p className="font-display text-[clamp(1.6rem,1rem+2.4vw,2.8rem)] font-extrabold leading-[0.95] text-ink">
-                <span className="mr-1 inline-block -rotate-2 rounded-xl border-[3px] border-ink bg-lime px-2 nb-shadow-sm">#1</span>{" "}
-                among local models.
+                <span className="mr-1 inline-block -rotate-2 border-[3px] border-ink bg-lime px-2">#1</span> among
+                local models.
               </p>
               <p className="mt-4 max-w-[40ch] font-mono text-[12px] font-bold uppercase tracking-[0.08em] text-ink-mute">
                 Near-frontier accuracy — running on your own machine.
               </p>
             </div>
 
-            {/* link */}
-            <div className="flex items-center justify-center border-t-[2.5px] border-ink bg-peri p-8 md:border-l-[2.5px] md:border-t-0">
+            {/* link on a circle-grid field */}
+            <div className="relative flex items-center justify-center overflow-hidden p-8">
+              <CircleGridTile className="absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMid slice" />
               <a
                 href={HF}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="a-focus nb-card nb-hover inline-flex items-center gap-2 bg-cream px-5 py-3 font-mono text-[12px] font-bold uppercase tracking-[0.1em] text-ink"
+                className="a-focus relative inline-flex items-center gap-2 border-[2.5px] border-ink bg-cream px-5 py-3 font-mono text-[12px] font-bold uppercase tracking-[0.1em] text-ink transition-transform hover:-translate-y-0.5"
               >
                 See the leaderboard
                 <ArrowUpRight size={16} strokeWidth={2.5} />

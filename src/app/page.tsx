@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/landing/Hero";
 import { Declaration } from "@/components/landing/Declaration";
 import { MarqueeBand } from "@/components/landing/MarqueeBand";
-import { AnyoneCanBuild } from "@/components/landing/AnyoneCanBuild";
 import { Benchmark } from "@/components/landing/Benchmark";
 import { TheSystem } from "@/components/landing/TheSystem";
 import { TwoApps } from "@/components/landing/TwoApps";
@@ -26,7 +25,6 @@ export default function HomePage() {
       <Hero />
       <Declaration />
       <MarqueeBand />
-      <AnyoneCanBuild />
       <Benchmark />
       <TheSystem />
       <TwoApps />

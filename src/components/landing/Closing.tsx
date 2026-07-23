@@ -1,23 +1,15 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { Parallax } from "@/components/motion/Parallax";
-import { Concentric, Hexagon } from "@/components/decor/Stickers";
-import { AaSpecimen } from "@/components/decor/Specimens";
+import { InkBurst, SpeedLines } from "@/components/decor/HandDrawn";
+import { PixelSteps } from "@/components/decor/ArtTiles";
 
 export function Closing() {
   return (
     <section className="relative isolate flex min-h-[86vh] items-center overflow-hidden border-t-[2.5px] border-ink bg-coral py-24 text-cream md:py-32">
-      {/* flat hard-geometric accents */}
-      <Parallax y={50} className="pointer-events-none absolute -left-16 top-8 hidden md:block">
-        <Concentric className="h-52 w-52 text-olive" />
+      <Parallax y={40} className="pointer-events-none absolute -left-10 top-10 hidden md:block">
+        <PixelSteps className="h-40 w-40 opacity-90" />
       </Parallax>
-      <Parallax y={-46} className="pointer-events-none absolute -right-14 bottom-8 hidden md:block">
-        <Concentric className="h-44 w-44 text-peri" />
-      </Parallax>
-      <div className="checker-bg pointer-events-none absolute left-8 top-10 hidden h-16 w-16 md:block" aria-hidden />
-      <Hexagon className="pointer-events-none absolute right-12 top-16 hidden h-16 w-16 text-lime lg:block" aria-hidden />
-      <div className="pointer-events-none absolute bottom-10 left-1/4 hidden select-none opacity-90 lg:block" aria-hidden>
-        <AaSpecimen c1="var(--color-cream)" c2="var(--color-olive)" className="text-[8rem]" />
-      </div>
+      <InkBurst className="pointer-events-none absolute right-14 top-16 hidden h-20 w-20 text-cream lg:block" aria-hidden />
 
       <div className="relative mx-auto max-w-5xl px-5 text-center">
         <Reveal>
@@ -30,8 +22,14 @@ export function Closing() {
           <h2 className="mt-8 text-cream">
             <span className="block font-display text-[clamp(2.4rem,1rem+7vw,7rem)] font-extrabold leading-[0.82]">Make</span>
             <span className="-mt-1 block font-display text-mega font-extrabold leading-[0.8]">anything</span>
-            <span className="mt-3 inline-block -rotate-1 border-[3px] border-ink bg-lime px-5 pb-2 font-display text-[clamp(3rem,1rem+9vw,8.5rem)] font-extrabold leading-[0.82] text-ink">
-              real.
+            <span className="relative mt-3 inline-block">
+              <span className="inline-block -rotate-1 border-[3px] border-ink bg-lime px-5 pb-2 font-display text-[clamp(3rem,1rem+9vw,8.5rem)] font-extrabold leading-[0.82] text-ink">
+                real.
+              </span>
+              <SpeedLines
+                className="pointer-events-none absolute -left-16 top-1/2 h-12 w-14 -translate-y-1/2 text-cream"
+                aria-hidden
+              />
             </span>
           </h2>
         </Reveal>
@@ -45,7 +43,7 @@ export function Closing() {
         <Reveal delay={0.3}>
           <div className="mt-10 flex items-center justify-center">
             <span className="inline-flex items-center gap-2.5 border-[2.5px] border-ink bg-cream px-5 py-2.5 font-mono text-[12px] font-bold uppercase tracking-[0.16em] text-ink">
-              <span className="h-2 w-2 rounded-full bg-coral bob" aria-hidden />
+              <span className="h-2 w-2 rounded-full bg-coral" aria-hidden />
               Public release soon
             </span>
           </div>

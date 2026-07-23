@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/brand/Logo";
 import { footer } from "@/lib/site";
-import { Asterisk } from "@/components/decor/Stickers";
 
 export function Footer() {
   return (
@@ -22,7 +21,6 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-6">
-            <Asterisk className="hidden h-14 w-14 spin-slow text-gold sm:block" />
             <div className="flex flex-col items-start gap-4 md:items-end">
               <nav className="flex items-center gap-5">
                 {footer.legal.map((l) => (

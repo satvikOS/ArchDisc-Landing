@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Unbounded, Space_Grotesk, Space_Mono, Instrument_Serif } from "next/font/google";
+import { Unbounded, Space_Grotesk, Space_Mono, Instrument_Serif, Caveat } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
@@ -19,6 +19,12 @@ const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: "400",
   style: ["normal", "italic"],
+  display: "swap",
+  preload: false,
+});
+const caveat = Caveat({
+  variable: "--font-hand",
+  subsets: ["latin"],
   display: "swap",
   preload: false,
 });
@@ -61,7 +67,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${unbounded.variable} ${spaceGrotesk.variable} ${spaceMono.variable} ${instrumentSerif.variable}`}
+      className={`${unbounded.variable} ${spaceGrotesk.variable} ${spaceMono.variable} ${instrumentSerif.variable} ${caveat.variable}`}
     >
       <body className="min-h-dvh bg-cream text-ink antialiased">
         <SmoothScroll />

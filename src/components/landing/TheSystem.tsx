@@ -1,6 +1,5 @@
 import { Reveal } from "@/components/motion/Reveal";
-import { Parallax } from "@/components/motion/Parallax";
-import { Concentric, Checker, Hexagon } from "@/components/decor/Stickers";
+import { CenterMark } from "@/components/decor/EngMarks";
 
 type Mode = "describe" | "plan" | "build" | "verify";
 type Stage = { n: string; k: string; mode: Mode; d: string; spec: string; color: string };
@@ -61,11 +60,7 @@ function PartSVG({ mode }: { mode: Mode }) {
 export function TheSystem() {
   return (
     <section id="system" className="relative scroll-mt-24 overflow-hidden border-y-[2.5px] border-ink bg-sky py-24 md:py-32">
-      <Parallax y={40} className="pointer-events-none absolute -left-12 top-24 hidden md:block">
-        <Concentric className="h-36 w-36 text-coral" />
-      </Parallax>
-      <Checker n={4} a="var(--color-ink)" className="pointer-events-none absolute left-1/3 bottom-8 hidden h-16 w-16 rotate-6 md:block" aria-hidden />
-      <Hexagon className="pointer-events-none absolute right-1/4 bottom-14 hidden h-14 w-14 bob text-lav lg:block" aria-hidden />
+      <CenterMark className="pointer-events-none absolute -right-8 top-16 hidden h-32 w-32 text-ink/40 md:block" aria-hidden />
       <div className="mx-auto w-full max-w-[1180px] px-4 md:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
@@ -76,9 +71,7 @@ export function TheSystem() {
           <Reveal delay={0.06}>
             <h2 className="mt-6 font-display text-h1 text-ink">
               Not a magic button. A{" "}
-              <span className="inline-block rotate-1 rounded-xl border-[3px] border-ink bg-cream px-2 nb-shadow-sm">
-                verified
-              </span>{" "}
+              <span className="inline-block rotate-1 border-[3px] border-ink bg-cream px-2">verified</span>{" "}
               pipeline.
             </h2>
           </Reveal>
@@ -93,13 +86,10 @@ export function TheSystem() {
           <ol className="mt-14 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
             {STAGES.map((s) => (
               <li key={s.n} className="flex">
-                <div
-                  className="flex w-full flex-col rounded-xl border-[2.5px] border-ink bg-cream p-5"
-                  style={{ boxShadow: `8px 8px 0 0 var(--color-${s.color})` }}
-                >
+                <div className="flex w-full flex-col border-[2.5px] border-ink bg-cream p-5">
                   <div className="flex items-center justify-between">
                     <span
-                      className="rounded-md border-2 border-ink px-2 py-0.5 font-mono text-[12px] font-bold text-ink"
+                      className="border-2 border-ink px-2 py-0.5 font-mono text-[12px] font-bold text-ink"
                       style={{ backgroundColor: `var(--color-${s.color})` }}
                     >
                       {s.n}
@@ -108,7 +98,7 @@ export function TheSystem() {
                       {s.k}
                     </span>
                   </div>
-                  <div className="mt-4 aspect-[220/150] w-full rounded-lg border-2 border-ink bg-cream-2 p-3">
+                  <div className="mt-4 aspect-[220/150] w-full border-2 border-ink bg-cream-2 p-3">
                     <PartSVG mode={s.mode} />
                   </div>
                   <p className="mt-4 text-body-sm text-ink-soft">{s.d}</p>

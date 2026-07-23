@@ -1,5 +1,3 @@
-import { Asterisk } from "@/components/decor/Stickers";
-
 const WORDS = [
   "bearing flange",
   "watertight",
@@ -29,7 +27,9 @@ export function MarqueeBand() {
             >
               {w}
             </span>
-            <Asterisk className="h-6 w-6 shrink-0 spin-slow text-coral md:h-8 md:w-8" />
+            <span className="shrink-0 font-display text-[5vw] font-extrabold leading-none text-coral md:text-[2.4vw]" aria-hidden>
+              ✳
+            </span>
           </span>
         ))}
       </div>
