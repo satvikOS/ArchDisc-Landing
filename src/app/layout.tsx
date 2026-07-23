@@ -3,6 +3,7 @@ import { Unbounded, Space_Grotesk, Space_Mono, Instrument_Serif } from "next/fon
 import "./globals.css";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
 
 const unbounded = Unbounded({ variable: "--font-unbounded", subsets: ["latin"], display: "swap" });
 const spaceGrotesk = Space_Grotesk({ variable: "--font-space-grotesk", subsets: ["latin"], display: "swap" });
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       className={`${unbounded.variable} ${spaceGrotesk.variable} ${spaceMono.variable} ${instrumentSerif.variable}`}
     >
       <body className="min-h-dvh bg-cream text-ink antialiased">
+        <SmoothScroll />
         <a
           href="#main"
           className="a-focus sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:nb-card focus:bg-lime focus:px-4 focus:py-2 focus:font-mono focus:text-[12px] focus:font-bold focus:uppercase focus:tracking-[0.14em] focus:text-ink"

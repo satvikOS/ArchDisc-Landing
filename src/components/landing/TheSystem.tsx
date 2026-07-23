@@ -1,14 +1,15 @@
 import { Reveal } from "@/components/motion/Reveal";
-import { Bolt, Sparkle } from "@/components/decor/Stickers";
+import { Parallax } from "@/components/motion/Parallax";
+import { Bolt, Sparkle, Concentric, Checker, Hexagon } from "@/components/decor/Stickers";
 
 type Mode = "describe" | "plan" | "build" | "verify";
 type Stage = { n: string; k: string; mode: Mode; d: string; spec: string; color: string };
 
 const STAGES: Stage[] = [
-  { n: "01", k: "Describe", mode: "describe", d: "One plain line.", spec: "natural language", color: "peri" },
+  { n: "01", k: "Describe", mode: "describe", d: "One plain line.", spec: "natural language", color: "gold" },
   { n: "02", k: "Plan", mode: "plan", d: "Intent → inventory.", spec: "features · datums", color: "olive" },
-  { n: "03", k: "Build", mode: "build", d: "Compiled to a native kernel.", spec: "B-rep · 900+ ops", color: "lav" },
-  { n: "04", k: "Verify", mode: "verify", d: "Proven watertight.", spec: "watertight · DFM ✓", color: "coral" },
+  { n: "03", k: "Build", mode: "build", d: "Compiled to a native kernel.", spec: "B-rep · 900+ ops", color: "coral" },
+  { n: "04", k: "Verify", mode: "verify", d: "Proven watertight.", spec: "watertight · DFM ✓", color: "lime" },
 ];
 
 const INK = "var(--color-ink)";
@@ -61,6 +62,11 @@ export function TheSystem() {
   return (
     <section id="system" className="relative scroll-mt-24 overflow-hidden border-y-[2.5px] border-ink bg-sky py-24 md:py-32">
       <Bolt className="absolute right-8 top-10 hidden h-16 w-16 rotate-6 text-olive md:block" aria-hidden />
+      <Parallax y={40} className="pointer-events-none absolute -left-12 top-24 hidden md:block">
+        <Concentric className="h-36 w-36 text-coral" />
+      </Parallax>
+      <Checker n={4} a="var(--color-ink)" className="pointer-events-none absolute left-1/3 bottom-8 hidden h-16 w-16 rotate-6 md:block" aria-hidden />
+      <Hexagon className="pointer-events-none absolute right-1/4 bottom-14 hidden h-14 w-14 bob text-lav lg:block" aria-hidden />
       <div className="mx-auto w-full max-w-[1180px] px-4 md:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
@@ -71,7 +77,7 @@ export function TheSystem() {
           <Reveal delay={0.06}>
             <h2 className="mt-6 font-display text-h1 text-ink">
               Not a magic button. A{" "}
-              <span className="inline-block rotate-1 rounded-lg border-[3px] border-ink bg-cream px-2 nb-shadow-sm">
+              <span className="inline-block rotate-1 rounded-xl border-[3px] border-ink bg-cream px-2 nb-shadow-sm">
                 verified
               </span>{" "}
               pipeline.
@@ -90,7 +96,7 @@ export function TheSystem() {
               <li key={s.n} className="flex">
                 <div
                   className="flex w-full flex-col rounded-xl border-[2.5px] border-ink bg-cream p-5"
-                  style={{ boxShadow: `7px 7px 0 0 var(--color-${s.color})` }}
+                  style={{ boxShadow: `8px 8px 0 0 var(--color-${s.color})` }}
                 >
                   <div className="flex items-center justify-between">
                     <span

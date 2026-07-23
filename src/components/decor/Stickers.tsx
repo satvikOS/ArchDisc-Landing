@@ -145,4 +145,64 @@ export function Target(p: P) {
   );
 }
 
-export const STICKERS = { Asterisk, DieDots, Flower, Sparkle, ArrowSquiggle, Zigzag, Clover, Bolt, Target };
+const rad = (d: number) => (d * Math.PI) / 180;
+const pt = (cx: number, cy: number, r: number, a: number) =>
+  `${(cx + r * Math.cos(rad(a))).toFixed(2)} ${(cy + r * Math.sin(rad(a))).toFixed(2)}`;
+
+/** Segmented pinwheel — alternating filled wedges (currentColor) on ink. */
+export function Pinwheel(p: P) {
+  const segs = 10;
+  const wedges = [];
+  for (let i = 0; i < segs; i += 2) {
+    const a0 = (i / segs) * 360;
+    const a1 = ((i + 1.15) / segs) * 360;
+    wedges.push(`M50 50 L${pt(50, 50, 46, a0)} A46 46 0 0 1 ${pt(50, 50, 46, a1)} Z`);
+  }
+  return (
+    <svg {...base(p)}>
+      <circle cx="50" cy="50" r="47" fill={INK} />
+      {wedges.map((d, i) => (
+        <path key={i} d={d} fill="currentColor" />
+      ))}
+      <circle cx="50" cy="50" r="10" fill={INK} />
+    </svg>
+  );
+}
+
+/** Concentric target rings — currentColor + ink, from the reference boards. */
+export function Concentric(p: P) {
+  return (
+    <svg {...base(p)}>
+      <circle cx="50" cy="50" r="47" fill="currentColor" stroke={INK} strokeWidth="4" />
+      <circle cx="50" cy="50" r="34" fill={INK} />
+      <circle cx="50" cy="50" r="22" fill="currentColor" />
+      <circle cx="50" cy="50" r="10" fill={INK} />
+    </svg>
+  );
+}
+
+/** Hexagon with a center dot. */
+export function Hexagon(p: P) {
+  const d = [0, 60, 120, 180, 240, 300].map((a) => pt(50, 50, 46, a - 90)).join(" L ");
+  return (
+    <svg {...base(p)}>
+      <path d={`M ${d} Z`} fill="currentColor" stroke={INK} strokeWidth="5" strokeLinejoin="round" />
+      <circle cx="50" cy="50" r="10" fill={INK} />
+    </svg>
+  );
+}
+
+/** Checkerboard tile grid — two palette colors via props. */
+export function Checker({ n = 4, a = "var(--color-ink)", b = "transparent", ...p }: P & { n?: number; a?: string; b?: string }) {
+  const s = 100 / n;
+  const cells = [];
+  for (let y = 0; y < n; y++)
+    for (let x = 0; x < n; x++)
+      cells.push(<rect key={`${x}-${y}`} x={x * s} y={y * s} width={s} height={s} fill={(x + y) % 2 ? a : b} />);
+  return <svg {...base(p)}>{cells}</svg>;
+}
+
+export const STICKERS = {
+  Asterisk, DieDots, Flower, Sparkle, ArrowSquiggle, Zigzag, Clover, Bolt, Target,
+  Pinwheel, Concentric, Hexagon, Checker,
+};

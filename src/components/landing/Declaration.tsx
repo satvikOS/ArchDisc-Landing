@@ -1,14 +1,22 @@
 import { Reveal } from "@/components/motion/Reveal";
-import { Clover, Flower, Sparkle, Target } from "@/components/decor/Stickers";
+import { Parallax } from "@/components/motion/Parallax";
+import { Concentric, Pinwheel, Hexagon, Checker, Asterisk, Sparkle, Bolt } from "@/components/decor/Stickers";
 
 const MODALITIES = ["text", "images", "video"];
 
 export function Declaration() {
   return (
-    <section id="matter" className="relative overflow-hidden border-y-[2.5px] border-ink bg-lav py-24 md:py-32">
-      <Clover className="absolute -left-8 top-10 h-28 w-28 -rotate-12 text-sage/70" aria-hidden />
-      <Target className="absolute right-6 bottom-10 hidden h-20 w-20 text-coral md:block" aria-hidden />
-      <Flower className="absolute right-16 top-8 hidden h-14 w-14 spin-slow text-lime md:block" aria-hidden />
+    <section id="matter" className="relative overflow-hidden border-y-[2.5px] border-ink bg-peach py-24 md:py-32">
+      {/* dense hard decor */}
+      <Parallax y={50} className="pointer-events-none absolute -left-12 top-6 hidden md:block">
+        <Concentric className="h-44 w-44 text-peri" />
+      </Parallax>
+      <Parallax y={-40} className="pointer-events-none absolute -right-8 top-16 hidden md:block">
+        <Pinwheel className="h-40 w-40 spin-slow text-violet" />
+      </Parallax>
+      <Checker n={4} a="var(--color-ink)" className="pointer-events-none absolute bottom-8 left-10 hidden h-20 w-20 -rotate-6 md:block" aria-hidden />
+      <Hexagon className="pointer-events-none absolute bottom-14 right-16 hidden h-16 w-16 bob text-coral md:block" aria-hidden />
+      <Bolt className="pointer-events-none absolute right-1/3 top-4 hidden h-12 w-12 rotate-12 text-olive lg:block" aria-hidden />
 
       <div className="relative mx-auto max-w-4xl px-5 text-center">
         <Reveal>
@@ -25,18 +33,24 @@ export function Declaration() {
                 <span aria-hidden>→</span>
               </span>
             ))}
-            <span className="tag bg-olive px-3 py-1 text-cream nb-shadow-sm">matter</span>
+            <span className="tag bg-olive px-3 py-1 text-ink nb-shadow-sm">matter</span>
           </div>
         </Reveal>
 
+        {/* irregular type — mixed sizes, one boxed word, a serif kicker */}
         <Reveal delay={0.12}>
-          <h2 className="mt-10 font-display text-display text-ink">
-            Generative AI learned to make media.
-            <br className="hidden sm:block" /> Now it can make{" "}
-            <span className="inline-block rotate-1 rounded-xl border-[3px] border-ink bg-coral px-3 pb-1 text-cream nb-shadow">
-              real things
+          <h2 className="mt-10 text-ink">
+            <span className="block font-display text-[clamp(1.9rem,1rem+4vw,4rem)] font-extrabold leading-[0.95]">
+              Generative AI learned to make{" "}
+              <span className="accent-serif font-normal text-brown">media.</span>
             </span>
-            .
+            <span className="mt-2 block font-display text-[clamp(2.1rem,1rem+5vw,4.6rem)] font-extrabold leading-[0.92]">
+              Now it can make{" "}
+              <span className="inline-block rotate-1 rounded-xl border-[3px] border-ink bg-coral px-3 pb-1 text-cream nb-shadow">
+                real things
+              </span>
+              .
+            </span>
           </h2>
         </Reveal>
 
@@ -47,6 +61,8 @@ export function Declaration() {
           </p>
         </Reveal>
       </div>
+
+      <Asterisk className="pointer-events-none absolute bottom-6 left-1/2 h-8 w-8 -translate-x-1/2 spin-slow text-ink" aria-hidden />
     </section>
   );
 }

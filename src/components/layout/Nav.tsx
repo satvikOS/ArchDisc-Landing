@@ -28,8 +28,8 @@ export function Nav() {
               </a>
             ))}
           </nav>
-          <span className="nb-2 inline-flex items-center gap-2 rounded-full bg-coral px-3 py-1.5 font-mono text-[10.5px] font-bold uppercase tracking-[0.1em] text-cream">
-            <span className="h-1.5 w-1.5 rounded-full bg-cream bob" aria-hidden />
+          <span className="nb-2 inline-flex items-center gap-2 rounded-full bg-coral px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-ink">
+            <span className="h-1.5 w-1.5 rounded-full bg-ink bob" aria-hidden />
             Coming soon
           </span>
         </div>
