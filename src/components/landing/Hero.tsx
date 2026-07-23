@@ -44,7 +44,7 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden border-b-[2.5px] border-ink bg-cream">
       {/* ── rich art tiles spread CLEANLY across the background ── */}
-      <div aria-hidden className="pointer-events-none absolute inset-0">
+      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-45">
         <QuarterTargetPixel className="absolute -right-8 -top-8 h-[24rem] w-[24rem] opacity-95 lg:h-[30rem] lg:w-[30rem]" />
         <BarcodeBars className="absolute -bottom-14 right-[16%] h-72 w-72 opacity-95" />
         <AaSpecimen
@@ -53,9 +53,9 @@ export function Hero() {
           className="absolute -bottom-10 -left-6 text-[16vw] opacity-90 lg:text-[13vw]"
         />
         <NumberSpecimen n="0110" className="absolute right-[38%] top-6 text-[7vw] text-coral opacity-90" />
-        <div className="absolute left-[30%] top-[16%] h-40 w-40 rounded-full bg-magenta/85" />
-        <div className="absolute left-[52%] bottom-[30%] h-32 w-32 rotate-45 bg-violet/85" />
-        <div className="absolute left-[12%] top-[52%] h-24 w-52 -rotate-6 bg-sky/90" />
+        <div className="absolute right-[30%] bottom-[8%] h-40 w-40 rounded-full bg-magenta/85" />
+        <div className="absolute left-[46%] top-[6%] h-32 w-32 rotate-45 bg-violet/85" />
+        
       </div>
 
       <div className="relative z-10 flex min-h-[88vh] flex-col justify-between gap-8 px-4 pb-10 pt-8 md:px-10">

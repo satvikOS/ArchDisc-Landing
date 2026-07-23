@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 100 100" fill="none" aria-hidden="true" className={cn("h-8 w-8", className)}>
-      <circle cx="50" cy="42" r="37" fill="var(--color-coral)" stroke="var(--color-ink)" strokeWidth="4" />
+      <circle cx="50" cy="42" r="40" fill="var(--color-coral)" stroke="var(--color-ink)" strokeWidth="4" />
       <path
         fillRule="evenodd"
         clipRule="evenodd"

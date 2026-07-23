@@ -10,7 +10,7 @@ export function Closing() {
         <PixelSteps className="h-40 w-40 opacity-90" />
       </Parallax>
       <InkBurst className="pointer-events-none absolute right-14 top-16 hidden h-20 w-20 text-cream lg:block" aria-hidden />
-      <div aria-hidden className="pointer-events-none absolute inset-0">
+      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-40">
         <div className="absolute -left-20 bottom-10 h-72 w-72 rounded-full bg-violet/80" />
         <div className="absolute right-[12%] top-1/3 h-40 w-40 rotate-45 bg-gold/90" />
         <div className="absolute -right-16 -bottom-14 h-64 w-64 rounded-tl-full bg-magenta/80" />

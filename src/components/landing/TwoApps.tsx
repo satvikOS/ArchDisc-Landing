@@ -20,7 +20,7 @@ export function TwoApps() {
           bell housing · verified ✓
         </figcaption>
       </figure>
-      <div aria-hidden className="pointer-events-none absolute inset-0">
+      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-40">
         <div className="absolute -left-16 top-8 h-56 w-56 rounded-full bg-lime/85" />
         <div className="absolute left-1/4 -top-10 h-28 w-48 rotate-6 bg-peri/85" />
         <div className="absolute -right-14 top-1/3 h-64 w-64 rounded-bl-full bg-magenta/75" />

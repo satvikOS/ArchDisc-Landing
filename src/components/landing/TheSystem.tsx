@@ -61,14 +61,14 @@ export function TheSystem() {
   return (
     <section id="system" className="relative scroll-mt-24 overflow-hidden border-y-[2.5px] border-ink bg-sky py-12 md:py-16">
       <CenterMark className="pointer-events-none absolute -right-8 top-16 hidden h-32 w-32 text-ink/40 md:block" aria-hidden />
-      <div aria-hidden className="pointer-events-none absolute inset-0">
+      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-40">
         <div className="absolute -left-24 top-8 h-72 w-72 rounded-full bg-cream/80" />
         <div className="absolute left-10 bottom-10 h-36 w-36 rotate-45 bg-magenta/80" />
         <div className="absolute -right-12 bottom-16 h-56 w-56 rounded-tl-full bg-violet/75" />
         <div className="absolute right-1/4 -top-10 h-28 w-52 rotate-6 bg-gold/90" />
         <div className="absolute left-1/3 -bottom-8 h-24 w-24 rounded-full bg-coral/90" />
       </div>
-      <div className="relative z-10 mx-auto w-full max-w-[1180px] px-4 md:px-8">
+      <div className="relative z-10 mx-auto w-full max-w-[1500px] px-4 md:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
             <span className="inline-flex items-center border-[2.5px] border-ink bg-cream px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">
@@ -90,10 +90,10 @@ export function TheSystem() {
         </div>
 
         <Reveal delay={0.16}>
-          <ol className="mt-14 grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {STAGES.map((s) => (
               <li key={s.n} className="flex">
-                <div className="flex w-full flex-col border-[2.5px] border-ink bg-cream p-5">
+                <div className="flex w-full flex-col border-[2.5px] border-ink bg-cream p-7">
                   <div className="flex items-center justify-between">
                     <span
                       className="border-2 border-ink px-2 py-0.5 font-mono text-[12px] font-bold text-ink"

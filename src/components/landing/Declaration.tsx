@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Reveal } from "@/components/motion/Reveal";
-import { RoughMark } from "@/components/motion/RoughMark";
 import { ScribbleTangle, CurlyArrowLoop, WavyArrow, DartArrow, FlangeSketch } from "@/components/decor/HandDrawn";
 
 const MODALITIES = ["text", "images", "video"];
@@ -8,7 +7,7 @@ const MODALITIES = ["text", "images", "video"];
 export function Declaration() {
   return (
     <section id="matter" className="relative overflow-hidden border-y-[2.5px] border-ink bg-peach py-14 md:py-20">
-      <div aria-hidden className="pointer-events-none absolute inset-0">
+      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-40">
         <div className="absolute -left-20 top-10 h-64 w-64 rounded-full bg-peri/85" />
         <div className="absolute left-8 bottom-24 h-40 w-40 rotate-12 bg-magenta/80" />
         <div className="absolute -right-16 top-1/4 h-72 w-72 rounded-bl-full bg-violet/80" />
@@ -43,9 +42,12 @@ export function Declaration() {
             </span>
             <span className="mt-2 block font-display text-[clamp(2.6rem,1rem+6.5vw,6.4rem)] font-extrabold leading-[0.9]">
               Now it can make{" "}
-              <RoughMark type="circle" color="var(--color-coral)" strokeWidth={3} padding={10}>
+              <span className="relative inline-block">
                 <span className="bubble text-gold">real things</span>
-              </RoughMark>
+                <svg className="pointer-events-none absolute -left-[6%] -top-[12%] h-[124%] w-[112%]" viewBox="0 0 100 40" preserveAspectRatio="none" fill="none" aria-hidden>
+                  <path d="M8 21 C10 9 38 4 62 6 C86 8 96 15 94 23 C92 33 62 38 38 36 C16 34 6 29 8 21" stroke="var(--color-coral)" strokeWidth="2.4" strokeLinecap="round" />
+                </svg>
+              </span>
               .
             </span>
           </h2>
@@ -55,26 +57,26 @@ export function Declaration() {
         <Reveal delay={0.18}>
           <div className="mx-auto mt-16 flex flex-wrap items-center justify-center gap-x-4 gap-y-12">
             <figure className="flex flex-col items-center">
-              <ScribbleTangle className="h-44 w-52 text-ink" />
+              <span className="relative"><span className="absolute -left-4 -top-3 h-40 w-48 rounded-full bg-lav" aria-hidden /><ScribbleTangle className="relative h-44 w-52 text-ink" /></span>
               <figcaption className="hand -rotate-3 text-[28px] text-brown">your idea</figcaption>
             </figure>
-            <CurlyArrowLoop className="h-24 w-36 shrink-0 text-ink" aria-hidden />
+            <CurlyArrowLoop className="h-24 w-36 shrink-0 text-coral" aria-hidden />
             <figure className="flex flex-col items-center">
               <code className="u-mono max-w-[22ch] border-[3px] border-ink bg-cream px-5 py-4 text-[17px] font-bold text-ink">
                 “a bearing flange — Ø90 bore”
               </code>
               <figcaption className="hand mt-4 rotate-2 text-[28px] text-brown">say it. one line.</figcaption>
             </figure>
-            <WavyArrow className="h-20 w-36 shrink-0 text-ink" aria-hidden />
+            <WavyArrow className="h-20 w-36 shrink-0 text-peri" aria-hidden />
             <figure className="flex flex-col items-center">
               <div className="flex h-32 w-32 rotate-45 items-center justify-center bg-sage" aria-hidden>
                 <span className="-rotate-45 font-mono text-[15px] font-bold uppercase text-cream">plan</span>
               </div>
               <figcaption className="hand mt-8 -rotate-1 text-[28px] text-brown">archie plans it</figcaption>
             </figure>
-            <DartArrow className="h-18 w-32 shrink-0 text-ink" aria-hidden />
+            <DartArrow className="h-18 w-32 shrink-0 text-violet" aria-hidden />
             <figure className="flex flex-col items-center">
-              <FlangeSketch className="h-44 w-64 text-ink" />
+              <span className="relative"><span className="absolute -left-2 top-2 h-40 w-64 rounded-[2rem] bg-sky/80" aria-hidden /><FlangeSketch className="relative h-44 w-64 text-ink" /></span>
               <figcaption className="hand rotate-1 text-[28px] text-brown">the kernel builds it</figcaption>
             </figure>
             <span className="font-display text-6xl font-extrabold text-ink" aria-hidden>
@@ -97,11 +99,14 @@ export function Declaration() {
 
         {/* the statement to the industry */}
         <Reveal delay={0.26}>
-          <p className="mx-auto mt-14 font-display text-[clamp(1.9rem,1rem+4vw,4.2rem)] font-extrabold leading-[0.95] text-ink">
+          <p className="mx-auto mt-14 whitespace-nowrap font-display text-[clamp(1.4rem,0.6rem+3vw,3.4rem)] font-extrabold leading-[0.95] text-ink">
             The beginning of{" "}
-            <RoughMark type="underline" color="var(--color-peri)" strokeWidth={4} padding={6} animated={false}>
+            <span className="relative inline-block">
               <span className="accent-serif font-normal text-brown">vibe designing</span>
-            </RoughMark>
+              <svg className="pointer-events-none absolute -bottom-2 left-0 h-3 w-full" viewBox="0 0 100 10" preserveAspectRatio="none" fill="none" aria-hidden>
+                <path d="M2 7 Q50 0 98 5" stroke="var(--color-peri)" strokeWidth="3.5" strokeLinecap="round" />
+              </svg>
+            </span>
             .
           </p>
         </Reveal>

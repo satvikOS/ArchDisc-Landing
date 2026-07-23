@@ -20,7 +20,7 @@ export function Nav() {
                 key={l.href}
                 href={l.href}
                 className={cn(
-                  "a-focus nb-2 nb-hover hidden rounded-full px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-ink sm:inline-block",
+                  "a-focus nb-2 nb-hover hidden px-5 py-2.5 font-mono text-[13px] font-bold uppercase tracking-[0.1em] text-ink sm:inline-block",
                   i === 0 ? "bg-lime" : "bg-sky",
                 )}
               >
@@ -28,8 +28,7 @@ export function Nav() {
               </a>
             ))}
           </nav>
-          <span className="nb-2 inline-flex items-center gap-2 rounded-full bg-coral px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-ink">
-            <span className="h-1.5 w-1.5 rounded-full bg-ink bob" aria-hidden />
+          <span className="nb-2 inline-flex items-center bg-coral px-5 py-2.5 font-mono text-[13px] font-bold uppercase tracking-[0.1em] text-ink">
             Coming soon
           </span>
         </div>
