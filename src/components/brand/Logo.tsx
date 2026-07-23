@@ -4,11 +4,13 @@ import { cn } from "@/lib/utils";
 export function LogoMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 100 100" fill="none" aria-hidden="true" className={cn("h-8 w-8", className)}>
-      <circle cx="50" cy="23" r="18" fill="var(--color-coral)" stroke="var(--color-ink)" strokeWidth="4.5" />
-      <g stroke="var(--color-ink)" strokeWidth="13" strokeLinecap="round" strokeLinejoin="round" fill="none">
-        <path d="M22 86 L50 26 L78 86" />
-        <line x1="34" y1="61" x2="66" y2="61" />
-      </g>
+      <circle cx="50" cy="35" r="30" fill="var(--color-coral)" stroke="var(--color-ink)" strokeWidth="4" />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M50 5 L90 95 L66 95 L58.5 76 L41.5 76 L34 95 L10 95 Z M50 43 L41 67 L59 67 Z"
+        fill="var(--color-ink)"
+      />
     </svg>
   );
 }

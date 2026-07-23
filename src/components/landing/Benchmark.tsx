@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { Parallax } from "@/components/motion/Parallax";
-import { Concentric, Checker, Sparkle, DieDots } from "@/components/decor/Stickers";
+import { Concentric, Checker } from "@/components/decor/Stickers";
 
 const HF = "https://huggingface.co/spaces/HuggingAI4Engineering/CADGenBench";
 
@@ -11,13 +11,12 @@ export function Benchmark() {
       <Parallax y={40} className="pointer-events-none absolute -left-12 top-8 hidden md:block">
         <Concentric className="h-36 w-36 text-brown" />
       </Parallax>
-      <DieDots className="pointer-events-none absolute right-10 top-8 hidden h-14 w-14 rotate-12 text-peri md:block" aria-hidden />
       <Checker n={4} a="var(--color-ink)" className="pointer-events-none absolute right-1/4 bottom-6 hidden h-14 w-14 -rotate-6 md:block" aria-hidden />
 
       <div className="relative mx-auto w-full max-w-[1180px] px-4 md:px-8">
         <Reveal>
-          <span className="eyebrow bg-cream">
-            <Sparkle className="h-3.5 w-3.5 text-coral" /> Benchmarked · not vibes
+          <span className="inline-flex items-center border-[2.5px] border-ink bg-cream px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">
+            Benchmarked · not vibes
           </span>
         </Reveal>
 

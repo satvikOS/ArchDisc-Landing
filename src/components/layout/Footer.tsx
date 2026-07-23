@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/brand/Logo";
 import { footer } from "@/lib/site";
-import { Asterisk, Flower } from "@/components/decor/Stickers";
+import { Asterisk } from "@/components/decor/Stickers";
 
 export function Footer() {
   return (
@@ -43,9 +43,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-2 border-t-2 border-cream/30 pt-6 font-mono text-[12px] text-cream/70 sm:flex-row sm:items-center sm:justify-between">
-          <p className="flex items-center gap-2">
-            <Flower className="h-4 w-4 text-lime" /> © 2026 ArchDisc
-          </p>
+          <p>© 2026 ArchDisc</p>
           <span className="uppercase tracking-[0.12em]">Describe it. Archie builds it.</span>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { Parallax } from "@/components/motion/Parallax";
-import { Concentric, Pinwheel, Hexagon, Checker, Asterisk, Sparkle, Bolt } from "@/components/decor/Stickers";
+import { Concentric, Pinwheel, Hexagon, Checker } from "@/components/decor/Stickers";
+import { AaSpecimen } from "@/components/decor/Specimens";
 
 const MODALITIES = ["text", "images", "video"];
 
@@ -15,13 +16,15 @@ export function Declaration() {
         <Pinwheel className="h-40 w-40 spin-slow text-violet" />
       </Parallax>
       <Checker n={4} a="var(--color-ink)" className="pointer-events-none absolute bottom-8 left-10 hidden h-20 w-20 -rotate-6 md:block" aria-hidden />
-      <Hexagon className="pointer-events-none absolute bottom-14 right-16 hidden h-16 w-16 bob text-coral md:block" aria-hidden />
-      <Bolt className="pointer-events-none absolute right-1/3 top-4 hidden h-12 w-12 rotate-12 text-olive lg:block" aria-hidden />
+      <Hexagon className="pointer-events-none absolute bottom-14 right-16 hidden h-16 w-16 text-coral md:block" aria-hidden />
+      <div className="pointer-events-none absolute right-[6%] top-10 hidden select-none lg:block" aria-hidden>
+        <AaSpecimen c1="var(--color-brown)" c2="var(--color-peri)" className="text-[7rem] opacity-40" />
+      </div>
 
       <div className="relative mx-auto max-w-4xl px-5 text-center">
         <Reveal>
-          <span className="eyebrow bg-cream">
-            <Sparkle className="h-3 w-3 text-coral" /> The shift
+          <span className="inline-flex items-center border-[2.5px] border-ink bg-cream px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">
+            The shift
           </span>
         </Reveal>
 
@@ -62,7 +65,6 @@ export function Declaration() {
         </Reveal>
       </div>
 
-      <Asterisk className="pointer-events-none absolute bottom-6 left-1/2 h-8 w-8 -translate-x-1/2 spin-slow text-ink" aria-hidden />
     </section>
   );
 }

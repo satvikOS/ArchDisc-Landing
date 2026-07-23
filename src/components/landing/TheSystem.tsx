@@ -1,6 +1,6 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { Parallax } from "@/components/motion/Parallax";
-import { Bolt, Sparkle, Concentric, Checker, Hexagon } from "@/components/decor/Stickers";
+import { Concentric, Checker, Hexagon } from "@/components/decor/Stickers";
 
 type Mode = "describe" | "plan" | "build" | "verify";
 type Stage = { n: string; k: string; mode: Mode; d: string; spec: string; color: string };
@@ -61,7 +61,6 @@ function PartSVG({ mode }: { mode: Mode }) {
 export function TheSystem() {
   return (
     <section id="system" className="relative scroll-mt-24 overflow-hidden border-y-[2.5px] border-ink bg-sky py-24 md:py-32">
-      <Bolt className="absolute right-8 top-10 hidden h-16 w-16 rotate-6 text-olive md:block" aria-hidden />
       <Parallax y={40} className="pointer-events-none absolute -left-12 top-24 hidden md:block">
         <Concentric className="h-36 w-36 text-coral" />
       </Parallax>
@@ -70,8 +69,8 @@ export function TheSystem() {
       <div className="mx-auto w-full max-w-[1180px] px-4 md:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
-            <span className="eyebrow bg-cream">
-              <Sparkle className="h-3 w-3 text-coral" /> Under the sentence
+            <span className="inline-flex items-center border-[2.5px] border-ink bg-cream px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">
+              Under the sentence
             </span>
           </Reveal>
           <Reveal delay={0.06}>

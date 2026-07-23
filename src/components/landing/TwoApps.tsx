@@ -1,12 +1,12 @@
 import { Reveal } from "@/components/motion/Reveal";
 import { Parallax } from "@/components/motion/Parallax";
-import { Flower, Target, DieDots, Concentric, Pinwheel, Checker, Asterisk } from "@/components/decor/Stickers";
+import { Target, Concentric, Pinwheel, Checker } from "@/components/decor/Stickers";
 
 const STATS = [
-  { v: "30B", l: "on-device model" },
-  { v: "0", l: "data leaves your Mac" },
-  { v: "≈frontier", l: "CAD generation" },
-  { v: "Free", l: "to create, forever" },
+  { v: "30B", l: "params · on-device" },
+  { v: "#2", l: "on CADGenBench" },
+  { v: "0", l: "cloud calls" },
+  { v: "Free", l: "to create" },
 ];
 
 export function TwoApps() {
@@ -16,12 +16,11 @@ export function TwoApps() {
         <Concentric className="h-40 w-40 text-coral" />
       </Parallax>
       <Pinwheel className="pointer-events-none absolute -left-8 bottom-24 hidden h-28 w-28 spin-slow text-olive md:block" aria-hidden />
-      <Checker n={4} a="var(--color-peri)" className="pointer-events-none absolute left-1/4 top-4 hidden h-14 w-14 -rotate-6 lg:block" aria-hidden />
-      <Asterisk className="pointer-events-none absolute right-1/4 bottom-6 hidden h-12 w-12 spin-slow text-lime lg:block" aria-hidden />
+      <Checker n={4} className="pointer-events-none absolute left-1/4 top-4 hidden h-14 w-14 -rotate-6 lg:block" aria-hidden />
       <div className="relative mx-auto w-full max-w-[1300px] px-4 md:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
-            <span className="eyebrow bg-lime">One universe</span>
+            <span className="inline-flex items-center border-[2.5px] border-ink bg-lime px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">One universe</span>
           </Reveal>
           <Reveal delay={0.06}>
             <h2 className="mt-6 font-display text-h1 text-ink">
@@ -44,7 +43,7 @@ export function TwoApps() {
           <div className="mt-14 grid grid-cols-1 overflow-hidden rounded-2xl border-[2.5px] border-ink nb-shadow-lg md:grid-cols-2">
             {/* Studio */}
             <div className="relative overflow-hidden border-b-[2.5px] border-ink bg-violet p-8 text-cream md:border-b-0 md:border-r-[2.5px] md:p-10">
-              <Flower className="pointer-events-none absolute -right-6 -top-6 h-40 w-40 spin-slow text-cream/15" aria-hidden />
+              <Concentric className="pointer-events-none absolute -right-10 -top-10 h-44 w-44 text-cream/12" aria-hidden />
               <span className="inline-block rounded-md border-2 border-cream px-2 py-0.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em]">
                 SYS-02 · 3D creation
               </span>
@@ -85,8 +84,8 @@ export function TwoApps() {
           <div className="mt-8 rounded-2xl border-[2.5px] border-ink bg-brown p-8 nb-shadow md:p-10">
             <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
               <div className="max-w-md">
-                <span className="inline-flex items-center gap-2 rounded-md border-2 border-ink bg-cream px-2 py-0.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-ink">
-                  <DieDots className="h-3.5 w-3.5 text-coral" /> SYS-00 · Archie
+                <span className="inline-flex items-center border-2 border-ink bg-cream px-2 py-0.5 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-ink">
+                  SYS-00 · Archie
                 </span>
                 <p className="mt-4 font-display text-h3 font-extrabold text-cream">
                   The one model that builds both — private by default.

@@ -133,20 +133,16 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; }
   .nb-2 { border: 2px solid var(--color-ink); }
   .nb-3 { border: 3px solid var(--color-ink); }
 
-  .nb-shadow    { box-shadow: 6px 6px 0 0 var(--color-ink); }
-  .nb-shadow-sm { box-shadow: 4px 4px 0 0 var(--color-ink); }
-  .nb-shadow-lg { box-shadow: 10px 10px 0 0 var(--color-ink); }
+  /* FLAT by design — museum butted-field look, no sticker drop-shadows. */
+  .nb-shadow, .nb-shadow-sm, .nb-shadow-lg, .nb-shadow-xl { box-shadow: none; }
 
   .nb-card {
     border: 2.5px solid var(--color-ink);
     border-radius: var(--nb-radius);
-    box-shadow: 6px 6px 0 0 var(--color-ink);
   }
-  /* colored-shadow card — the ONE deliberate palette-shadow exception, fixed 8px */
   .nb-card-c {
     border: 2.5px solid var(--color-ink);
-    border-radius: 12px;
-    box-shadow: 8px 8px 0 0 var(--sh, var(--color-ink));
+    border-radius: 4px;
   }
   /* status pill — dot + mono label, reused verbatim */
   .status-pill {
@@ -157,9 +153,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; }
     letter-spacing: 0.1em; text-transform: uppercase;
   }
   /* interactive lift — press toward the shadow on hover */
-  .nb-hover { transition: transform 0.14s var(--ease-out-soft), box-shadow 0.14s var(--ease-out-soft); }
-  .nb-hover:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 0 var(--color-ink); }
-  .nb-hover:active { transform: translate(2px, 2px); box-shadow: 3px 3px 0 0 var(--color-ink); }
+  .nb-hover { transition: transform 0.14s var(--ease-out-soft); }
+  .nb-hover:hover { transform: translate(-2px, -2px); }
+  .nb-hover:active { transform: translate(1px, 1px); }
 
   /* mono HUD eyebrow — a bordered pill/tab */
   .eyebrow {
@@ -173,8 +169,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; }
   /* a "letter/word in a colored box" — the A/B motif */
   .tag {
     display: inline-flex; align-items: center; justify-content: center;
-    border: 2.5px solid var(--color-ink); border-radius: 8px;
-    padding: 0.02em 0.28em; box-shadow: 3px 3px 0 0 var(--color-ink);
+    border: 2.5px solid var(--color-ink); border-radius: 4px;
+    padding: 0.02em 0.28em;
     font-family: var(--font-display); font-weight: 800; line-height: 1;
   }
 
@@ -207,7 +203,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; }
   .a-focus:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 2px; box-shadow: 0 0 0 5px var(--color-lime); }
 
   /* the real-part lightbox tiles: colored ground, multiply keeps only geometry */
-  .part-tile img { mix-blend-mode: multiply; filter: contrast(1.12) brightness(0.97); }
+  /* riso part-on-color — multiply drops the white bg; contrast only (never
+     brightness<1, which would grey the white and dirty the field). */
+  .part-tile img { mix-blend-mode: multiply; filter: contrast(1.5) saturate(1.1); }
 }
 
 /* ---- kinetic marquee ---- */
@@ -249,7 +247,7 @@ html.lenis, html.lenis body { height: auto; }
     background-size: 22px 22px;
   }
   .checker-sm { background-size: 14px 14px; }
-  .nb-shadow-xl { box-shadow: 14px 14px 0 0 var(--color-ink); }
+  .nb-shadow-xl { box-shadow: none; }
   /* irregular "specimen" label — a big Aa-style type accent */
   .specimen { font-family: var(--font-display); font-weight: 800; line-height: 0.8; }
 }
