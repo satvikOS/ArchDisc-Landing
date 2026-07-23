@@ -7,7 +7,7 @@ const MODALITIES = ["text", "images", "video"];
 
 export function Declaration() {
   return (
-    <section id="matter" className="graph-grid relative overflow-hidden border-y-[2.5px] border-ink bg-peach py-24 md:py-32">
+    <section id="matter" className="relative overflow-hidden border-y-[2.5px] border-ink bg-peach py-12 md:py-16">
       <div className="relative mx-auto max-w-5xl px-5 text-center">
         <Reveal>
           <span className="inline-flex items-center border-[2.5px] border-ink bg-cream px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">
@@ -28,49 +28,61 @@ export function Declaration() {
         </Reveal>
 
         <Reveal delay={0.12}>
-          <h2 className="mt-10 text-ink">
-            <span className="block font-display text-[clamp(1.9rem,1rem+4vw,4rem)] font-extrabold leading-[0.95]">
-              Generative AI learned to make <span className="accent-serif font-normal text-brown">media.</span>
+          <h2 className="mt-8 text-ink">
+            <span className="block font-display text-[clamp(2.2rem,1rem+5vw,5.2rem)] font-extrabold leading-[0.92]">
+              Generative AI learned to make{" "}
+              <span className="accent-serif -rotate-2 inline-block font-normal text-brown">media.</span>
             </span>
-            <span className="mt-2 block font-display text-[clamp(2.1rem,1rem+5vw,4.6rem)] font-extrabold leading-[0.92]">
+            <span className="mt-2 block font-display text-[clamp(2.6rem,1rem+6.5vw,6.4rem)] font-extrabold leading-[0.9]">
               Now it can make{" "}
-              <RoughMark type="circle" color="var(--color-coral)" strokeWidth={2.5} padding={8}>
-                real things
+              <RoughMark type="circle" color="var(--color-coral)" strokeWidth={3} padding={10}>
+                <span className="bubble">real things</span>
               </RoughMark>
               .
             </span>
           </h2>
         </Reveal>
 
-        {/* the pencil flow — intent becomes matter */}
+        {/* the pencil flow — the TRUE pipeline: idea → say it → plan → build → verified */}
         <Reveal delay={0.18}>
-          <div className="mx-auto mt-16 flex max-w-4xl flex-wrap items-center justify-center gap-x-2 gap-y-8">
+          <div className="mx-auto mt-14 flex flex-wrap items-center justify-center gap-x-3 gap-y-10">
             <figure className="flex flex-col items-center">
-              <ScribbleTangle className="h-24 w-28 text-ink" />
-              <figcaption className="hand mt-1 -rotate-2 text-[19px] text-brown">your idea</figcaption>
+              <ScribbleTangle className="h-32 w-36 text-ink" />
+              <figcaption className="hand mt-1 -rotate-3 text-[22px] text-brown">your idea</figcaption>
             </figure>
-            <CurlyArrowLoop className="h-16 w-24 text-ink" aria-hidden />
+            <CurlyArrowLoop className="h-20 w-28 text-ink" aria-hidden />
             <figure className="flex flex-col items-center">
-              <div className="h-16 w-16 rotate-45 bg-sage" aria-hidden />
-              <figcaption className="hand mt-4 rotate-1 text-[19px] text-brown">archie plans</figcaption>
+              <code className="u-mono max-w-[24ch] border-[2.5px] border-ink bg-cream px-3 py-2 text-[13px] font-bold text-ink">
+                “a bearing flange — Ø90 bore”
+              </code>
+              <figcaption className="hand mt-3 rotate-2 text-[22px] text-brown">say it. one line.</figcaption>
             </figure>
-            <WavyArrow className="h-14 w-24 text-ink" aria-hidden />
+            <WavyArrow className="h-16 w-28 text-ink" aria-hidden />
             <figure className="flex flex-col items-center">
-              <FlangeSketch className="h-24 w-36 text-ink" />
-              <figcaption className="hand mt-1 -rotate-1 text-[19px] text-brown">sketch</figcaption>
+              <div className="flex h-20 w-20 rotate-45 items-center justify-center bg-sage" aria-hidden>
+                <span className="-rotate-45 font-mono text-[11px] font-bold uppercase text-cream">plan</span>
+              </div>
+              <figcaption className="hand mt-5 -rotate-1 text-[22px] text-brown">archie plans it</figcaption>
             </figure>
-            <DartArrow className="h-12 w-20 text-ink" aria-hidden />
+            <DartArrow className="h-14 w-24 text-ink" aria-hidden />
             <figure className="flex flex-col items-center">
-              <div className="part-tile relative h-28 w-40">
+              <FlangeSketch className="h-32 w-48 text-ink" />
+              <figcaption className="hand mt-1 rotate-1 text-[22px] text-brown">the kernel builds it</figcaption>
+            </figure>
+            <span className="font-display text-4xl font-extrabold text-ink" aria-hidden>
+              =
+            </span>
+            <figure className="flex flex-col items-center">
+              <div className="part-tile relative h-36 w-52">
                 <Image
                   src="/parts/valve-housing.png"
-                  alt="The real valve housing Archie built from a single line."
+                  alt="The real part Archie built and verified."
                   fill
-                  sizes="160px"
+                  sizes="210px"
                   className="object-contain"
                 />
               </div>
-              <figcaption className="hand mt-1 rotate-2 text-[19px] text-coral">built. real.</figcaption>
+              <figcaption className="hand mt-1 -rotate-2 text-[22px] text-coral">verified. real. ✓</figcaption>
             </figure>
           </div>
         </Reveal>

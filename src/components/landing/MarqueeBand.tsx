@@ -1,14 +1,14 @@
 const WORDS = [
-  "bearing flange",
-  "watertight",
-  "ribbed gearbox housing",
-  "verified",
-  "three-port valve body",
-  "manufacturable",
-  "pump volute backplate",
-  "kernel-true",
+  "parametric CAD",
+  "on-device AI",
+  "FEA + simulation",
+  "watertight solids",
+  "assemblies",
+  "photoreal render",
+  "sketch → solid",
+  "STEP · DXF export",
 ];
-const HOT = new Set(["watertight", "verified", "manufacturable", "kernel-true"]);
+const HOT = new Set(["on-device AI", "watertight solids", "photoreal render"]);
 
 export function MarqueeBand() {
   const track = [...WORDS, ...WORDS];

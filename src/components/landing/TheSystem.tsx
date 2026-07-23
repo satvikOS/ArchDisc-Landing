@@ -59,7 +59,7 @@ function PartSVG({ mode }: { mode: Mode }) {
 
 export function TheSystem() {
   return (
-    <section id="system" className="relative scroll-mt-24 overflow-hidden border-y-[2.5px] border-ink bg-sky py-24 md:py-32">
+    <section id="system" className="relative scroll-mt-24 overflow-hidden border-y-[2.5px] border-ink bg-sky py-12 md:py-16">
       <CenterMark className="pointer-events-none absolute -right-8 top-16 hidden h-32 w-32 text-ink/40 md:block" aria-hidden />
       <div className="mx-auto w-full max-w-[1180px] px-4 md:px-8">
         <div className="mx-auto max-w-2xl text-center">
@@ -69,10 +69,10 @@ export function TheSystem() {
             </span>
           </Reveal>
           <Reveal delay={0.06}>
-            <h2 className="mt-6 font-display text-h1 text-ink">
-              Not a magic button. A{" "}
+            <h2 className="mt-6 font-display text-[clamp(2.2rem,1rem+4.6vw,4.8rem)] font-extrabold leading-[0.92] text-ink">
+              Not a <span className="accent-serif inline-block -rotate-2 font-normal">magic</span> button. A{" "}
               <span className="inline-block rotate-1 border-[3px] border-ink bg-cream px-2">verified</span>{" "}
-              pipeline.
+              <span className="bubble">pipeline</span>.
             </h2>
           </Reveal>
           <Reveal delay={0.12}>

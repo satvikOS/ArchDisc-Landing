@@ -20,8 +20,10 @@ export function Closing() {
 
         <Reveal delay={0.08}>
           <h2 className="mt-8 text-cream">
-            <span className="block font-display text-[clamp(2.4rem,1rem+7vw,7rem)] font-extrabold leading-[0.82]">Make</span>
-            <span className="-mt-1 block font-display text-mega font-extrabold leading-[0.8]">anything</span>
+            <span className="block -rotate-1 font-display text-[clamp(2.4rem,1rem+7vw,7rem)] font-extrabold leading-[0.82]">Make</span>
+            <span className="bubble -mt-1 block font-display text-[clamp(3.2rem,0.4rem+12vw,12rem)] font-extrabold leading-[0.8] [-webkit-text-stroke-color:var(--color-cream)]">
+              anything
+            </span>
             <span className="relative mt-3 inline-block">
               <span className="inline-block -rotate-1 border-[3px] border-ink bg-lime px-5 pb-2 font-display text-[clamp(3rem,1rem+9vw,8.5rem)] font-extrabold leading-[0.82] text-ink">
                 real.

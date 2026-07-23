@@ -12,7 +12,7 @@ const STATS = [
 
 export function TwoApps() {
   return (
-    <section id="universe" className="relative scroll-mt-24 overflow-hidden py-24 md:py-32">
+    <section id="universe" className="relative scroll-mt-24 overflow-hidden bg-peach py-12 md:py-16">
       {/* scattered part — floats at the right edge */}
       <figure className="part-tile pointer-events-none absolute -right-14 top-14 hidden h-40 w-56 lg:block" aria-hidden>
         <Image src="/parts/bell-housing.png" alt="" fill sizes="230px" className="object-contain" />
@@ -20,15 +20,15 @@ export function TwoApps() {
           bell housing · verified ✓
         </figcaption>
       </figure>
-      <div className="relative mx-auto w-full max-w-[1300px] px-4 md:px-8">
+      <div className="relative mx-auto w-full max-w-[1560px] px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
             <span className="inline-flex items-center border-[2.5px] border-ink bg-lime px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">One universe</span>
           </Reveal>
           <Reveal delay={0.06}>
-            <h2 className="mt-6 font-display text-h1 text-ink">
-              Two apps. One{" "}
-              <span className="inline-block -rotate-1 border-[3px] border-ink bg-coral px-2 text-cream">
+            <h2 className="mt-6 font-display text-[clamp(2.2rem,1rem+4.6vw,4.8rem)] font-extrabold leading-[0.92] text-ink">
+              <span className="bubble">Two apps.</span> One{" "}
+              <span className="inline-block -rotate-2 border-[3px] border-ink bg-coral px-2 text-cream">
                 model.
               </span>{" "}
               Your machine.

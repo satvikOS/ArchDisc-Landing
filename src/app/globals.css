@@ -116,7 +116,11 @@ body {
   background-color: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  /* the site is a poster, not a document — no selecting, no dragging */
+  user-select: none;
+  -webkit-user-select: none;
 }
+img, svg, canvas { -webkit-user-drag: none; user-drag: none; }
 h1, h2, h3 { font-family: var(--font-display); font-weight: 800; }
 
 ::selection { background-color: var(--color-coral); color: var(--color-cream); }
@@ -210,6 +214,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 800; }
 
 /* ---- kinetic marquee ---- */
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes warmflow { 0% { background-position: 0% 50%; } 100% { background-position: 300% 50%; } }
+@media (prefers-reduced-motion: reduce) { .wordmark:hover, a:hover .wordmark { animation: none; } }
 .marquee-track { animation: marquee 30s linear infinite; will-change: transform; }
 .marquee-track.reverse { animation-direction: reverse; }
 
@@ -250,6 +256,33 @@ html.lenis, html.lenis body { height: auto; }
 
   /* handwritten voice (Caveat) — margin notes, scattered-part captions */
   .hand { font-family: var(--font-hand); font-weight: 600; }
+
+  /* drawing-letters: hollow bubble/outline type */
+  .bubble {
+    -webkit-text-stroke: 2.8px var(--color-ink);
+    paint-order: stroke fill;
+    color: transparent;
+  }
+  .bubble-fill { -webkit-text-stroke: 2.8px var(--color-ink); paint-order: stroke fill; }
+
+  /* ARCHDISC wordmark — black italic caps; warm colors flow on hover */
+  .wordmark {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+  }
+  .wordmark:hover, a:hover .wordmark, a:focus-visible .wordmark {
+    background: linear-gradient(90deg, #e0522f, #cba52c, #bf3f22, #9a8722, #ecc9a3, #e0522f);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: warmflow 1.4s linear infinite;
+  }
 
   /* engineer's graph paper — faint square grid */
   .graph-grid {

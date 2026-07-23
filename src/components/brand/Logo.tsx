@@ -20,9 +20,7 @@ export function Logo({ className, markClassName }: { className?: string; markCla
   return (
     <span className={cn("inline-flex items-center gap-2.5 text-ink", className)}>
       <LogoMark className={markClassName} />
-      <span className="font-display text-[17px] font-extrabold tracking-[-0.02em]">
-        Arch<span className="text-coral">Disc</span>
-      </span>
+      <span className="wordmark text-[19px]">ArchDisc</span>
     </span>
   );
 }

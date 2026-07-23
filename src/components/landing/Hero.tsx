@@ -45,7 +45,7 @@ export function Hero() {
   return (
     <section className="relative grid grid-cols-1 border-b-[2.5px] border-ink lg:min-h-[92vh] lg:grid-cols-[55fr_45fr]">
       {/* ── headline field ── */}
-      <div className="graph-grid relative flex flex-col justify-center px-5 py-16 md:px-10 lg:py-10">
+      <div className="relative flex flex-col justify-center bg-cream px-5 py-12 md:px-10 lg:py-8">
         <span className="mb-8 inline-flex w-fit items-center border-[2.5px] border-ink bg-lime px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">
           Creative AI for the physical world
         </span>
@@ -58,8 +58,10 @@ export function Hero() {
             initial={reduce ? false : "hidden"}
             animate="show"
           >
-            <span className="font-display text-mega font-extrabold">Describe</span>
-            <span className="accent-serif -rotate-3 text-[clamp(2rem,1rem+4.5vw,4.5rem)] text-brown">it.</span>
+            <span className="bubble font-display text-[clamp(3.4rem,0.4rem+12vw,11.5rem)] font-extrabold">
+              Describe
+            </span>
+            <span className="accent-serif -rotate-6 text-[clamp(2.2rem,1rem+5vw,5rem)] text-brown">it.</span>
           </motion.span>
           <motion.span
             className="mt-2 flex flex-wrap items-center gap-x-3 leading-[0.82]"
@@ -68,11 +70,13 @@ export function Hero() {
             initial={reduce ? false : "hidden"}
             animate="show"
           >
-            <span className="inline-block -rotate-1 bg-coral px-2.5 pb-1 font-display text-[clamp(2.4rem,1rem+6.5vw,6rem)] font-extrabold text-cream">
+            <span className="inline-block -rotate-2 bg-coral px-3 pb-1 font-display text-[clamp(2.6rem,1rem+7.5vw,7rem)] font-extrabold uppercase italic text-cream">
               Archie
             </span>
-            <span className="font-display text-[clamp(2.2rem,1rem+5.5vw,5.4rem)] font-extrabold">builds</span>
-            <span className="font-display text-mega font-extrabold text-olive">it.</span>
+            <span className="font-display text-[clamp(2.4rem,1rem+6vw,6rem)] font-extrabold">builds</span>
+            <span className="rotate-2 font-display text-[clamp(3.2rem,1rem+10vw,10rem)] font-extrabold text-olive">
+              it.
+            </span>
           </motion.span>
         </h1>
 

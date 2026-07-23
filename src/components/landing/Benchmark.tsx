@@ -8,7 +8,7 @@ const HF = "https://huggingface.co/spaces/HuggingAI4Engineering/CADGenBench";
 
 export function Benchmark() {
   return (
-    <section id="benchmark" className="relative overflow-hidden border-y-[2.5px] border-ink bg-peach py-20 md:py-28">
+    <section id="benchmark" className="relative overflow-hidden border-b-[2.5px] border-ink bg-gold py-12 md:py-16">
       {/* scattered part — floats at the left edge, half off-canvas */}
       <figure className="part-tile pointer-events-none absolute -left-16 bottom-6 hidden h-44 w-64 lg:block" aria-hidden>
         <Image src="/parts/gearbox-housing.png" alt="" fill sizes="260px" className="object-contain" />
@@ -17,15 +17,17 @@ export function Benchmark() {
         </figcaption>
       </figure>
 
-      <div className="relative mx-auto w-full max-w-[1180px] px-4 md:px-8">
-        <Reveal>
-          <span className="inline-flex items-center border-[2.5px] border-ink bg-cream px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">
-            Benchmarked · not vibes
-          </span>
-        </Reveal>
+      <div className="relative w-full">
+        <div className="mx-auto w-full max-w-[1180px] px-4 md:px-8">
+          <Reveal>
+            <span className="inline-flex items-center border-[2.5px] border-ink bg-cream px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">
+              Benchmarked · not vibes
+            </span>
+          </Reveal>
+        </div>
 
         <Reveal delay={0.08}>
-          <div className="mt-8 grid grid-cols-1 overflow-hidden border-[2.5px] border-ink md:grid-cols-[minmax(220px,auto)_1fr_auto]">
+          <div className="mt-8 grid grid-cols-1 overflow-hidden border-y-[2.5px] border-ink md:grid-cols-[minmax(260px,auto)_1fr_auto]">
             {/* big number specimen */}
             <div className="relative flex flex-col justify-center overflow-hidden bg-olive p-8 text-ink">
               <DatumFlag letter="A" className="absolute right-2 top-2 h-12 w-16" />
@@ -36,9 +38,9 @@ export function Benchmark() {
 
             {/* claim */}
             <div className="flex flex-col justify-center bg-cream p-8 md:p-10">
-              <p className="font-display text-[clamp(1.6rem,1rem+2.4vw,2.8rem)] font-extrabold leading-[0.95] text-ink">
-                <span className="mr-1 inline-block -rotate-2 border-[3px] border-ink bg-lime px-2">#1</span> among
-                local models.
+              <p className="font-display text-[clamp(2rem,1rem+3.4vw,3.8rem)] font-extrabold leading-[0.92] text-ink">
+                <span className="mr-1 inline-block -rotate-3 border-[3px] border-ink bg-lime px-2">#1</span> among{" "}
+                <span className="bubble">local models</span>.
               </p>
               <p className="mt-4 max-w-[40ch] font-mono text-[12px] font-bold uppercase tracking-[0.08em] text-ink-mute">
                 Near-frontier accuracy — running on your own machine.
