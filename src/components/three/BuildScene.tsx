@@ -162,16 +162,6 @@ export function BuildScene({
         edgeMat.opacity = Math.max(0, (t - 0.5) / 0.5);
       };
 
-      // Pointer parallax (fine pointers only) — a subtle "alive" tilt.
-      let px = 0, py = 0, tpx = 0, tpy = 0;
-      const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-      const onMove = (e: PointerEvent) => {
-        const r = host.getBoundingClientRect();
-        tpx = ((e.clientX - r.left) / r.width - 0.5) * 2;
-        tpy = ((e.clientY - r.top) / r.height - 0.5) * 2;
-      };
-      if (fine && !reduce) window.addEventListener("pointermove", onMove, { passive: true });
-
       let raf = 0;
       let t0 = 0;
       let visible = true;
@@ -194,16 +184,12 @@ export function BuildScene({
           const t = elapsed / DUR_BUILD;
           setReveal(1 - Math.pow(1 - t, 3)); // ease-out
         } else {
+          // Build complete — freeze. The model does not move.
           setReveal(1);
-          const live = (elapsed - DUR_BUILD) / 1000;
-          spin.rotation.y = live * 0.3;
-          part.position.y = -0.18 + Math.sin(live * 0.9) * 0.03;
+          renderOnce();
+          raf = 0;
+          return;
         }
-        px += (tpx - px) * 0.05;
-        py += (tpy - py) * 0.05;
-        camera.position.x = 3.6 + px * 0.5;
-        camera.position.y = 2.7 - py * 0.35;
-        camera.lookAt(0, 0.15, 0);
         renderOnce();
         if (visible && !lost) raf = requestAnimationFrame(loop);
       };
@@ -261,7 +247,6 @@ export function BuildScene({
         cancelAnimationFrame(raf);
         io.disconnect();
         ro.disconnect();
-        window.removeEventListener("pointermove", onMove);
         canvas.removeEventListener("webglcontextlost", onLost);
         canvas.removeEventListener("webglcontextrestored", onRestored);
         part.traverse((o) => {

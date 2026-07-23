@@ -6,7 +6,7 @@ const STATS = [
   { v: "Local", l: "model · on-device" },
   { v: "#2", l: "on CADGenBench" },
   { v: "0", l: "cloud calls" },
-  { v: "Free", l: "to create" },
+  { v: "1:1", l: "kernel-true geometry" },
 ];
 
 export function TwoApps() {

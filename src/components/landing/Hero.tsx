@@ -101,15 +101,15 @@ export function Hero() {
             <ArrowDown size={15} className={reduce ? "" : "bob"} />
           </a>
           <span className="font-mono text-[12px] font-bold uppercase tracking-[0.1em] text-ink-mute">
-            Free · Local · Private
+            Local · Private · On-device
           </span>
         </motion.div>
       </div>
 
       {/* ── butted color-field gallery ── */}
       <div className="grid grid-cols-2 border-t-[2.5px] border-ink lg:border-l-[2.5px] lg:border-t-0">
-        {/* 3D part — flat field, no background clutter */}
-        <div className="relative col-span-2 aspect-[16/10] border-b-[2.5px] border-ink bg-peri">
+        {/* 3D part — no background, just the model on cream */}
+        <div className="relative col-span-2 aspect-[16/10] border-b-[2.5px] border-ink bg-cream">
           <BuildScene className="absolute inset-0" startDelay={TYPE_MS} />
           {sparked && !reduce && (
             <span

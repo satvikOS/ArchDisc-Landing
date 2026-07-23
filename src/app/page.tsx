@@ -10,7 +10,7 @@ import { Closing } from "@/components/landing/Closing";
 
 const TITLE = "ArchDisc — creative AI for the physical world";
 const DESCRIPTION =
-  "Describe an object in a sentence, and Archie builds it — real, manufacturable geometry verified against a native kernel. #2 on CADGenBench, #1 among local models. Free, local, private. Public release soon.";
+  "Describe an object in a sentence, and Archie builds it — real, manufacturable geometry verified against a native kernel. #2 on CADGenBench, #1 among local models. Local and private. Public release soon.";
 
 export const metadata: Metadata = {
   title: TITLE,

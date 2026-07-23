@@ -20,7 +20,7 @@ export const nav = {
 export const footer = {
   tagline: "Make anything real.",
   pre: "Public release soon",
-  bottomLine: "Free · Local · Private",
+  bottomLine: "Local · Private · On-device",
   legal: [
     { label: "Privacy", href: "/privacy" },
     { label: "Terms", href: "/terms" },

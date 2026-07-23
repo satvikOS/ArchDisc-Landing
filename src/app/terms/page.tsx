@@ -22,10 +22,10 @@ const SECTIONS: LegalSection[] = [
     ],
   },
   {
-    h: "Free to use",
+    h: "Using ArchDisc",
     p: [
-      "When ArchDisc opens, it's free to use. We build and maintain the technology; you make things with it.",
-      "“Free to use” is exactly that — it isn't a transfer of ownership of the software or its underlying source.",
+      "We build and maintain the technology; you make things with it.",
+      "Using ArchDisc isn't a transfer of ownership of the software or its underlying source.",
     ],
   },
   {
