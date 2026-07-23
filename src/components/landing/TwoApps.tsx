@@ -20,7 +20,14 @@ export function TwoApps() {
           bell housing · verified ✓
         </figcaption>
       </figure>
-      <div className="relative mx-auto w-full max-w-[1560px] px-4 md:px-6">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-16 top-8 h-56 w-56 rounded-full bg-lime/85" />
+        <div className="absolute left-1/4 -top-10 h-28 w-48 rotate-6 bg-peri/85" />
+        <div className="absolute -right-14 top-1/3 h-64 w-64 rounded-bl-full bg-magenta/75" />
+        <div className="absolute right-1/3 -bottom-10 h-32 w-32 rotate-45 bg-gold/90" />
+        <div className="absolute left-10 bottom-8 h-24 w-24 rounded-full bg-violet/85" />
+      </div>
+      <div className="relative z-10 mx-auto w-full max-w-[1560px] px-4 md:px-6">
         <div className="mx-auto max-w-2xl text-center">
           <Reveal>
             <span className="inline-flex items-center border-[2.5px] border-ink bg-lime px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">One universe</span>

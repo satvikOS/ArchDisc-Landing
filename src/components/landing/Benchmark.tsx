@@ -17,7 +17,12 @@ export function Benchmark() {
         </figcaption>
       </figure>
 
-      <div className="relative w-full">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute -right-16 -top-10 h-56 w-56 rounded-full bg-violet/80" />
+        <div className="absolute right-1/4 bottom-2 h-24 w-24 rotate-45 bg-sky/90" />
+        <div className="absolute left-1/3 -top-8 h-20 w-40 -rotate-6 bg-coral/90" />
+      </div>
+      <div className="relative z-10 w-full">
         <div className="mx-auto w-full max-w-[1180px] px-4 md:px-8">
           <Reveal>
             <span className="inline-flex items-center border-[2.5px] border-ink bg-cream px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">

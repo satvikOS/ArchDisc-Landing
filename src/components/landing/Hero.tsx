@@ -43,13 +43,21 @@ export function Hero() {
 
   return (
     <section className="relative grid grid-cols-1 border-b-[2.5px] border-ink lg:grid-cols-[58fr_42fr]">
-      {/* ── headline field — packed, no voids ── */}
-      <div className="relative flex flex-col justify-between gap-6 bg-cream px-4 pb-8 pt-6 md:px-8">
-        <span className="inline-flex w-fit items-center border-[2.5px] border-ink bg-lime px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">
+      {/* ── headline field — packed, voids filled with flat shapes ── */}
+      <div className="relative flex flex-col justify-between gap-6 overflow-hidden bg-cream px-4 pb-8 pt-6 md:px-8">
+        <div aria-hidden className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-16 top-[30%] h-52 w-52 rounded-full bg-magenta/85" />
+          <div className="absolute left-[36%] -top-10 h-44 w-44 rotate-45 bg-violet/80" />
+          <div className="absolute right-[26%] top-[52%] h-40 w-40 rounded-tl-full bg-sky" />
+          <div className="absolute -bottom-12 left-[18%] h-44 w-44 rounded-full bg-gold/90" />
+          <div className="absolute bottom-[26%] -right-8 h-24 w-56 -rotate-12 bg-lime" />
+          <div className="absolute left-[58%] bottom-4 h-16 w-16 rotate-12 bg-peri" />
+        </div>
+        <span className="relative z-10 inline-flex w-fit items-center border-[2.5px] border-ink bg-lime px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">
           Creative AI for the physical world
         </span>
 
-        <h1 className="text-ink">
+        <h1 className="relative z-10 text-ink">
           <motion.span
             className="flex flex-wrap items-end gap-x-4 leading-[0.9]"
             custom={0}
@@ -89,7 +97,7 @@ export function Hero() {
         </div>
 
         <motion.div
-          className="flex flex-wrap items-center gap-4"
+          className="relative z-10 flex flex-wrap items-center gap-4"
           initial={reduce ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}

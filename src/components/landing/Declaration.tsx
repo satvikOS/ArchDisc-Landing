@@ -7,8 +7,16 @@ const MODALITIES = ["text", "images", "video"];
 
 export function Declaration() {
   return (
-    <section id="matter" className="relative overflow-hidden border-y-[2.5px] border-ink bg-peach py-12 md:py-16">
-      <div className="relative mx-auto max-w-5xl px-5 text-center">
+    <section id="matter" className="relative overflow-hidden border-y-[2.5px] border-ink bg-peach py-14 md:py-20">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-20 top-10 h-64 w-64 rounded-full bg-peri/85" />
+        <div className="absolute left-8 bottom-24 h-40 w-40 rotate-12 bg-magenta/80" />
+        <div className="absolute -right-16 top-1/4 h-72 w-72 rounded-bl-full bg-violet/80" />
+        <div className="absolute right-10 bottom-10 h-32 w-32 rotate-45 bg-lime" />
+        <div className="absolute left-1/4 -top-8 h-24 w-48 -rotate-6 bg-gold/90" />
+        <div className="absolute right-1/4 -bottom-10 h-36 w-36 rounded-full bg-sky/90" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-5xl px-5 text-center">
         <Reveal>
           <span className="inline-flex items-center border-[2.5px] border-ink bg-cream px-3 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[0.16em] text-ink">
             The shift
@@ -16,7 +24,7 @@ export function Declaration() {
         </Reveal>
 
         <Reveal delay={0.05}>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-2.5 font-mono text-[13px] font-bold uppercase tracking-[0.12em] text-ink">
+          <div className="mx-auto mt-6 flex w-fit flex-wrap items-center justify-center gap-2.5 font-mono text-[13px] font-bold uppercase tracking-[0.12em] text-ink">
             {MODALITIES.map((m) => (
               <span key={m} className="inline-flex items-center gap-2.5">
                 <span className="border-2 border-ink bg-cream px-2.5 py-1">{m}</span>
@@ -87,11 +95,12 @@ export function Declaration() {
           </div>
         </Reveal>
 
+        {/* the statement to the industry */}
         <Reveal delay={0.26}>
-          <p className="mx-auto mt-12 max-w-[42ch] font-mono text-[13px] font-bold uppercase tracking-[0.08em] text-brown">
+          <p className="mx-auto mt-14 font-display text-[clamp(1.9rem,1rem+4vw,4.2rem)] font-extrabold leading-[0.95] text-ink">
             The beginning of{" "}
-            <RoughMark type="underline" color="var(--color-peri)" strokeWidth={2}>
-              <span className="accent-serif text-[1.35em] font-normal normal-case tracking-normal">vibe designing</span>
+            <RoughMark type="underline" color="var(--color-coral)" strokeWidth={4} padding={6}>
+              <span className="accent-serif font-normal text-brown">vibe designing</span>
             </RoughMark>
             .
           </p>
